@@ -1,0 +1,98 @@
+{
+  "dataset_id": "ccle_three_view_breast_skin_61",
+  "title": "CCLE three-view teaching subset: breast and skin cancer cell lines",
+  "pairing_unit": "Unique CCLE/DepMap cell-line identity across public assays; these profiles are not claimed to be from the same biological aliquot or culture batch.",
+  "cohort": "All unambiguously matched breast (28) and skin (33) lines with RNA, TMT mass-spectrometry proteomics and LC-MS metabolomics available; no random sample downsampling.",
+  "sources": [
+    {
+      "local_file": "proteomics.csv.gz",
+      "url": "https://gygi.hms.harvard.edu/data/ccle/protein_quant_current_normalized.csv.gz",
+      "sha256": "b72a9ff39b123c801249ea212844ac1f500c3f38fa0f399ec6ad08ee1be2a7ed",
+      "bytes": 30916232
+    },
+    {
+      "local_file": "rna.csv",
+      "url": "https://ndownloader.figshare.com/files/24613349",
+      "sha256": "be0d72f538594755c8fa84cc4a10458520da59f336a815dc3fb8ee13d617443a",
+      "bytes": 794634561
+    },
+    {
+      "local_file": "sample_info.csv",
+      "url": "https://ndownloader.figshare.com/files/24613394",
+      "sha256": "86da61d59fdbadb1ac5005a3c6fc78e3802942441998e29ae9132b92dc0e1ac1",
+      "bytes": 371576
+    },
+    {
+      "local_file": "metabolomics.csv",
+      "url": "https://data.broadinstitute.org/ccle/CCLE_metabolomics_20190502.csv",
+      "sha256": "7c1d24aa575f4c58a29019026b5df8e6d1142a56925aba32ff3f1d1d5a7fd0ac",
+      "bytes": 2098255
+    }
+  ],
+  "papers": [
+    {
+      "authors": "Nusinow et al.",
+      "title": "Quantitative Proteomics of the Cancer Cell Line Encyclopedia",
+      "journal": "Cell",
+      "year": 2020,
+      "doi": "10.1016/j.cell.2019.12.023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7339254/"
+    },
+    {
+      "authors": "Ghandi et al.",
+      "title": "Next-generation characterization of the Cancer Cell Line Encyclopedia",
+      "journal": "Nature",
+      "year": 2019,
+      "doi": "10.1038/s41586-019-1186-3",
+      "url": "https://doi.org/10.1038/s41586-019-1186-3"
+    },
+    {
+      "authors": "Li et al.",
+      "title": "The landscape of cancer cell line metabolism",
+      "journal": "Nature Medicine",
+      "year": 2019,
+      "doi": "10.1038/s41591-019-0404-8",
+      "url": "https://doi.org/10.1038/s41591-019-0404-8"
+    }
+  ],
+  "rna_release": {
+    "name": "DepMap public_20q3",
+    "article_id": 12931238,
+    "url": "https://api.figshare.com/v2/articles/12931238",
+    "note": "File IDs24613349 and24613394 verified in this article through the official Figshare API."
+  },
+  "processing": [
+    "Map proteomic columns to CCLE_Name after removing the _TenPxXX suffix. Exclude cell lines with multiple proteomic sample columns and require exact unique CCLE_Name-to-DepMap_ID metadata mapping.",
+    "Inner join all three views by DepMap_ID, then retain all matched breast and skin lines. No nearest-name or fuzzy matching.",
+    "Protein teaching pool: unique single gene symbols only; exclude features >50% missing or zero variance; rank by variance over all61 lines without group labels, retain1200.",
+    "RNA teaching pool: unique gene symbols only; remove zero-variance features; rank by variance over all61 lines without group labels, retain1200 independently of proteins.",
+    "Retain all225 public metabolite columns. This source was already cleaned, batch-corrected and imputed by its authors; zero observed gaps do not imply no original missingness.",
+    "Preserve upstream transformed scales. No log transform, z-scoring, new imputation or normalization during extraction. Round exported values to6decimal places; source files remain available for audit."
+  ],
+  "view_scales": {
+    "Proteomics": "Normalized log\u2082 protein ratio",
+    "RNA": "log\u2082(TPM + 1)",
+    "Metabolomics": "Cleaned log\u2081\u2080 metabolite abundance (source imputed)"
+  },
+  "sample_counts": {
+    "Skin": 33,
+    "Breast": 28
+  },
+  "features": {
+    "Proteomics": 1200,
+    "RNA": 1200,
+    "Metabolomics": 225
+  },
+  "missing_fraction": {
+    "Proteomics": 0.1516256830601093,
+    "RNA": 0.0,
+    "Metabolomics": 0.0
+  },
+  "shared_selected_rna_protein_genes": 522,
+  "limitations": [
+    "Different assays can use different cell stocks, collection times and processing batches; cell-line identity is the unit of integration, not a paired common aliquot.",
+    "Tissue-lineage comparisons are descriptive exploratory examples, not a clinical classification experiment.",
+    "Protein and RNA high-variance teaching pools were selected independently before classroom filtering; these are reduced, data-selected views rather than whole-omics matrices.",
+    "Metabolite source values were already imputed upstream, so original missingness cannot be reconstructed from the supplied file."
+  ]
+}

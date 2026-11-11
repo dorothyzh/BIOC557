@@ -1,0 +1,226 @@
+feature_id,status,compound_id,matched_name,source_url,reason,chemical_class,candidate_compound_ids,pathway_count
+2-aminoadipate,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+3-phosphoglycerate,ambiguous,,,,Name matches more than one KEGG compound entry (including possible stereoisomers). Excluded from compound-pathway ORA.,small_molecule,C00197;C00597,0
+alpha-glycerophosphate,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+4-pyridoxate,exact_name,C00847,4-Pyridoxate,https://www.kegg.jp/entry/C00847,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+aconitate,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+adenine,exact_name,C00147,Adenine,https://www.kegg.jp/entry/C00147,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+adipate,exact_name,C06104,Adipate,https://www.kegg.jp/entry/C06104,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+alpha-ketoglutarate,curated_synonym,C00026,alpha-Ketoglutaric acid,https://www.kegg.jp/entry/C00026,Acid/base spelling of the KEGG synonym alpha-Ketoglutaric acid.,small_molecule,,19
+AMP,exact_name,C00020,AMP,https://www.kegg.jp/entry/C00020,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,20
+citrate,exact_name,C00158,Citrate,https://www.kegg.jp/entry/C00158,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,6
+isocitrate,exact_name,C00311,Isocitrate,https://www.kegg.jp/entry/C00311,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,4
+CMP,exact_name,C00055,CMP,https://www.kegg.jp/entry/C00055,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+cystathionine,exact_name,C00542,Cystathionine,https://www.kegg.jp/entry/C00542,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+cytidine,exact_name,C00475,Cytidine,https://www.kegg.jp/entry/C00475,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+dCMP,exact_name,C00239,dCMP,https://www.kegg.jp/entry/C00239,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+DHAP/glyceraldehyde 3P,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+erythrose-4-phosphate,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+F1P/F6P/G1P/G6P,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+hexoses (HILIC neg),ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+fumarate/maleate/alpha-ketoisovalerate,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+glucuronate,exact_name,C00191,Glucuronate,https://www.kegg.jp/entry/C00191,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,4
+glutathione oxidized,curated_synonym,C00127,Oxidized glutathione,https://www.kegg.jp/entry/C00127,Word order of the explicit redox-state KEGG synonym.,small_molecule,,5
+glutathione reduced,curated_synonym,C00051,Reduced glutathione,https://www.kegg.jp/entry/C00051,Word order of the explicit redox-state KEGG synonym.,small_molecule,,8
+GMP,exact_name,C00144,GMP,https://www.kegg.jp/entry/C00144,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,6
+guanosine,exact_name,C00387,Guanosine,https://www.kegg.jp/entry/C00387,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+hippurate,exact_name,C01586,Hippurate,https://www.kegg.jp/entry/C01586,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+hypoxanthine,exact_name,C00262,Hypoxanthine,https://www.kegg.jp/entry/C00262,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+inosine,exact_name,C00294,Inosine,https://www.kegg.jp/entry/C00294,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+kynurenine,exact_name,C01718,Kynurenine,https://www.kegg.jp/entry/C01718,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+lactate,exact_name,C01432,Lactate,https://www.kegg.jp/entry/C01432,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+lactose,exact_name,C00243,Lactose,https://www.kegg.jp/entry/C00243,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,3
+malate,ambiguous,,,,Name matches more than one KEGG compound entry (including possible stereoisomers). Excluded from compound-pathway ORA.,small_molecule,C00149;C00711,0
+NAD,exact_name,C00003,NAD+,https://www.kegg.jp/entry/C00003,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,11
+NADP,exact_name,C00006,NADP+,https://www.kegg.jp/entry/C00006,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,8
+oxalate,exact_name,C00209,Oxalate,https://www.kegg.jp/entry/C00209,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+pantothenate,exact_name,C00864,Pantothenate,https://www.kegg.jp/entry/C00864,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,3
+PEP,exact_name,C00074,PEP,https://www.kegg.jp/entry/C00074,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,8
+ribose-5-P/ribulose5-P,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+sorbitol,exact_name,C00794,Sorbitol,https://www.kegg.jp/entry/C00794,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,4
+succinate/methylmalonate,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+sucrose,exact_name,C00089,Sucrose,https://www.kegg.jp/entry/C00089,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,5
+thymine,exact_name,C00178,Thymine,https://www.kegg.jp/entry/C00178,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+UMP,exact_name,C00105,UMP,https://www.kegg.jp/entry/C00105,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+UDP-galactose/UDP-glucose,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+uracil,exact_name,C00106,Uracil,https://www.kegg.jp/entry/C00106,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,3
+urate,exact_name,C00366,Urate,https://www.kegg.jp/entry/C00366,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+uridine,exact_name,C00299,Uridine,https://www.kegg.jp/entry/C00299,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+xanthine,exact_name,C00385,Xanthine,https://www.kegg.jp/entry/C00385,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+taurocholate,exact_name,C05122,Taurocholate,https://www.kegg.jp/entry/C05122,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,4
+glycodeoxycholate/glycochenodeoxycholate,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+taurodeoxycholate/taurochenodeoxycholate,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+phosphocreatine,exact_name,C02305,Phosphocreatine,https://www.kegg.jp/entry/C02305,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+3-methyladipate/pimelate,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+6-phosphogluconate,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+alpha-hydroxybutyrate,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+2-hydroxyglutarate,exact_name,C02630,2-Hydroxyglutarate,https://www.kegg.jp/entry/C02630,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+inositol,ambiguous,,,,Name matches more than one KEGG compound entry (including possible stereoisomers). Excluded from compound-pathway ORA.,small_molecule,C00137;C06151;C19891,0
+malondialdehyde,exact_name,C19440,Malondialdehyde,https://www.kegg.jp/entry/C19440,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+glycine,exact_name,C00037,Glycine,https://www.kegg.jp/entry/C00037,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,20
+alanine,exact_name,C01401,Alanine,https://www.kegg.jp/entry/C01401,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+serine,ambiguous,,,,Name matches more than one KEGG compound entry (including possible stereoisomers). Excluded from compound-pathway ORA.,small_molecule,C00065;C00716,0
+threonine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+methionine,ambiguous,,,,Name matches more than one KEGG compound entry (including possible stereoisomers). Excluded from compound-pathway ORA.,small_molecule,C00073;C01733,0
+aspartate,exact_name,C16433,Aspartate,https://www.kegg.jp/entry/C16433,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+glutamate,ambiguous,,,,Name matches more than one KEGG compound entry (including possible stereoisomers). Excluded from compound-pathway ORA.,small_molecule,C00025;C00302,0
+asparagine,exact_name,C16438,Asparagine,https://www.kegg.jp/entry/C16438,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+glutamine,exact_name,C00303,Glutamine,https://www.kegg.jp/entry/C00303,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+histidine,exact_name,C00768,Histidine,https://www.kegg.jp/entry/C00768,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+arginine,exact_name,C02385,Arginine,https://www.kegg.jp/entry/C02385,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+lysine,exact_name,C16440,Lysine,https://www.kegg.jp/entry/C16440,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+valine,exact_name,C16436,Valine,https://www.kegg.jp/entry/C16436,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+leucine,exact_name,C16439,Leucine,https://www.kegg.jp/entry/C16439,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+isoleucine,exact_name,C16434,Isoleucine,https://www.kegg.jp/entry/C16434,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+phenylalanine,exact_name,C02057,Phenylalanine,https://www.kegg.jp/entry/C02057,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+tyrosine,ambiguous,,,,Name matches more than one KEGG compound entry (including possible stereoisomers). Excluded from compound-pathway ORA.,small_molecule,C00082;C01536,0
+tryptophan,ambiguous,,,,Name matches more than one KEGG compound entry (including possible stereoisomers). Excluded from compound-pathway ORA.,small_molecule,C00078;C00806,0
+proline,exact_name,C16435,Proline,https://www.kegg.jp/entry/C16435,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+cis/trans-hydroxyproline,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+ornithine,exact_name,C01602,Ornithine,https://www.kegg.jp/entry/C01602,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+citrulline,exact_name,C00327,Citrulline,https://www.kegg.jp/entry/C00327,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+taurine,exact_name,C00245,Taurine,https://www.kegg.jp/entry/C00245,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,5
+5-HIAA,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+serotonin,exact_name,C00780,Serotonin,https://www.kegg.jp/entry/C00780,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,11
+GABA,exact_name,C00334,GABA,https://www.kegg.jp/entry/C00334,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,17
+acetylglycine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+dimethylglycine,exact_name,C01026,Dimethylglycine,https://www.kegg.jp/entry/C01026,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,3
+homocysteine,ambiguous,,,,Name matches more than one KEGG compound entry (including possible stereoisomers). Excluded from compound-pathway ORA.,small_molecule,C00155;C05330,0
+SDMA/ADMA,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+NMMA,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+allantoin,exact_name,C01551,Allantoin,https://www.kegg.jp/entry/C01551,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+anthranilic acid,exact_name,C00108,Anthranilic acid,https://www.kegg.jp/entry/C00108,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+kynurenic acid,exact_name,C01717,Kynurenic acid,https://www.kegg.jp/entry/C01717,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+5-adenosylhomocysteine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+carnosine,exact_name,C00386,Carnosine,https://www.kegg.jp/entry/C00386,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+N-carbamoyl-beta-alanine,exact_name,C02642,N-Carbamoyl-beta-alanine,https://www.kegg.jp/entry/C02642,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,3
+thiamine,exact_name,C00378,Thiamine,https://www.kegg.jp/entry/C00378,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,4
+niacinamide,exact_name,C00153,Niacinamide,https://www.kegg.jp/entry/C00153,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+betaine,exact_name,C00719,Betaine,https://www.kegg.jp/entry/C00719,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,4
+choline,exact_name,C00114,Choline,https://www.kegg.jp/entry/C00114,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,9
+alpha-glycerophosphocholine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+acetylcholine,exact_name,C01996,Acetylcholine,https://www.kegg.jp/entry/C01996,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,16
+creatine,exact_name,C00300,Creatine,https://www.kegg.jp/entry/C00300,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+creatinine,exact_name,C00791,Creatinine,https://www.kegg.jp/entry/C00791,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+thyroxine,exact_name,C01829,Thyroxine,https://www.kegg.jp/entry/C01829,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,8
+trimethylamine-N-oxide,exact_name,C01104,Trimethylamine N-oxide,https://www.kegg.jp/entry/C01104,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,0
+hexoses (HILIC pos),ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+adenosine,exact_name,C00212,Adenosine,https://www.kegg.jp/entry/C00212,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,14
+thymidine,exact_name,C00214,Thymidine,https://www.kegg.jp/entry/C00214,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+xanthosine,exact_name,C01762,Xanthosine,https://www.kegg.jp/entry/C01762,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,3
+2-deoxyadenosine,exact_name,C00559,2'-Deoxyadenosine,https://www.kegg.jp/entry/C00559,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+2-deoxycytidine,exact_name,C00881,2'-Deoxycytidine,https://www.kegg.jp/entry/C00881,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+cAMP,exact_name,C00575,cAMP,https://www.kegg.jp/entry/C00575,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,77
+cotinine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+pipecolic acid,exact_name,C00408,Pipecolic acid,https://www.kegg.jp/entry/C00408,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,1
+pyroglutamic acid,exact_name,C01879,Pyroglutamic acid,https://www.kegg.jp/entry/C01879,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+1-methylnicotinamide,exact_name,C02918,1-Methylnicotinamide,https://www.kegg.jp/entry/C02918,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+butyrobetaine,exact_name,C01181,Butyro-betaine,https://www.kegg.jp/entry/C01181,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+putrescine,exact_name,C00134,Putrescine,https://www.kegg.jp/entry/C00134,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,6
+methionine sulfoxide,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+carnitine,exact_name,C00487,Carnitine,https://www.kegg.jp/entry/C00487,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+acetylcarnitine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+propionylcarnitine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+malonylcarnitine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+butyrylcarnitine/isobutyrylcarnitine,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+valerylcarnitine/isovalerylcarnitine/2-methylbutyroylcarnitine,ambiguous,,,,Source label explicitly groups isomers/compounds or a chemical class. Excluded from compound-pathway ORA.,unresolved_mixture,,0
+hexanoylcarnitine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+heptanoylcarnitine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+lauroylcarnitine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+myristoylcarnitine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+palmitoylcarnitine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+stearoylcarnitine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+oleylcarnitine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+arachidonyl_carnitine,unmapped,,,,No strict unambiguous KEGG compound name match.,small_molecule,,0
+sarcosine,exact_name,C00213,Sarcosine,https://www.kegg.jp/entry/C00213,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,3
+beta-alanine,exact_name,C00099,beta-Alanine,https://www.kegg.jp/entry/C00099,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,6
+anserine,exact_name,C01262,Anserine,https://www.kegg.jp/entry/C01262,One KEGG compound entry matches the normalized source feature name; no stereochemistry was inferred.,small_molecule,,2
+C14:0 LPC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPC,,0
+C16:1 LPC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPC,,0
+C16:0 LPC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPC,,0
+C18:2 LPC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPC,,0
+C18:1 LPC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPC,,0
+C18:0 LPC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPC,,0
+C20:4 LPC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPC,,0
+C20:3 LPC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPC,,0
+C22:6 LPC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPC,,0
+C16:0 LPE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPE,,0
+C18:1 LPE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPE,,0
+C18:0 LPE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPE,,0
+C20:4 LPE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPE,,0
+C22:6 LPE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,LPE,,0
+C32:2 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C32:1 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C32:0 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C34:4 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C34:3 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C34:2 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C34:1 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C36:4 PC-A,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C36:4 PC-B,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C36:3 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C36:2 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C36:1 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C38:6 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C38:5 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C38:4 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C38:2 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C40:6 PC,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,PC,,0
+C14:0 SM,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,SM,,0
+C16:1 SM,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,SM,,0
+C16:0 SM,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,SM,,0
+C18:2 SM,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,SM,,0
+C18:1 SM,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,SM,,0
+C18:0 SM,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,SM,,0
+C22:1 SM,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,SM,,0
+C22:0 SM,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,SM,,0
+C24:1 SM,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,SM,,0
+C24:0 SM,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,SM,,0
+C34:2 DAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,DAG,,0
+C34:1 DAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,DAG,,0
+C36:2 DAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,DAG,,0
+C36:1 DAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,DAG,,0
+C14:0 CE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,CE,,0
+C16:1 CE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,CE,,0
+C16:0 CE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,CE,,0
+C18:3 CE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,CE,,0
+C18:2 CE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,CE,,0
+C18:1 CE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,CE,,0
+C18:0 CE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,CE,,0
+C20:5 CE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,CE,,0
+C20:4 CE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,CE,,0
+C20:3 CE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,CE,,0
+C22:6 CE,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,CE,,0
+C46:2 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C46:1 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C46:0 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C48:3 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C48:2 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C48:1 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C48:0 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C50:3 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C50:2 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C50:1 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C50:0 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C52:5 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C52:4 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C52:3 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C52:2 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C52:1 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C54:7 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C54:6 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C54:5 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C54:4 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C54:3 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C54:2 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C54:1 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C56:8 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C56:7 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C56:6 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C56:5 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C56:4 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C56:3 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C56:2 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C58:8 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C58:7 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0
+C58:6 TAG,ambiguous,,,,Lipid sum-composition/class label; molecular species and/or acyl-chain positions are unresolved. Excluded from compound-pathway ORA.,TAG,,0

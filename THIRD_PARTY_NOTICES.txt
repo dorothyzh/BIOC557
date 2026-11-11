@@ -1,0 +1,11 @@
+BIOC557 teaching lab, prepared 2026-11-10.
+
+Public study data: Shen et al., Cell 2020, doi:10.1016/j.cell.2020.05.032; author repository https://github.com/guomics-lab/CVDSBA. Original authors' rights and source terms continue to apply. Full provenance accompanies the selected teaching matrices. This package does not relicense the original study data.
+
+Browser libraries: Plotly.js 2.35.2 (MIT), JSZip 3.10.1 (MIT/GPLv3 dual), PapaParse 5.4.1 (MIT), mofapy2 0.7.5 (LGPL-3.0). The MOFA wheel includes its upstream license metadata. Pyodide is loaded from its official distribution via jsDelivr; package licenses belong to their respective projects.
+
+Sources: https://github.com/plotly/plotly.js ; https://github.com/Stuk/jszip ; https://github.com/mholt/PapaParse ; https://github.com/bioFAM/mofapy2 ; https://pyodide.org/ .
+
+Three-view edition: public CCLE/DepMap protein, RNA and metabolite tables from Nusinow et al. Cell2020; Ghandi et al. Nature2019; Li et al. Nature Medicine2019; actual RNA release DepMap public_20q3. Source URLs/hashes and upstream processing are recorded in the current data/provenance.json. The source authors' rights and release terms continue to apply; this package does not relicense original data. R interface MOFA2 uses its upstream license, as do ggplot2, reticulate, knitr and rmarkdown. The R code controls a managed mofapy2 calculation dependency; students need no Python code.
+
+Functional annotation edition, 2026-11-11: GO Biological Process mappings use the versioned Bioconductor org.Hs.eg.db/GO.db 3.19.1 snapshot; Reactome uses the official release 98 human GMT; metabolite identities and reference-map membership use official KEGG lists retrieved 2026-11-11. These sources retain their respective upstream terms. Source URLs, versions, hashes and exclusions accompany data/enrichment_annotations.json and source_audit/pathway_provenance.json. Annotation is limited to the supplied teaching feature pool.
