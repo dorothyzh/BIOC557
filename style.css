@@ -23,3 +23,5 @@
 @media(max-width:1050px){.living-hero{grid-template-columns:1fr}.hero-copy{padding:35px 32px 0}.hero-copy h2{font-size:40px}.hero-visual{min-height:370px}.hero-copy>p{max-width:700px}.hero-phase{margin-top:24px}.demo-grid{grid-template-columns:1fr}.demo-card{min-height:190px}.demo-card p{max-width:600px}}@media(max-width:600px){.hero-copy{padding:30px 24px 0}.hero-copy h2{font-size:34px}.hero-visual{min-height:330px}.hero-copy>p{font-size:16px}.hero-actions button{font-size:14px!important}.hero-art-caption{font-size:10px}.hero-phase{font-size:10px}.chart-menu{flex-wrap:wrap}#feature-correlations{height:650px}}
 
 main:has(#study-panel:not([hidden])) .page-head{display:none}.living-hero{margin-top:32px}.study-design-note{font-size:14px;line-height:1.65;flex-basis:100%;max-width:1000px;color:#607078}.demo-selection #demo-status{font-size:15px;color:#137b85}
+/* Clip decorative aura without creating a focus-scrollable inner container. */
+.living-hero{overflow:clip}
