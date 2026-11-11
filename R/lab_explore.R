@@ -27,7 +27,7 @@ plot_pathway_results<-function(e){
  p+ggplot2::scale_size_area(max_size=8)+lab_theme()+ggplot2::theme(axis.text.y=ggplot2::element_text(size=9),legend.position='right')
 }
 factor_network<-function(lab,mofa,factor=1,top_per_view=6,mode='factor',threshold=.6){
- nodes<-do.call(rbind,lapply(seq_along(lab$prepared),function(i){view<-names(lab$prepared)[i];w<-mofa$weights[[view]][,factor];ix<-head(order(-abs(w)),top_per_view);theta<-(-90+(i-1)*120-42+84*(seq_along(ix)-.5)/length(ix))*pi/180;data.frame(id=paste(view,colnames(lab$prepared[[view]]$model)[ix],sep='::'),feature=colnames(lab$prepared[[view]]$model)[ix],view=view,column=ix,weight=w[ix],x=cos(theta),y=sin(theta))}))
+ nodes<-do.call(rbind,lapply(seq_along(lab$prepared),function(i){view<-names(lab$prepared)[i];w<-mofa$weights[[view]][,factor];ix<-head(order(-abs(w)),top_per_view);theta<-(-90+(i-1)*360/length(lab$prepared)-42+84*(seq_along(ix)-.5)/length(ix))*pi/180;data.frame(id=paste(view,colnames(lab$prepared[[view]]$model)[ix],sep='::'),feature=colnames(lab$prepared[[view]]$model)[ix],view=view,column=ix,weight=w[ix],x=cos(theta),y=sin(theta))}))
  edges<-data.frame(source=character(),target=character(),value=double())
  if(mode=='factor')edges<-data.frame(source=paste('Factor',factor),target=nodes$id,value=nodes$weight)
  else for(i in seq_len(nrow(nodes)-1))for(j in (i+1):nrow(nodes)){if(nodes$view[i]==nodes$view[j])next;x<-mofa$model_input[[nodes$view[i]]][,nodes$column[i]];y<-mofa$model_input[[nodes$view[j]]][,nodes$column[j]];ok<-is.finite(x)&is.finite(y);if(sum(ok)<10)next;r<-cor(x[ok],y[ok],method='spearman');if(is.finite(r)&&abs(r)>=threshold)edges<-rbind(edges,data.frame(source=nodes$id[i],target=nodes$id[j],value=r))}
