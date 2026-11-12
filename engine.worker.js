@@ -8,8 +8,8 @@ async function initialize(){
     py=await loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.29.3/full/',stdout:()=>{},stderr:()=>{}});
     send('progress',{message:'Loading scientific libraries. First visit takes longer; each learner has an independent workspace.'});
     await py.loadPackage(['numpy','pandas','scipy','scikit-learn','h5py','micropip']);
-    const [code,wheel,exploreCode,catalogs]=await Promise.all([fetch('lab_core.py').then(r=>{if(!r.ok)throw Error('Analysis code could not load.');return r.text();}),fetch('vendor/mofapy2-0.7.5-py3-none-any.whl').then(r=>{if(!r.ok)throw Error('MOFA package could not load.');return r.arrayBuffer();}),fetch('lab_explore.py').then(r=>r.text()),fetch('data/enrichment_annotations.json?v=20261111e').then(r=>r.text())]);
-    py.FS.writeFile('/home/pyodide/lab_core.py',code);py.FS.writeFile('/home/pyodide/lab_explore.py',exploreCode);py.FS.writeFile('/home/pyodide/enrichment_annotations.json',catalogs);
+    const [code,wheel,exploreCode,catalogs,beeCatalogs]=await Promise.all([fetch('lab_core.py?v=20261111f').then(r=>{if(!r.ok)throw Error('Analysis code could not load.');return r.text();}),fetch('vendor/mofapy2-0.7.5-py3-none-any.whl').then(r=>{if(!r.ok)throw Error('MOFA package could not load.');return r.arrayBuffer();}),fetch('lab_explore.py?v=20261111f').then(r=>r.text()),fetch('data/enrichment_annotations.json?v=20261111e').then(r=>r.text()),fetch('data/bee_enrichment_annotations.json?v=20261111f').then(r=>{if(!r.ok)throw Error('Bee annotations could not load.');return r.text();})]);
+    py.FS.writeFile('/home/pyodide/lab_core.py',code);py.FS.writeFile('/home/pyodide/lab_explore.py',exploreCode);py.FS.writeFile('/home/pyodide/enrichment_annotations.json',catalogs);py.FS.writeFile('/home/pyodide/bee_enrichment_annotations.json',beeCatalogs);
     py.FS.writeFile('/tmp/mofapy2-0.7.5-py3-none-any.whl',new Uint8Array(wheel));
     await py.runPythonAsync("import micropip\nawait micropip.install('emfs:/tmp/mofapy2-0.7.5-py3-none-any.whl', deps=False)\nfrom lab_core import run_json\nfrom lab_explore import compare_json, explore_json");
     send('ready');return py;

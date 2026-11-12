@@ -197,6 +197,7 @@ def analyze(data, parameters=None):
     ids, groups, levels, source_views = validate_dataset(data)
     rng = np.random.default_rng(params.seed)
     result = {'dataset': data.get('title', 'Uploaded teaching data'), 'sample_ids': ids,
+              'annotation_scope': 'bee' if data.get('teaching', {}).get('annotation_mode') == 'bee_genes' else 'human',
               'groups': groups.tolist(), 'group_order': levels, 'parameters': asdict(params),
               'views': [], 'challenge': {'kind': params.challenge, 'synthetic': params.challenge in ['break_pairing', 'missing']}}
     if params.challenge == 'break_pairing':
@@ -311,10 +312,10 @@ def analyze(data, parameters=None):
                 'observed_n': int(observed.sum()), 'spearman': stats.spearmanr(x[observed], y[observed]).statistic,
                 'selection_variance_product': np.nanvar(x, ddof=1) * np.nanvar(y, ddof=1)})
         examples.sort(key=lambda g: -g['selection_variance_product'])
-    teaching_markers = ['EPCAM', 'VIM', 'EGFR', 'ERBB2', 'TYR', 'AXL']
+    teaching_markers = [] if result['annotation_scope']=='bee' else ['EPCAM', 'VIM', 'EGFR', 'ERBB2', 'TYR', 'AXL']
     examples.sort(key=lambda g: (teaching_markers.index(g['gene']) if g['gene'] in teaching_markers else len(teaching_markers), -g['selection_variance_product']))
     result['shared_gene_examples'] = examples[:40]
-    result['shared_gene_example_note'] = 'Matched gene symbols present in both retained views. Preselected teaching markers appear first, followed by genes ranked by the product of within-view variances without group labels. Values precede model z-scoring. Correlations pool the lineages.'
+    result['shared_gene_example_note'] = 'Matched gene symbols present in both retained views. Preselected teaching markers appear first, followed by genes ranked by the product of within-view variances without group labels. Values precede model z-scoring. Correlations pool the recorded study groups.'
     if params.method == 'mofa':
         result['mofa'] = _fit_mofa(matrices, model_features, ids, [v['name'] for v in source_views], params)
     result['effect_label'] = ('Difference in mean log₂ abundance' if params.transform == 'log2' else 'Difference in mean input-scale abundance')

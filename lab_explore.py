@@ -8,9 +8,13 @@ from scipy.stats import hypergeom, spearmanr
 from scipy.optimize import linear_sum_assignment
 from lab_core import analyze, _fit_mofa, Parameters, bh_adjust, clean_json
 
-@lru_cache(maxsize=1)
-def read_catalogs():
-    return json.loads((Path(__file__).resolve().parent/'enrichment_annotations.json').read_text())
+@lru_cache(maxsize=2)
+def read_catalogs(scope='human'):
+    if scope not in ['human','bee']:raise ValueError('Unknown annotation species.')
+    name='bee_enrichment_annotations.json' if scope=='bee' else 'enrichment_annotations.json'
+    path=Path(__file__).resolve().parent/name
+    if not path.exists():path=path.parent/'data'/name
+    return json.loads(path.read_text())
 
 def compare_counts(data, parameters, counts=(2,3,4,5,6)):
     counts=sorted(set(int(k) for k in counts))
@@ -128,7 +132,7 @@ def network(result,options):
 def explore(result,options,annotations=None):
     action=options.get('action','network')
     if action=='network':return network(result,options)
-    if action=='enrichment':return enrichment(result,options,annotations if annotations is not None else read_catalogs())
+    if action=='enrichment':return enrichment(result,options,annotations if annotations is not None else read_catalogs(result.get('annotation_scope','human')))
     raise ValueError('Unknown exploration action.')
 
 def compare_json(dataset_json,parameters_json,counts_json='[2,3,4,5,6]'):
