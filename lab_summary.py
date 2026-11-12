@@ -116,37 +116,45 @@ def summarize(result,options):
   gene_rows=[x for x in candidates if x['view']!='Metabolomics'];compound_rows=[x for x in candidates if x['view']=='Metabolomics']
   groups=cluster_terms(gene_rows,gene_universe)+cluster_terms(compound_rows,set().union(*(set(v['selected_features']) for v in r['views'] if v['name']=='Metabolomics')))
   groups=sorted(groups,key=lambda g:(g['report_q'],-g['score']))[:5]
+  # One reviewed interpretation at most. No keyword-to-paper or single-gene fallback.
   hypotheses=[]
-  for g in groups[:2]:
-   cat,hyp,test=category(g['title']);genes=', '.join(labels.get(gene,gene) for gene in g['genes'][:5]);topic=' '.join(t['name'] for t in g['terms']).lower()
-   related=[ref for ref in refs if ref['kind']=='biological' and ref['species']==scope and any(tag.lower() in topic for tag in ref['tags'])][:2]
-   for ref in related:used[ref['id']]=ref
-   contrib={v['name']:r['mofa']['variance_explained'][i][k] for i,v in enumerate(r['views'])};pr=contrib.get('Proteomics',0);rr=contrib.get('RNA',0)
-   statement=f"One hypothesis is that {hyp}, involving the highlighted {g['title'].lower()} genes/features."
-   if 'RNA' in g['views'] and rr>=.05 and rr>3*max(pr,.001):
-    statement=f"{prefix} {k+1} reconstructs more of the RNA input ({rr:.1%}) than the protein input ({pr:.1%}). The {g['title'].lower()} signature could be buffered between RNA expression and protein accumulation."
-    test='Track the highlighted genes at RNA and protein levels across matched time points, and compare the timing and size of their responses.'
-   elif 'Proteomics' in g['views'] and pr>=.05 and pr>3*max(rr,.001):
-    statement=f"{prefix} {k+1} reconstructs more of the protein input ({pr:.1%}) than the RNA input ({rr:.1%}). Differences in translation or protein turnover could contribute to the {g['title'].lower()} signature."
-    test='Measure the highlighted transcripts alongside new protein synthesis and protein half-lives in independently collected matched samples.'
-   elif all(v in g['views'] for v in ['Proteomics','RNA']) and pr>=.05 and rr>=.05:
-    statement=f"Both protein ({pr:.1%}) and RNA ({rr:.1%}) contribute to {prefix} {k+1}. Test whether the {g['title'].lower()} genes show coordinated regulation across the two layers."
-   hypotheses.append(dict(title=cat,text=statement,basis=f"{g['title']}; contributing genes/features: {genes}.",test=test,references=[x['id'] for x in related],status=g['status']))
-  # Gene-specific reading is kept separate from term-derived functional themes.
-  top_ids={x['feature'] for rows in selected.values() for x in rows[:10]}
-  if scope=='bee' and context.get('tissue')=='Head' and 'GeneID_408786' in top_ids:
-   ref=next(x for x in refs if x['id']=='bee_dscam');used[ref['id']]=ref
-   hypotheses.append(dict(title='Dscam follow-up',text=f'Dscam ranks among the strongest features for {prefix} {k+1}. A follow-up could test whether its expression or splice forms track the measured sample differences.',basis='Gene-specific lead: GeneID_408786 (Dscam).',test='Measure Dscam isoforms by targeted RNA sequencing and its protein abundance in independent head samples; pair the measurements with an appropriate learning assay.',references=['bee_dscam'],status='Gene-specific hypothesis'))
-  if not hypotheses:hypotheses=[dict(title='Follow the strongest features',text=f'Test whether the leading genes/features for {prefix} {k+1} reproduce in a new matched sample set.',basis='The current annotation profile does not resolve a specific functional theme.',test='Repeat the paired measurements, check sample composition and recorded technical factors, then repeat functional annotation.',references=[],status='Open functional assignment')]
+  contributions={v['name']:r['mofa']['variance_explained'][i][k] for i,v in enumerate(r['views'])}
+  # Reviewed support is tied to specific RNA annotations and tissue, not category keywords.
+  reviewed_rna_terms={'GO:0009889','GO:0031326','GO:0010468','GO:0010556','GO:0010467','GO:0009059','GO:0044249','GO:0016070','GO:0051252','GO:0006351','GO:0032774','GO:0006355','GO:2001141','GO:0006357','GO:0006366'}
+  support_reasons={
+   'bee_crop':'The source study identifies biosynthesis and protein-synthesis modules in matched honeybee RNA and protein measurements.',
+   'bee_brain_grn':'Independent honeybee brain data identify coordinated gene-regulatory programs across cell types and behavioral maturation.'}
+  centered=model=='Joint PCA' or r['parameters']['mofa_center']
+  if centered and len(r['sample_ids'])>=16 and scope=='bee' and context.get('tissue')=='Head':
+   for g in groups:
+    eligible=[t for t in g['terms'] if t['id'] in reviewed_rna_terms and t['view']=='RNA' and t['report_q']<.05 and t['overlap']>=3 and contributions.get('RNA',0)>=.10]
+    ids=('bee_crop','bee_brain_grn')
+    if not eligible:continue
+    eligible.sort(key=lambda t:(t['report_q'],t['p_value'],-t['overlap']))
+    lead=eligible[0];view=lead['view'];lead_genes=lead['features'];cat=g['category']
+    statement=f"{prefix} {k+1} captures an RNA expression pattern enriched for {lead['name'].lower()}."
+    test='Check whether the same regulatory-gene pattern recurs in independent head pools, with crop and collection year balanced.'
+    associations=factor_associations(r,k,meta)
+    year=next((x for x in associations if x['trait']=='year' and abs(x['rho'])>=.5),None)
+    if year:statement+=f" Its scores are associated with collection year (Spearman rho {year['rho']:.2f})."
+    paper_support=[]
+    for id in ids:
+     ref=next((x for x in refs if x['id']==id),None)
+     if ref:used[id]=ref;paper_support.append(dict(id=id,support=support_reasons[id]))
+    if len(paper_support)<2:continue
+    genes=', '.join(labels.get(gene,gene) for gene in lead_genes[:8])
+    hypotheses=[dict(title=cat,text=statement,basis=f"{lead['name']}; {view} contribution {contributions[view]:.1%}; {lead['overlap']} selected genes; report-wide BH q {lead['report_q']:.3g}. Genes: {genes}.",
+     test=test,references=list(ids),paper_support=paper_support,status='Enrichment- and literature-supported',evidence_term=lead['id'],evidence_view=view,report_q=lead['report_q'])]
+    break
   factor_rows=[x for x in all_rows if x['factor']==k+1]
   factors.append(dict(index=k+1,label=f'{prefix} {k+1}',contributions=[dict(view=v['name'],r2=r['mofa']['variance_explained'][i][k]) for i,v in enumerate(r['views'])],
-   total_significant_terms=sum(x['report_q']<.05 for x in factor_rows),themes=groups,hypotheses=hypotheses[:3],
+   total_significant_terms=sum(x['report_q']<.05 for x in factor_rows),themes=groups,hypotheses=hypotheses[:1],
    strongest_features={v:[dict(x,label=labels.get(x['feature'],x['feature'])) for x in rows[:6]] for v,rows in selected.items()},
    associations=factor_associations(r,k,meta)[:4],queries=[{x:q[x] for x in ['view','catalog','direction','query_mapped','query_selected','universe_size','model_features','tested_terms']} for q in queries if q['factor']==k+1]))
  papers=[]
  for p in context.get('papers',[]):
   if str(p.get('url','')).startswith('https://'):papers.append(p)
  return clean_json(dict(schema_version='1.0',action='summary',dataset=r['dataset'],model=model,annotation_provenance=ann.get('provenance',{}),component_name=prefix,samples=len(r['sample_ids']),views=[v['name'] for v in r['views']],parameters=r['parameters'],
-  top_n=top,reconstruction_basis='centered variation' if model=='Joint PCA' or r['parameters']['mofa_center'] else 'uncentered input energy',cluster_kappa=.5,multiple_testing_family='All tested factor/view/catalog/direction term queries in this summary',tested_term_queries=len(all_rows),
+  interpretation_policy='At most one interpretation; report-wide BH q < 0.05, at least three selected supporting genes, at least 10% reconstruction in the supporting view, at least 16 samples, centered inputs and two explicitly reviewed relevant primary studies. The current reviewed interpretation covers specific RNA-regulatory annotations in honeybee head samples; other contexts show functional results. No single-gene or keyword-only citation fallback.',top_n=top,reconstruction_basis='centered variation' if model=='Joint PCA' or r['parameters']['mofa_center'] else 'uncentered input energy',cluster_kappa=.5,multiple_testing_family='All tested factor/view/catalog/direction term queries in this summary',tested_term_queries=len(all_rows),
   method='Signed top-weight gene sets; one-sided hypergeometric over-representation. Within-query and report-wide Benjamini-Hochberg correction. Terms with at least two query hits are grouped using complete-linkage clustering at kappa >= 0.5, with at least three shared model genes. Cluster score is mean(-log10(raw term p)); it summarizes related terms and is not an additional p value. This is a DAVID-inspired local grouping, using ordinary hypergeometric p values rather than DAVID EASE scores.',
   factors=factors,references=list(used.values()),study_papers=papers))

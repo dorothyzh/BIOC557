@@ -182,5 +182,17 @@
     "tags": [],
     "url": "https://doi.org/10.1021/acsomega.4c10637",
     "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "bee_brain_grn",
+    "doi": "10.1038/s41467-025-58614-8",
+    "title": "Single-nucleus and spatial transcriptomics identify brain landscape of gene regulatory networks associated with behavioral maturation in honeybees",
+    "journal": "Nature Communications",
+    "year": 2025,
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1038/s41467-025-58614-8",
+    "source": "CrossRef publisher-deposited metadata; primary publisher abstract reviewed"
   }
 ]
