@@ -1,39 +1,47 @@
 {
   "ccle": {
     "method": "mofa",
-    "factors": 5,
+    "factors": 6,
     "model_features": 100,
-    "feature_scaling": "pareto",
+    "feature_scaling": "none",
     "feature_alignment": "matched_genes",
     "iterations": 300,
-    "max_missing": 0.3
+    "max_missing": 0.3,
+    "mofa_center": true,
+    "mofa_scale_views": true
   },
   "bee-own-head-2025": {
     "method": "mofa",
-    "factors": 5,
+    "factors": 6,
     "model_features": 100,
-    "feature_scaling": "unit_variance",
+    "feature_scaling": "none",
     "feature_alignment": "matched_genes",
     "iterations": 300,
-    "max_missing": 0.3
+    "max_missing": 0.3,
+    "mofa_center": true,
+    "mofa_scale_views": true
   },
   "bee-own-abdomen-2025": {
     "method": "mofa",
-    "factors": 5,
+    "factors": 6,
     "model_features": 100,
-    "feature_scaling": "pareto",
+    "feature_scaling": "none",
     "feature_alignment": "matched_genes",
     "iterations": 300,
-    "max_missing": 0.3
+    "max_missing": 0.3,
+    "mofa_center": true,
+    "mofa_scale_views": true
   },
   "bee-own-gut-2025": {
     "method": "mofa",
-    "factors": 4,
+    "factors": 6,
     "model_features": 100,
-    "feature_scaling": "pareto",
+    "feature_scaling": "none",
     "feature_alignment": "matched_genes",
     "iterations": 300,
-    "max_missing": 0.3
+    "max_missing": 0.3,
+    "mofa_center": true,
+    "mofa_scale_views": false
   },
   "human-islets-2025": {
     "method": "pca",
@@ -42,6 +50,8 @@
     "feature_scaling": "unit_variance",
     "feature_alignment": "matched_genes",
     "iterations": 300,
-    "max_missing": 0.3
+    "max_missing": 0.3,
+    "mofa_center": true,
+    "mofa_scale_views": false
   }
 }

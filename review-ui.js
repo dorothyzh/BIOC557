@@ -2,17 +2,27 @@
 // Per-study choices come from the reproducible, label-free defaults review.
 function applyStudyDefaults(data){
  const id=data.teaching?.id||'ccle',p=validatedDefaults[id]||{method:'mofa',factors:3,model_features:100,feature_scaling:'unit_variance',max_missing:.3};
- for(const [id,value] of Object.entries({transform:'auto',normalization:'none',standardize:p.feature_scaling,'mofa-center':'true','scale-views':'false','factor-count':p.factors,'feature-count':p.model_features,'max-missing':p.max_missing,method:p.method,'gene-alignment':p.feature_alignment||'matched_genes'}))$(id).value=String(value);
+ for(const [id,value] of Object.entries({transform:'auto',normalization:'none',standardize:p.feature_scaling,'mofa-center':p.mofa_center??true,'scale-views':p.mofa_scale_views??false,'factor-count':p.factors,'feature-count':p.model_features,'max-missing':p.max_missing,method:p.method,'gene-alignment':p.feature_alignment||'matched_genes'}))$(id).value=String(value);
+ challenge='none';factorIndex=0;geneIndex=0;selectedView=0;
  $('gene-alignment').disabled=!['RNA','Proteomics'].every(n=>data.views.some(v=>v.name===n));
  networkSettings={mode:'factor',top_per_view:6,threshold:.6};pathwaySettings={view:'Proteomics',catalog:'GO_BP',mode:'ora',top_n:20,direction:'absolute'};
  if($('restore-defaults'))$('restore-defaults').onclick=()=>{applyStudyDefaults(dataset);challenge='none';stale();};
 }
 const summaryBeforeReview=renderStudySummary;
 renderStudySummary=function(){summaryBeforeReview();const t=dataset.teaching||{},p=validatedDefaults[t.id||'ccle'];if(!p)return;const bridge=$('public-study-overview').querySelector('.mofa-bridge strong');if(bridge)bridge.textContent=p.method==='pca'?'Joint PCA':'MOFA';
- $('public-study-overview').insertAdjacentHTML('beforeend',`<div class="default-explainer"><b>Recommended settings</b><p>${p.method==='pca'?'Start with joint PCA for these six donors. Select MOFA to compare a factor model.':`MOFA · ${p.factors} factors · ${p.feature_scaling==='pareto'?'Pareto':'unit-variance'} scaling · 100 features per view. Settings were selected from three repeated masked-entry comparisons.`} Protein and RNA use verified common genes in the same order. <a href="sources.html?v=20261112s#gene-alignment">How matching and defaults work ↗</a></p></div>`);
+ const scaling={pareto:'Pareto scaling',unit_variance:'unit-variance scaling',none:'source feature scales'}[p.feature_scaling];
+ $('public-study-overview').insertAdjacentHTML('beforeend',`<div class="default-explainer"><b>Recommended settings</b><p>${p.method==='pca'?'Start with joint PCA for these six donors. Select MOFA to compare a factor model.':`MOFA · ${p.factors} factors · ${scaling} · whole-view scaling ${p.mofa_scale_views?'on':'off'} · ${p.model_features} features per view. Lowest average held-entry error among 30 tested settings, using five repeated masks.`} Protein and RNA use verified common genes in the same order. <a href="sources.html?v=20261112t#gene-alignment">How matching and defaults work ↗</a></p></div>`);
 };
 const metadataBeforeReview=metadata;
 metadata=function(){return metadataBeforeReview()+`<span>${result.gene_alignment?.mode==='matched_genes'?result.gene_alignment.model_pairs.length+' protein–RNA genes aligned by ID and column order':'Independent view features'}</span>`;};
+// Start interpretation in the strongest measured layer, before any term tests.
+const finishRunBeforeDefaults=finishRun;
+finishRun=function(value){
+ if(value.mofa){const k=Math.min(factorIndex,value.mofa.factors-1),r2=value.mofa.variance_explained.map(row=>row[k]);const view=value.views[r2.indexOf(Math.max(...r2))].name;
+  pathwaySettings={view,catalog:view==='Metabolomics'?'Metabolite_pathways':'GO_BP',mode:'ora',top_n:20,direction:'absolute'};
+ }
+ finishRunBeforeDefaults(value);
+};
 const integrationBeforeReview=renderIntegration;
 renderIntegration=function(box){integrationBeforeReview(box);
  const a=result.gene_alignment;if(!a?.model_pairs?.length)return;

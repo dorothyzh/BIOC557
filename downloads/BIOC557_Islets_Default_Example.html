@@ -2867,7 +2867,9 @@ is included in the teaching package. There is no parameter menu to
 complete.</p>
 <p>For your first run, open <strong>BIOC557.Rproj</strong>, open
 <strong>START_HERE.R</strong>, and click <strong>Source</strong> in
-RStudio. It installs the missing packages and builds this report. After that, open <strong>BIOC557_Default_Lab.Rmd</strong> and click <strong>Knit</strong>.</p>
+RStudio. It installs the missing packages and builds this report. After
+that, open <strong>BIOC557_Default_Lab.Rmd</strong> and click
+<strong>Knit</strong>.</p>
 <p>The code below is written in small steps. Read a section, look at its
 plot, and use the short question to think about what the measurements
 show.</p>
@@ -2989,7 +2991,7 @@ RNA use the same genes in the same column order.</p>
                model_features = settings$model_features,
                feature_scaling = settings$feature_scaling,
                feature_alignment = &quot;matched_genes&quot;,
-               mofa_center = TRUE)
+               mofa_center = settings$mofa_center)
 
 knitr::kable(course_qc_table(lab))</code></pre>
 <table>

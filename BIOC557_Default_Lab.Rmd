@@ -73,7 +73,7 @@ lab <- run_lab(study,
                model_features = settings$model_features,
                feature_scaling = settings$feature_scaling,
                feature_alignment = "matched_genes",
-               mofa_center = TRUE)
+               mofa_center = settings$mofa_center)
 
 knitr::kable(course_qc_table(lab))
 ```
@@ -145,7 +145,7 @@ mofa <- fit_lab_mofa(lab,
                      factors = settings$factors,
                      iterations = settings$iterations,
                      seed = 557,
-                     scale_views = FALSE,
+                     scale_views = settings$mofa_scale_views,
                      runtime = "managed",
                      outfile = "outputs/default_MOFA.hdf5")
 ```
@@ -158,7 +158,7 @@ course_save_figure(integration_plot, "06_pca_and_mofa", width=11)
 ## Which view contributes to each factor?
 
 The percentages show reconstructed variation within each molecular view.
-Read each percentage against its own view. RNA means ribonucleic acid;
+Read each percentage against its own view.
 R-squared (R2) is the fraction of input variation reconstructed by the model.
 
 ```{r factor-contributions}

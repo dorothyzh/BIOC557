@@ -19,7 +19,7 @@ read_course_study <- function() {
 course_settings_table <- function(course) {
   p<-course$settings
   data.frame(Setting=c('Dataset','Matched samples','Analysis','MOFA factors','Model features per view','Feature scaling','Protein/RNA alignment','Center features','Scale whole views','Seed','Maximum iterations'),
-    Value=c(course$config$title,nrow(course$study$metadata),if(p$method=='mofa')'Multi-Omics Factor Analysis (MOFA)' else 'Principal Component Analysis (PCA)',if(p$method=='mofa')p$factors else 'Not used',p$model_features,p$feature_scaling,'Same gene IDs; same column order','Yes','No','557',if(p$method=='mofa')p$iterations else 'Not used'))
+    Value=c(course$config$title,nrow(course$study$metadata),if(p$method=='mofa')'Multi-Omics Factor Analysis (MOFA)' else 'Principal Component Analysis (PCA)',if(p$method=='mofa')p$factors else 'Not used',p$model_features,p$feature_scaling,'Same gene IDs; same column order',if(isTRUE(p$mofa_center))'Yes' else 'No',if(isTRUE(p$mofa_scale_views))'Yes' else 'No','557',if(p$method=='mofa')p$iterations else 'Not used'))
 }
 course_qc_table <- function(lab) do.call(rbind,lapply(names(lab$prepared),function(name){v<-lab$prepared[[name]];data.frame(View=name,Samples=nrow(v$raw),Input_features=ncol(v$raw),Retained_features=ncol(v$retained),Model_features=ncol(v$model),Missing_percent=round(100*mean(is.na(v$raw)),1))}))
 course_save_figure <- function(figure,name,width=9,height=5.8) {
@@ -55,7 +55,7 @@ course_save_results <- function(course,lab,mofa=NULL) {
   write.csv(lab$joint_pca$scores,'outputs/joint_pca_scores.csv')
   if(!is.null(mofa)) {write.csv(mofa$scores,'outputs/mofa_scores.csv');write.csv(mofa$variance_explained,'outputs/mofa_factor_r2.csv')}
   saveRDS(list(lab=lab,mofa=mofa,config=course$config,settings=course$settings),'outputs/default_analysis.rds')
-  record<-list(dataset=course$config$id,settings=course$settings,seed=557,center=TRUE,scale_views=FALSE,matched_sample_ids=course$study$metadata$sample_id,aligned_gene_ids=genes,protein_rna_columns_identical=TRUE,input_md5=unname(tools::md5sum(course$config$study_file)),software=lapply(c('R'=as.character(getRversion()),rmarkdown=as.character(packageVersion('rmarkdown')),ggplot2=as.character(packageVersion('ggplot2'))),identity))
+  record<-list(dataset=course$config$id,settings=course$settings,seed=557,center=isTRUE(course$settings$mofa_center),scale_views=isTRUE(course$settings$mofa_scale_views),matched_sample_ids=course$study$metadata$sample_id,aligned_gene_ids=genes,protein_rna_columns_identical=TRUE,input_md5=unname(tools::md5sum(course$config$study_file)),software=lapply(c('R'=as.character(getRversion()),rmarkdown=as.character(packageVersion('rmarkdown')),ggplot2=as.character(packageVersion('ggplot2'))),identity))
   if(!is.null(mofa))record$software$MOFA2<-as.character(packageVersion('MOFA2'))
   jsonlite::write_json(record,'outputs/run_manifest.json',auto_unbox=TRUE,pretty=TRUE)
   writeLines(capture.output(sessionInfo()),'outputs/sessionInfo.txt')

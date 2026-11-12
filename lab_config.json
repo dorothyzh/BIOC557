@@ -6,5 +6,5 @@
   "annotation_file": "data/bee_enrichment_annotations.json",
   "seed": 557,
   "center": true,
-  "scale_views": false
+  "scale_views": true
 }
