@@ -15,10 +15,12 @@ read_lab_data <- function(root='.') {
   # Source table already contains log2 protein ratios, log2(TPM+1) RNA and log10 metabolites.
   list(metadata=meta, views=views, levels=unique(meta$group))
 }
-prepare_views <- function(study, max_missing=.30, model_features=100, standardize=TRUE, normalization='none',feature_scaling=NULL,mofa_center=TRUE) {
+prepare_views <- function(study, max_missing=.30, model_features=100, standardize=TRUE, normalization='none',feature_scaling=NULL,mofa_center=TRUE,feature_alignment='matched_genes') {
   if(is.null(feature_scaling))feature_scaling<-if(standardize)'unit_variance' else 'none'
   if(!feature_scaling%in%c('none','unit_variance','pareto'))stop('Unknown feature scaling.')
-  lapply(study$views,function(raw) {
+  out<-lapply(study$views,function(raw) {
+    if(anyDuplicated(rownames(raw)) || !setequal(rownames(raw),study$metadata$sample_id))stop('Every view must match sample IDs exactly.')
+    raw<-raw[match(study$metadata$sample_id,rownames(raw)),,drop=FALSE]
     x<-raw
     if(normalization=='sample_median') {m<-apply(x,1,median,na.rm=TRUE); if(any(!is.finite(m))) stop('A sample has no observed values.'); x<-x-m+median(m)}
     missing<-colMeans(is.na(x)); variance<-apply(x,2,var,na.rm=TRUE)
@@ -35,6 +37,25 @@ prepare_views <- function(study, max_missing=.30, model_features=100, standardiz
     list(raw=raw, retained=x, model=model, pca=imputed,
          input_features=ncol(raw), retained_features=ncol(x), missing_fraction=mean(is.na(raw)), imputed_entries=sum(is.na(model)))
   })
+  if(!feature_alignment%in%c('matched_genes','independent'))stop('Unknown feature alignment.')
+  if(feature_alignment=='matched_genes' && all(c('Proteomics','RNA')%in%names(out))) {
+    genes<-intersect(colnames(out$Proteomics$retained),colnames(out$RNA$retained))
+    ranks<-lapply(out[c('Proteomics','RNA')],function(v){variance<-apply(v$retained,2,var,na.rm=TRUE);rank(variance,ties.method='average')/length(variance)})
+    score<-ranks$Proteomics[genes]+ranks$RNA[genes]
+    genes<-genes[order(-score,genes,method='radix')][seq_len(min(model_features,length(genes)))]
+    if(length(genes)<4)stop('Too few shared genes pass both views QC.')
+    for(name in c('Proteomics','RNA')) {
+      model<-out[[name]]$retained[,genes,drop=FALSE]
+      if(mofa_center)model<-sweep(model,2,colMeans(model,na.rm=TRUE))
+      sd<-apply(model,2,stats::sd,na.rm=TRUE)
+      if(feature_scaling=='unit_variance')model<-sweep(model,2,sd,FUN='/')
+      if(feature_scaling=='pareto')model<-sweep(model,2,sqrt(sd),FUN='/')
+      imputed<-model
+      for(j in seq_len(ncol(imputed)))imputed[is.na(imputed[,j]),j]<-median(imputed[,j],na.rm=TRUE)
+      out[[name]]$model<-model;out[[name]]$pca<-imputed;out[[name]]$imputed_entries<-sum(is.na(model))
+    }
+  }
+  out
 }
 observed_welch <- function(x, groups, levels) {
   rows<-lapply(seq_len(ncol(x)),function(j){a<-x[groups==levels[1],j];b<-x[groups==levels[2],j];a<-a[is.finite(a)];b<-b[is.finite(b)]
@@ -47,9 +68,9 @@ stable_pca <- function(x) {
   for(j in seq_len(ncol(p$x))) {i<-which.max(abs(p$rotation[,j]));if(p$rotation[i,j]<0){p$x[,j]<- -p$x[,j];p$rotation[,j]<- -p$rotation[,j]}}
   list(scores=p$x,loadings=p$rotation,explained=p$sdev[1:3]^2/sum(p$sdev^2))
 }
-run_lab <- function(study,max_missing=.30,model_features=100,standardize=TRUE,normalization='none',feature_scaling=NULL,mofa_center=TRUE) {
+run_lab <- function(study,max_missing=.30,model_features=100,standardize=TRUE,normalization='none',feature_scaling=NULL,mofa_center=TRUE,feature_alignment='matched_genes') {
   if(is.null(feature_scaling))feature_scaling<-if(standardize)'unit_variance' else 'none'
-  prepared<-prepare_views(study,max_missing,model_features,standardize,normalization,feature_scaling,mofa_center)
+  prepared<-prepare_views(study,max_missing,model_features,standardize,normalization,feature_scaling,mofa_center,feature_alignment)
   pcas<-lapply(prepared,function(v)stable_pca(v$pca))
   joint<-do.call(cbind,lapply(prepared,function(v)v$pca/sqrt(ncol(v$pca))))
   diff<-lapply(prepared,function(v)observed_welch(v$retained,study$metadata$group,study$levels))
@@ -57,9 +78,9 @@ run_lab <- function(study,max_missing=.30,model_features=100,standardize=TRUE,no
   agreement<-cor(do.call(cbind,distances),method='spearman')
   colnames(agreement)<-rownames(agreement)<-names(prepared)
   list(study=study,prepared=prepared,pca=pcas,joint_pca=stable_pca(joint),differential=diff,agreement=agreement,
-       parameters=list(max_missing=max_missing,model_features=model_features,standardize=standardize,normalization=normalization,feature_scaling=feature_scaling,mofa_center=mofa_center))
+       parameters=list(max_missing=max_missing,model_features=model_features,standardize=standardize,normalization=normalization,feature_scaling=feature_scaling,mofa_center=mofa_center,feature_alignment=feature_alignment))
 }
-fit_lab_mofa <- function(lab,factors=3,iterations=100,seed=557,runtime='managed',scale_views=FALSE,outfile=file.path('outputs','BIOC557_MOFA.hdf5')) {
+fit_lab_mofa <- function(lab,factors=3,iterations=300,seed=557,runtime='managed',scale_views=FALSE,outfile=file.path('outputs','BIOC557_MOFA.hdf5')) {
   if(!requireNamespace('MOFA2',quietly=TRUE)) stop('Run R/install_packages.R first.')
   if(!runtime %in% c('managed','existing','basilisk')) stop('Choose a supported R calculation environment.')
   use_basilisk<-identical(runtime,'basilisk')
@@ -85,5 +106,7 @@ fit_lab_mofa <- function(lab,factors=3,iterations=100,seed=557,runtime='managed'
   inputs<-lapply(names(views),function(name)t(model_data[[name]][[1]][rownames(views[[name]]),lab$study$metadata$sample_id,drop=FALSE]));names(inputs)<-names(views)
   r2<-do.call(rbind,lapply(names(views),function(name){x<-inputs[[name]];den<-sum(x^2,na.rm=TRUE);sapply(seq_len(ncol(z)),function(j)1-sum((x-outer(z[,j],w[[name]][,j]))^2,na.rm=TRUE)/den)}));rownames(r2)<-names(views);colnames(r2)<-colnames(z)
   total<-sapply(names(views),function(name){x<-inputs[[name]];1-sum((x-z%*%t(w[[name]]))^2,na.rm=TRUE)/sum(x^2,na.rm=TRUE)})
+  order<-order(-colMeans(r2),method='radix');z<-z[,order,drop=FALSE];w<-lapply(w,function(a)a[,order,drop=FALSE]);r2<-r2[,order,drop=FALSE]
+  colnames(z)<-colnames(r2)<-paste0('Factor',seq_len(ncol(z)));w<-lapply(w,function(a){colnames(a)<-colnames(z);a})
   list(model=m,scores=z,weights=w,variance_explained=r2,total_r2=total,model_input=inputs,center=data_options$center_groups,scale_views=scale_views)
 }

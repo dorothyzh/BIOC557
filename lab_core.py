@@ -29,6 +29,7 @@ class Parameters:
     challenge: str = 'none'
     mask_fraction: float = 0.10
     method: str = 'pca'
+    feature_alignment: str = 'matched_genes'
 
 
 def bh_adjust(pvalues):
@@ -66,6 +67,14 @@ def validate_dataset(data):
     groups = [str(x) for x in data['groups']]
     if len(groups) != len(ids):
         raise ValueError('The metadata must provide one group for every sample.')
+    if data.get('metadata'):
+        meta = data['metadata']
+        mids = [str(m['sample_id']) for m in meta]
+        if len(mids) != len(set(mids)) or set(mids) != set(ids):
+            raise ValueError('Metadata sample IDs must match the views exactly, without duplicates.')
+        mg = {str(m['sample_id']): str(m.get('group', groups[ids.index(str(m['sample_id']))])) for m in meta}
+        if any(mg[s] != g for s, g in zip(ids, groups)):
+            raise ValueError('Metadata group labels disagree with the study group vector.')
     levels = list(data.get('group_order', list(dict.fromkeys(groups))))
     if set(levels) != set(groups) or len(levels) != len(set(levels)):
         raise ValueError('Group order must name each observed group exactly once.')
@@ -164,7 +173,9 @@ def _fit_mofa(matrices, feature_names, ids, names, params):
             return 1 - np.nansum(np.where(observed, (x - prediction) ** 2, np.nan)) / denom
         r2.append([reconstruction(np.outer(scores[:, j], w[:, j])) for j in range(scores.shape[1])])
         total_r2.append(reconstruction(scores @ w.T))
-    return {'scores': scores, 'weights': weights, 'variance_explained': np.asarray(r2),
+    # Present the strongest fitted sources of variation first, using no group labels.
+    order = np.argsort(-np.mean(r2, axis=0), kind='stable')
+    return {'scores': scores[:, order], 'weights': [w[:, order] for w in weights], 'variance_explained': np.asarray(r2)[:, order],
             'total_r2': total_r2, 'model_input': inputs,
             'factors': scores.shape[1], 'model': 'MOFA+ / mofapy2 0.7.5',
             'iterations_requested': params.iterations,
@@ -173,11 +184,36 @@ def _fit_mofa(matrices, feature_names, ids, names, params):
             'note': 'Factor-wise reconstruction uses actual MOFA input and a zero reference; contributions overlap. Total reconstruction is computed from all factors together, not by adding factor-wise scores.'}
 
 
+def gene_pairs(data):
+    """Only explicit, one-to-one identifiers; never match features by position."""
+    views = {v['name']: v for v in data['views']}
+    if not {'Proteomics', 'RNA'} <= views.keys():
+        return []
+    protein, rna = (set(views[n]['features']) for n in ['Proteomics', 'RNA'])
+    pairs = data.get('shared_gene_pairs')
+    if pairs is None:
+        pairs = [dict(protein_feature_id=f, rna_feature_id=f, gene_symbol=f, gene_id=f)
+                 for f in sorted(protein & rna)]
+    seen_p, seen_r, seen_g, valid = set(), set(), set(), []
+    for pair in pairs:
+        p, r = pair['protein_feature_id'], pair['rna_feature_id']
+        g = pair.get('gene_id', p if p == r else pair['gene_symbol'])
+        if p not in protein or r not in rna:
+            raise ValueError('Gene crosswalk references a feature absent from its view.')
+        if p in seen_p or r in seen_r or g in seen_g:
+            raise ValueError('Gene crosswalk must be one-to-one; resolve duplicate or ambiguous mappings first.')
+        seen_p.add(p); seen_r.add(r); seen_g.add(g)
+        valid.append(dict(pair, gene_id=g))
+    return valid
+
+
 def analyze(data, parameters=None):
     options = dict(parameters or {})
     if 'feature_scaling' not in options and options.get('standardize') is False:
         options['feature_scaling'] = 'none'
     params = Parameters(**options)
+    if params.feature_alignment not in ['matched_genes', 'independent']:
+        raise ValueError('Choose matched genes or independent feature selection.')
     if params.feature_scaling not in ['none', 'unit_variance', 'pareto']:
         raise ValueError('Choose no feature scaling, unit variance or Pareto scaling.')
     if not isinstance(params.mofa_center, bool) or not isinstance(params.mofa_scale_views, bool):
@@ -214,11 +250,14 @@ def analyze(data, parameters=None):
         permuted = dict(data, views=[])
         for v in data['views']:
             perm = rng.permutation(len(v['sample_ids']))
+            columns = rng.permutation(len(v['features']))
             permuted['views'].append(dict(v, sample_ids=[v['sample_ids'][i] for i in perm],
-                                         values=[v['values'][i] for i in perm]))
+                                         features=[v['features'][j] for j in columns],
+                                         values=[[v['values'][i][j] for j in columns] for i in perm]))
         _, _, _, source_views = validate_dataset(permuted)
-        result['challenge']['description'] = 'Rows were shuffled with their IDs intact. ID-based alignment restores the original pairing.'
-    matrices, model_features, retained_views = [], [], []
+        result['challenge']['description'] = 'Rows and feature columns were shuffled with their IDs intact. Alignment by sample ID and gene ID restores the pairing.'
+    matrices, model_features, retained_views, prepared_views = [], [], [], []
+    pairs = gene_pairs(data)
     for v in source_views:
         original = v['values']
         x = original.copy()
@@ -248,7 +287,31 @@ def analyze(data, parameters=None):
         features = np.asarray(v['features'])[keep].tolist()
         retained_views.append({'name': v['name'], 'features': features, 'values': x.copy()})
         retained_var = variance[keep]
-        select = np.argsort(-retained_var, kind='stable')[:params.model_features]
+        prepared_views.append(dict(view=v, original=original, x=x, features=features,
+                                   variance=retained_var, apply_log=apply_log))
+    paired_selection, aligned_pairs = {}, []
+    if params.feature_alignment == 'matched_genes' and {'Proteomics', 'RNA'} <= {v['name'] for v in source_views}:
+        by_name = {p['view']['name']: p for p in prepared_views}
+        indices = {n: {f: j for j, f in enumerate(by_name[n]['features'])} for n in ['Proteomics', 'RNA']}
+        # Percentile ranks give equal weight to both assays despite different units.
+        ranks = {n: stats.rankdata(by_name[n]['variance'], method='average') / len(by_name[n]['variance'])
+                 for n in ['Proteomics', 'RNA']}
+        eligible = [p for p in pairs if p['protein_feature_id'] in indices['Proteomics'] and p['rna_feature_id'] in indices['RNA']]
+        eligible.sort(key=lambda p: (-sum(ranks[n][indices[n][p[k]]] for n, k in [('Proteomics', 'protein_feature_id'), ('RNA', 'rna_feature_id')]), p['gene_id']))
+        aligned_pairs = eligible[:params.model_features]
+        if len(aligned_pairs) < max(4, params.factors + 1):
+            raise ValueError('Too few verified shared genes pass both views’ QC. Use independent selection or provide a gene crosswalk.')
+        for n, k in [('Proteomics', 'protein_feature_id'), ('RNA', 'rna_feature_id')]:
+            paired_selection[n] = [indices[n][p[k]] for p in aligned_pairs]
+        result['gene_alignment'] = dict(mode='matched_genes', verified_input_pairs=len(pairs),
+            eligible_pairs=len(eligible), model_pairs=aligned_pairs,
+            note='The same genes, in the same order, in protein and RNA model matrices. Sample rows align independently by sample ID. Other views retain their own features. QC and differential tests retain all eligible source features.')
+    else:
+        result['gene_alignment'] = dict(mode='independent', verified_input_pairs=len(pairs), model_pairs=[],
+            note='Features selected within each view; verified same-gene pairs are retained for cross-layer comparisons.')
+    for prepared in prepared_views:
+        v, original, x, features, retained_var, apply_log = (prepared[k] for k in ['view', 'original', 'x', 'features', 'variance', 'apply_log'])
+        select = paired_selection.get(v['name'], np.argsort(-retained_var, kind='stable')[:params.model_features])
         model_x = x[:, select].copy()
         feat = [features[i] for i in select]
         # Keep centering separate from SD division so the no-center option retains offsets.
@@ -300,7 +363,7 @@ def analyze(data, parameters=None):
     if 'Proteomics' in retained_by_name and 'RNA' in retained_by_name:
         protein, rna = retained_by_name['Proteomics'], retained_by_name['RNA']
         pi, ri = ({f: j for j, f in enumerate(v['features'])} for v in [protein, rna])
-        for pair in data.get('shared_gene_pairs', []):
+        for pair in pairs:
             pf, rf = pair['protein_feature_id'], pair['rna_feature_id']
             if pf not in pi or rf not in ri:
                 continue
@@ -308,7 +371,9 @@ def analyze(data, parameters=None):
             observed = np.isfinite(x) & np.isfinite(y)
             if observed.sum() < 6 or np.nanvar(x) <= 0 or np.nanvar(y) <= 0:
                 continue
-            examples.append({'gene': pair['gene_symbol'], 'rna': x, 'protein': y,
+            examples.append({'gene': pair['gene_symbol'], 'gene_id': pair['gene_id'],
+                'protein_feature_id': pf, 'rna_feature_id': rf, 'sample_ids': ids,
+                'rna': x, 'protein': y,
                 'observed_n': int(observed.sum()), 'spearman': stats.spearmanr(x[observed], y[observed]).statistic,
                 'selection_variance_product': np.nanvar(x, ddof=1) * np.nanvar(y, ddof=1)})
         examples.sort(key=lambda g: -g['selection_variance_product'])

@@ -1,0 +1,613 @@
+{
+  "ccle": {
+    "gene_alignment_pairs": 428,
+    "candidates": [
+      {
+        "factors": 2,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.6765236722341852,
+        "standard_error": 0.02341880904199299,
+        "repeats": [
+          0.6447378761415025,
+          0.7222086703391293,
+          0.662624470221924
+        ]
+      },
+      {
+        "factors": 2,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.6762587466340246,
+        "standard_error": 0.023442424547989615,
+        "repeats": [
+          0.6440217419984214,
+          0.7218598447526988,
+          0.6628946531509535
+        ]
+      },
+      {
+        "factors": 3,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.6270560416986566,
+        "standard_error": 0.029167949369743318,
+        "repeats": [
+          0.5901407084157052,
+          0.684632136705344,
+          0.6063952799749207
+        ]
+      },
+      {
+        "factors": 3,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.651298946423951,
+        "standard_error": 0.022939030268934495,
+        "repeats": [
+          0.6164367580441849,
+          0.6945577039821598,
+          0.6429023772455085
+        ]
+      },
+      {
+        "factors": 4,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.5982182291644099,
+        "standard_error": 0.025468141083520628,
+        "repeats": [
+          0.5619364918677466,
+          0.647320449281989,
+          0.5853977463434942
+        ]
+      },
+      {
+        "factors": 4,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.5979500779581445,
+        "standard_error": 0.02593840529519204,
+        "repeats": [
+          0.5604269060673861,
+          0.6477344182334569,
+          0.5856889095735905
+        ]
+      },
+      {
+        "factors": 5,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.5740522218073121,
+        "standard_error": 0.02454029000150012,
+        "repeats": [
+          0.5405903845972889,
+          0.6218782620228048,
+          0.5596880188018426
+        ]
+      },
+      {
+        "factors": 5,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.5734346666323674,
+        "standard_error": 0.024545456852059902,
+        "repeats": [
+          0.5394317462339626,
+          0.6211002656506173,
+          0.5597719880125224
+        ]
+      },
+      {
+        "factors": 6,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.5577143214198439,
+        "standard_error": 0.02367586764597847,
+        "repeats": [
+          0.5242217782147421,
+          0.6034489922298444,
+          0.5454721938149453
+        ]
+      },
+      {
+        "factors": 6,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.5650527388493009,
+        "standard_error": 0.02439391974970155,
+        "repeats": [
+          0.5297024243142918,
+          0.6118475872032778,
+          0.5536082050303327
+        ]
+      }
+    ],
+    "selected": {
+      "factors": 5,
+      "feature_scaling": "pareto",
+      "masked_standardized_MSE": 0.5734346666323674,
+      "standard_error": 0.024545456852059902,
+      "repeats": [
+        0.5394317462339626,
+        0.6211002656506173,
+        0.5597719880125224
+      ]
+    },
+    "sample_size_factor_cap": 6,
+    "rule": "At most one factor per four samples; lowest K within one standard error of the lowest masked-entry MSE; then lowest MSE. No group labels, group separation or enrichment p values used.",
+    "default": {
+      "method": "mofa",
+      "factors": 5,
+      "model_features": 100,
+      "feature_scaling": "pareto",
+      "feature_alignment": "matched_genes",
+      "iterations": 300,
+      "max_missing": 0.3
+    },
+    "total_R2": [
+      0.5254942366950961,
+      0.6822911037679428,
+      0.38950950055162514
+    ],
+    "model_gene_ids_aligned": true,
+    "seed_subspace_cosines": [
+      1.0000000000000002,
+      1.0,
+      1.0,
+      0.9999999999999999,
+      0.9999999999999993
+    ]
+  },
+  "bee-own-head-2025": {
+    "gene_alignment_pairs": 139,
+    "candidates": [
+      {
+        "factors": 2,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 1.015531981817486,
+        "standard_error": 0.009542649932300019,
+        "repeats": [
+          1.0105358035384637,
+          1.0339820349471909,
+          1.0020781069668028
+        ]
+      },
+      {
+        "factors": 2,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 1.002532531757421,
+        "standard_error": 0.00792202684756785,
+        "repeats": [
+          1.0013768214142305,
+          1.0167951879258426,
+          0.9894255859321899
+        ]
+      },
+      {
+        "factors": 3,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.9020993826861874,
+        "standard_error": 0.042083574047166346,
+        "repeats": [
+          0.8183800806657888,
+          0.9514683922351008,
+          0.9364496751576726
+        ]
+      },
+      {
+        "factors": 3,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.8913763236106073,
+        "standard_error": 0.04076898395337526,
+        "repeats": [
+          0.8099573686285413,
+          0.9358996554503207,
+          0.9282719467529597
+        ]
+      },
+      {
+        "factors": 4,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.8290380491245202,
+        "standard_error": 0.036091257212931716,
+        "repeats": [
+          0.7571618499018593,
+          0.8707290202456499,
+          0.8592232772260513
+        ]
+      },
+      {
+        "factors": 4,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.8172569598872342,
+        "standard_error": 0.034929341201744506,
+        "repeats": [
+          0.7474522647426374,
+          0.8545373386180914,
+          0.849781276300974
+        ]
+      },
+      {
+        "factors": 5,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.7402753562584791,
+        "standard_error": 0.04771352771190334,
+        "repeats": [
+          0.6450802965783043,
+          0.7821137507893656,
+          0.7936320214077672
+        ]
+      },
+      {
+        "factors": 5,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.7528614101360525,
+        "standard_error": 0.019675454506203678,
+        "repeats": [
+          0.7175817045628019,
+          0.7554056572350734,
+          0.7855968686102822
+        ]
+      },
+      {
+        "factors": 6,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.6576305392770332,
+        "standard_error": 0.023704644653230036,
+        "repeats": [
+          0.6124652689216432,
+          0.6926953337110876,
+          0.6677310151983689
+        ]
+      },
+      {
+        "factors": 6,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.6382881313582766,
+        "standard_error": 0.018124861696330753,
+        "repeats": [
+          0.604026590369158,
+          0.6656727763069903,
+          0.6451650273986816
+        ]
+      }
+    ],
+    "selected": {
+      "factors": 5,
+      "feature_scaling": "unit_variance",
+      "masked_standardized_MSE": 0.7402753562584791,
+      "standard_error": 0.04771352771190334,
+      "repeats": [
+        0.6450802965783043,
+        0.7821137507893656,
+        0.7936320214077672
+      ]
+    },
+    "sample_size_factor_cap": 5,
+    "rule": "At most one factor per four samples; lowest K within one standard error of the lowest masked-entry MSE; then lowest MSE. No group labels, group separation or enrichment p values used.",
+    "default": {
+      "method": "mofa",
+      "factors": 5,
+      "model_features": 100,
+      "feature_scaling": "unit_variance",
+      "feature_alignment": "matched_genes",
+      "iterations": 300,
+      "max_missing": 0.3
+    },
+    "total_R2": [
+      0.6938770531293845,
+      0.6229483985078108
+    ],
+    "model_gene_ids_aligned": true,
+    "seed_subspace_cosines": [
+      1.0000000000000004,
+      1.0000000000000004,
+      1.0,
+      1.0,
+      0.9999999999999999
+    ]
+  },
+  "bee-own-abdomen-2025": {
+    "gene_alignment_pairs": 127,
+    "candidates": [
+      {
+        "factors": 2,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.9822492612047697,
+        "standard_error": 0.0949108731283517,
+        "repeats": [
+          1.0284513612339086,
+          1.1185948981380052,
+          0.7997015242423954
+        ]
+      },
+      {
+        "factors": 2,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.9879795071887291,
+        "standard_error": 0.09833602928444356,
+        "repeats": [
+          1.0395077897013754,
+          1.1265885725150653,
+          0.7978421593497471
+        ]
+      },
+      {
+        "factors": 3,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.8902061731608789,
+        "standard_error": 0.09409533707974135,
+        "repeats": [
+          0.9405094617284129,
+          1.0221022342087052,
+          0.7080068235455184
+        ]
+      },
+      {
+        "factors": 3,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.8828028661009221,
+        "standard_error": 0.09689496242672718,
+        "repeats": [
+          0.9464035678265355,
+          1.0095336298056912,
+          0.6924714006705399
+        ]
+      },
+      {
+        "factors": 4,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.831906255782629,
+        "standard_error": 0.08683275678450245,
+        "repeats": [
+          0.8755948199802348,
+          0.9556238676367197,
+          0.6645000797309326
+        ]
+      },
+      {
+        "factors": 4,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.8222673895316253,
+        "standard_error": 0.0911551968648041,
+        "repeats": [
+          0.8823320017365632,
+          0.9413055081179134,
+          0.6431646587403993
+        ]
+      },
+      {
+        "factors": 5,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.7372799766086345,
+        "standard_error": 0.06478681223467594,
+        "repeats": [
+          0.7931199706985019,
+          0.8106191244031975,
+          0.6081008347242043
+        ]
+      },
+      {
+        "factors": 5,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.728369577570399,
+        "standard_error": 0.06883040982294206,
+        "repeats": [
+          0.7938396618777861,
+          0.8005064906515069,
+          0.5907625801819041
+        ]
+      },
+      {
+        "factors": 6,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.7063333165906975,
+        "standard_error": 0.06443479502326559,
+        "repeats": [
+          0.7623177689882141,
+          0.7788638950005622,
+          0.5778182857833162
+        ]
+      },
+      {
+        "factors": 6,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.7011852848052502,
+        "standard_error": 0.06711414560733725,
+        "repeats": [
+          0.7613674808932878,
+          0.775000409276172,
+          0.5671879642462908
+        ]
+      }
+    ],
+    "selected": {
+      "factors": 5,
+      "feature_scaling": "pareto",
+      "masked_standardized_MSE": 0.728369577570399,
+      "standard_error": 0.06883040982294206,
+      "repeats": [
+        0.7938396618777861,
+        0.8005064906515069,
+        0.5907625801819041
+      ]
+    },
+    "sample_size_factor_cap": 5,
+    "rule": "At most one factor per four samples; lowest K within one standard error of the lowest masked-entry MSE; then lowest MSE. No group labels, group separation or enrichment p values used.",
+    "default": {
+      "method": "mofa",
+      "factors": 5,
+      "model_features": 100,
+      "feature_scaling": "pareto",
+      "feature_alignment": "matched_genes",
+      "iterations": 300,
+      "max_missing": 0.3
+    },
+    "total_R2": [
+      0.6414477888825699,
+      0.6811353118638932
+    ],
+    "model_gene_ids_aligned": true,
+    "seed_subspace_cosines": [
+      1.0000000000000004,
+      1.0000000000000002,
+      1.0000000000000002,
+      1.0,
+      1.0
+    ]
+  },
+  "bee-own-gut-2025": {
+    "gene_alignment_pairs": 142,
+    "candidates": [
+      {
+        "factors": 2,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 1.1759598365066524,
+        "standard_error": 0.18677511431666322,
+        "repeats": [
+          1.5435861595691092,
+          1.0495312977213442,
+          0.9347620522295041
+        ]
+      },
+      {
+        "factors": 2,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 1.170965612213033,
+        "standard_error": 0.1872144383118485,
+        "repeats": [
+          1.5387815320322962,
+          1.0477315724247744,
+          0.9263837321820282
+        ]
+      },
+      {
+        "factors": 3,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 1.0626262910916535,
+        "standard_error": 0.16085036732808536,
+        "repeats": [
+          1.373836958639362,
+          0.9775862626180825,
+          0.8364556520175159
+        ]
+      },
+      {
+        "factors": 3,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 1.0544832370714878,
+        "standard_error": 0.1590467304187198,
+        "repeats": [
+          1.36119881486658,
+          0.974144302752892,
+          0.8281065935949914
+        ]
+      },
+      {
+        "factors": 4,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.9491904185920504,
+        "standard_error": 0.12770150328531588,
+        "repeats": [
+          1.1802828923346067,
+          0.9278260444048798,
+          0.7394623190366648
+        ]
+      },
+      {
+        "factors": 4,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.9319385740038962,
+        "standard_error": 0.12137316581566511,
+        "repeats": [
+          1.1471006198031926,
+          0.9216884643638439,
+          0.7270266378446524
+        ]
+      },
+      {
+        "factors": 5,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.9431746265641142,
+        "standard_error": 0.11947011579653935,
+        "repeats": [
+          1.1642090916422223,
+          0.9112522389007993,
+          0.7540625491493209
+        ]
+      },
+      {
+        "factors": 5,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.9005233694142841,
+        "standard_error": 0.12089015696552036,
+        "repeats": [
+          1.108395045970872,
+          0.9035235620966042,
+          0.689651500175376
+        ]
+      },
+      {
+        "factors": 6,
+        "feature_scaling": "unit_variance",
+        "masked_standardized_MSE": 0.9129106845230784,
+        "standard_error": 0.14199284006145768,
+        "repeats": [
+          1.1688115823026304,
+          0.8915995706503148,
+          0.6783209006162902
+        ]
+      },
+      {
+        "factors": 6,
+        "feature_scaling": "pareto",
+        "masked_standardized_MSE": 0.8833151472348547,
+        "standard_error": 0.12343789436251001,
+        "repeats": [
+          1.0939521057637982,
+          0.8895080802572323,
+          0.6664852556835339
+        ]
+      }
+    ],
+    "selected": {
+      "factors": 4,
+      "feature_scaling": "pareto",
+      "masked_standardized_MSE": 0.9319385740038962,
+      "standard_error": 0.12137316581566511,
+      "repeats": [
+        1.1471006198031926,
+        0.9216884643638439,
+        0.7270266378446524
+      ]
+    },
+    "sample_size_factor_cap": 5,
+    "rule": "At most one factor per four samples; lowest K within one standard error of the lowest masked-entry MSE; then lowest MSE. No group labels, group separation or enrichment p values used.",
+    "default": {
+      "method": "mofa",
+      "factors": 4,
+      "model_features": 100,
+      "feature_scaling": "pareto",
+      "feature_alignment": "matched_genes",
+      "iterations": 300,
+      "max_missing": 0.3
+    },
+    "total_R2": [
+      0.6187975894612093,
+      0.42637422192124297
+    ],
+    "model_gene_ids_aligned": true,
+    "seed_subspace_cosines": [
+      1.0000000000000002,
+      1.0,
+      0.9999999999999999,
+      0.9999999999999997
+    ]
+  },
+  "human-islets-2025": {
+    "reason": "Only six donors: PCA is the classroom default. Experimental MOFA remains available at K=2; avoid treating its sample separation as validated.",
+    "gene_alignment_pairs": 140,
+    "default": {
+      "method": "pca",
+      "factors": 2,
+      "model_features": 100,
+      "feature_scaling": "unit_variance",
+      "feature_alignment": "matched_genes",
+      "iterations": 300,
+      "max_missing": 0.3
+    },
+    "total_R2": null,
+    "model_gene_ids_aligned": true
+  }
+}
