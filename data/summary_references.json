@@ -1,0 +1,186 @@
+[
+  {
+    "id": "david",
+    "doi": "10.1093/nar/gkac194",
+    "title": "DAVID: a web server for functional enrichment analysis and functional annotation of gene lists (2021 update)",
+    "journal": "Nucleic Acids Research",
+    "year": 2022,
+    "species": "all",
+    "kind": "method",
+    "tags": [],
+    "url": "https://doi.org/10.1093/nar/gkac194",
+    "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "mofa",
+    "doi": "10.1186/s13059-020-02015-1",
+    "title": "MOFA+: a statistical framework for comprehensive integration of multi-modal single-cell data",
+    "journal": "Genome Biology",
+    "year": 2020,
+    "species": "all",
+    "kind": "method",
+    "tags": [],
+    "url": "https://doi.org/10.1186/s13059-020-02015-1",
+    "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "bee_crop",
+    "doi": "10.1002/pmic.70033",
+    "title": "Omics Insights Into the Effects of Highbush Blueberry and Cranberry Crop Agroecosystems on Honey Bee Health and Physiology",
+    "journal": "Proteomics",
+    "year": 2026,
+    "species": "bee",
+    "kind": "study",
+    "tags": [
+      "crop",
+      "agroecosystem"
+    ],
+    "url": "https://doi.org/10.1002/pmic.70033",
+    "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "bee_dscam",
+    "doi": "10.3389/fnmol.2023.1322808",
+    "title": "Memory consolidation in honey bees is enhanced by down-regulation of Down syndrome cell adhesion molecule and changes its alternative splicing",
+    "journal": "Frontiers in Molecular Neuroscience",
+    "year": 2024,
+    "species": "bee",
+    "kind": "biological",
+    "tags": [
+      "neuron",
+      "synap",
+      "axon",
+      "cell adhesion",
+      "learning",
+      "memory",
+      "Dscam",
+      "GeneID_408786"
+    ],
+    "url": "https://doi.org/10.3389/fnmol.2023.1322808",
+    "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "bee_nutrition",
+    "doi": "10.3390/insects15040215",
+    "title": "Changes in Vitellogenin, Abdominal Lipid Content, and Hypopharyngeal Gland Development in Honey Bees Fed Diets with Different Protein Sources",
+    "journal": "Insects",
+    "year": 2024,
+    "species": "bee",
+    "kind": "biological",
+    "tags": [
+      "vitellogenin",
+      "Vg",
+      "lipid",
+      "nutrition",
+      "feeding"
+    ],
+    "url": "https://doi.org/10.3390/insects15040215",
+    "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "bee_varroa",
+    "doi": "10.1002/pmic.202300312",
+    "title": "Varroa destructor parasitism and Deformed wing virus infection in honey bees are linked to peroxisome\u2010induced pathways",
+    "journal": "Proteomics",
+    "year": 2024,
+    "species": "bee",
+    "kind": "biological",
+    "tags": [
+      "peroxisom",
+      "oxid",
+      "immune",
+      "defense",
+      "cytoskeleton",
+      "cuticle"
+    ],
+    "url": "https://doi.org/10.1002/pmic.202300312",
+    "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "bee_energy",
+    "doi": "10.1096/fj.202300654r",
+    "title": "Age\u2010related flexibility of energetic metabolism in the honey bee Apis mellifera",
+    "journal": "The FASEB Journal",
+    "year": 2023,
+    "species": "bee",
+    "kind": "biological",
+    "tags": [
+      "mitochond",
+      "respirat",
+      "energy",
+      "ATP",
+      "oxidative phosphorylation",
+      "TCA",
+      "tricarboxyl"
+    ],
+    "url": "https://doi.org/10.1096/fj.202300654r",
+    "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "bee_development",
+    "doi": "10.7554/elife.88772",
+    "title": "Imidacloprid disrupts larval molting regulation and nutrient energy metabolism, causing developmental delay in honey bee Apis mellifera",
+    "journal": "eLife",
+    "year": 2024,
+    "species": "bee",
+    "kind": "biological",
+    "tags": [
+      "development",
+      "growth",
+      "molting",
+      "amino acid",
+      "nutrient",
+      "metabolic"
+    ],
+    "url": "https://doi.org/10.7554/elife.88772",
+    "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "ccle_protein",
+    "doi": "10.1016/j.cell.2019.12.023",
+    "title": "Quantitative Proteomics of the Cancer Cell Line Encyclopedia",
+    "journal": "Cell",
+    "year": 2020,
+    "species": "human",
+    "kind": "study",
+    "tags": [],
+    "url": "https://doi.org/10.1016/j.cell.2019.12.023",
+    "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "ccle_rna",
+    "doi": "10.1038/s41586-019-1186-3",
+    "title": "Next-generation characterization of the Cancer Cell Line Encyclopedia",
+    "journal": "Nature",
+    "year": 2019,
+    "species": "human",
+    "kind": "study",
+    "tags": [],
+    "url": "https://doi.org/10.1038/s41586-019-1186-3",
+    "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "ccle_metabolite",
+    "doi": "10.1038/s41591-019-0404-8",
+    "title": "The landscape of cancer cell line metabolism",
+    "journal": "Nature Medicine",
+    "year": 2019,
+    "species": "human",
+    "kind": "study",
+    "tags": [],
+    "url": "https://doi.org/10.1038/s41591-019-0404-8",
+    "source": "CrossRef publisher-deposited metadata"
+  },
+  {
+    "id": "islets",
+    "doi": "10.1021/acsomega.4c10637",
+    "title": "Multiomics Analysis Reveals Insights into Potential Drivers of Pancreatic Islet Pathology in Type 2 Diabetes",
+    "journal": "ACS Omega",
+    "year": 2025,
+    "species": "human",
+    "kind": "study",
+    "tags": [],
+    "url": "https://doi.org/10.1021/acsomega.4c10637",
+    "source": "CrossRef publisher-deposited metadata"
+  }
+]

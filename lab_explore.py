@@ -131,6 +131,9 @@ def network(result,options):
 
 def explore(result,options,annotations=None):
     action=options.get('action','network')
+    if action=='summary':
+        from lab_summary import summarize
+        return summarize(result,options)
     if action=='network':return network(result,options)
     if action=='enrichment':return enrichment(result,options,annotations if annotations is not None else read_catalogs(result.get('annotation_scope','human')))
     raise ValueError('Unknown exploration action.')
