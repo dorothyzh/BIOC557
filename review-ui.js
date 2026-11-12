@@ -35,3 +35,6 @@ const pathwaysBeforeReview=renderPathwaysPanel;
 renderPathwaysPanel=function(box){pathwaysBeforeReview(box);if(result.mofa&&!enrichmentResult&&!busy)queueMicrotask(()=>{if(current==='pathways'&&!busy)$('update-pathways')?.click();});};
 const endRequestBeforeReview=endRequest;
 endRequest=function(){endRequestBeforeReview();queueMicrotask(()=>{if(busy||!result?.mofa)return;if(current==='network'&&!networkResult)$('update-network')?.click();if(current==='pathways'&&!enrichmentResult)$('update-pathways')?.click();});};
+// Open each analysis chapter at its heading; retain position for tissue changes.
+const chapterBeforeScroll=setChapter;
+setChapter=function(id){const previous=current;chapterBeforeScroll(id);if(current!==previous)window.scrollTo({top:0,left:0,behavior:'instant'});};
