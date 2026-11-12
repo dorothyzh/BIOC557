@@ -89,6 +89,19 @@ def factor_associations(r,k,metadata):
   if np.isfinite(rho):out.append(dict(trait=label,rho=rho,n=int(ok.sum())))
  return sorted(out,key=lambda x:-abs(x['rho']))
 
+def reading_for_factor(groups,selected,labels,curated,hypotheses):
+ """Curated contextual reading, separate from the single retained interpretation."""
+ categories={g['category'] for g in groups};features={x for v in selected.values() for row in v for x in (row['feature'],labels.get(row['feature'],row['feature']))}
+ support={p['id']:p['support'] for h in hypotheses for p in h['paper_support']};rows=[]
+ for ref in curated:
+  spec=ref.get('reading',{});matched=sorted(categories&set(spec.get('categories',[])));genes=sorted(features&set(spec.get('features',[])))
+  if not (matched or genes or spec.get('study_wide') or ref['id'] in support):continue
+  rows.append(dict(id=ref['id'],relevance=support.get(ref['id'],spec.get('relevance','')),
+   role='Interpretation support' if ref['id'] in support else 'Functional context',matched_themes=matched,matched_features=genes,
+   priority=100 if ref['id'] in support else spec.get('priority',0)+10*bool(genes)+len(matched)))
+ rows.sort(key=lambda x:(-x['priority'],x['id']))
+ return [{k:v for k,v in row.items() if k!='priority'} for row in rows[:8]]
+
 def summarize(result,options):
  r,model,prefix=model_result(result);context=options.get('context',{});meta=context.get('metadata',[]);labels=context.get('gene_labels',{});top=int(options.get('top_n',20))
  if not 10<=top<=60:raise ValueError('Choose 10–60 top features for the summary.')
@@ -103,7 +116,11 @@ def summarize(result,options):
      queries.append(q)
      for row in q['rows']:row.update(factor=k+1,view=v['name'],catalog=catalog,direction=direction);all_rows.append(row)
  for row,q in zip(all_rows,bh_adjust([row['p_value'] for row in all_rows])):row['report_q']=float(q)
- term_lookup={(cat,t['id']):t for cat,ts in ann['catalogs'].items() for t in ts};refs=references();factors=[];used={x['id']:x for x in refs if x['kind']=='method'}
+ term_lookup={(cat,t['id']):t for cat,ts in ann['catalogs'].items() for t in ts};refs=references();factors=[]
+ study_key='bee' if scope=='bee' else 'islets' if 'islet' in str(context.get('id','')).lower() or context.get('annotation_mode')=='human_genes_only' else 'ccle'
+ curated=[ref for ref in refs if study_key in ref.get('reading',{}).get('studies',[]) and (not ref['reading'].get('tissues') or context.get('tissue') in ref['reading']['tissues'])]
+ used={x['id']:x for x in refs if x['kind']=='method' and (not x.get('applies_to') or study_key in x['applies_to'])}
+ for ref in curated:used[ref['id']]=ref
  for k in range(r['mofa']['factors']):
   selected=selected_features(r,k,min(top,40));pool=[row for row in all_rows if row['factor']==k+1 and row['overlap']>=2 and (row.get('fold_enrichment') or 0)>1 and row['term_in_background']<=.6*row['background_size']]
   pool.sort(key=lambda x:(x['report_q'],x['p_value'],-x['overlap']))
@@ -123,12 +140,13 @@ def summarize(result,options):
   reviewed_rna_terms={'GO:0009889','GO:0031326','GO:0010468','GO:0010556','GO:0010467','GO:0009059','GO:0044249','GO:0016070','GO:0051252','GO:0006351','GO:0032774','GO:0006355','GO:2001141','GO:0006357','GO:0006366'}
   support_reasons={
    'bee_crop':'The source study identifies biosynthesis and protein-synthesis modules in matched honeybee RNA and protein measurements.',
-   'bee_brain_grn':'Independent honeybee brain data identify coordinated gene-regulatory programs across cell types and behavioral maturation.'}
+   'bee_brain_grn':'Independent honeybee brain data identify coordinated gene-regulatory programs across cell types and behavioral maturation.',
+   'bee_brain_cells':'Single-cell brain profiles resolve cell-type and caste-associated RNA expression, providing context for cellular composition in bulk head samples.'}
   centered=model=='Joint PCA' or r['parameters']['mofa_center']
   if centered and len(r['sample_ids'])>=16 and scope=='bee' and context.get('tissue')=='Head':
    for g in groups:
     eligible=[t for t in g['terms'] if t['id'] in reviewed_rna_terms and t['view']=='RNA' and t['report_q']<.05 and t['overlap']>=3 and contributions.get('RNA',0)>=.10]
-    ids=('bee_crop','bee_brain_grn')
+    ids=('bee_crop','bee_brain_grn','bee_brain_cells')
     if not eligible:continue
     eligible.sort(key=lambda t:(t['report_q'],t['p_value'],-t['overlap']))
     lead=eligible[0];view=lead['view'];lead_genes=lead['features'];cat=g['category']
@@ -147,14 +165,21 @@ def summarize(result,options):
      test=test,references=list(ids),paper_support=paper_support,status='Enrichment- and literature-supported',evidence_term=lead['id'],evidence_view=view,report_q=lead['report_q'])]
     break
   factor_rows=[x for x in all_rows if x['factor']==k+1]
+  support_ids={id for h in hypotheses for id in h['references']}
+  factor_reading=reading_for_factor(groups,selected,labels,curated+[ref for ref in refs if ref['id'] in support_ids and ref not in curated],hypotheses)
   factors.append(dict(index=k+1,label=f'{prefix} {k+1}',contributions=[dict(view=v['name'],r2=r['mofa']['variance_explained'][i][k]) for i,v in enumerate(r['views'])],
-   total_significant_terms=sum(x['report_q']<.05 for x in factor_rows),themes=groups,hypotheses=hypotheses[:1],
+   total_significant_terms=sum(x['report_q']<.05 for x in factor_rows),themes=groups,hypotheses=hypotheses[:1],related_reading=factor_reading,
    strongest_features={v:[dict(x,label=labels.get(x['feature'],x['feature'])) for x in rows[:6]] for v,rows in selected.items()},
    associations=factor_associations(r,k,meta)[:4],queries=[{x:q[x] for x in ['view','catalog','direction','query_mapped','query_selected','universe_size','model_features','tested_terms']} for q in queries if q['factor']==k+1]))
  papers=[]
  for p in context.get('papers',[]):
-  if str(p.get('url','')).startswith('https://'):papers.append(p)
+  if str(p.get('url','')).startswith('https://'):
+   doi=str(p.get('doi','')).lower() or str(p['url']).lower().replace('https://doi.org/','')
+   canonical=next((ref for ref in refs if ref['doi'].lower()==doi or ref['title'].lower()==p.get('title','').lower()),None)
+   papers.append(dict(p,**{key:canonical[key] for key in ['title','journal','year','year_display','url','doi'] if canonical and key in canonical}))
  return clean_json(dict(schema_version='1.0',action='summary',dataset=r['dataset'],model=model,annotation_provenance=ann.get('provenance',{}),component_name=prefix,samples=len(r['sample_ids']),views=[v['name'] for v in r['views']],parameters=r['parameters'],
   interpretation_policy='At most one interpretation; report-wide BH q < 0.05, at least three selected supporting genes, at least 10% reconstruction in the supporting view, at least 16 samples, centered inputs and two explicitly reviewed relevant primary studies. The current reviewed interpretation covers specific RNA-regulatory annotations in honeybee head samples; other contexts show functional results. No single-gene or keyword-only citation fallback.',top_n=top,reconstruction_basis='centered variation' if model=='Joint PCA' or r['parameters']['mofa_center'] else 'uncentered input energy',cluster_kappa=.5,multiple_testing_family='All tested factor/view/catalog/direction term queries in this summary',tested_term_queries=len(all_rows),
   method='Signed top-weight gene sets; one-sided hypergeometric over-representation. Within-query and report-wide Benjamini-Hochberg correction. Terms with at least two query hits are grouped using complete-linkage clustering at kappa >= 0.5, with at least three shared model genes. Cluster score is mean(-log10(raw term p)); it summarizes related terms and is not an additional p value. This is a DAVID-inspired local grouping, using ordinary hypergeometric p values rather than DAVID EASE scores.',
+  related_reading_policy='Primary research is curated by study, tissue, functional theme and measured features. Interpretation support is labelled separately from functional context.',
+  reading_library=[dict(id=ref['id'],relevance=ref['reading']['relevance']) for ref in curated],
   factors=factors,references=list(used.values()),study_papers=papers))

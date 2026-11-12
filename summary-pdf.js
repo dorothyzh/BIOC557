@@ -10,7 +10,7 @@ function downloadSummaryPdf(s,save=true){
  function text(str,{size=10,bold=false,color=ink,gap=3,width=C}={}){doc.setFont('helvetica',bold?'bold':'normal');doc.setFontSize(size);doc.setTextColor(...color);const lines=doc.splitTextToSize(ascii(str),width),lh=size*.45;for(const t of lines){ensure(lh);doc.text(t,X,y);y+=lh;}y+=gap;}
  function heading(str){ensure(16);text(str,{size:16,bold:true,color:teal,gap:4});}
  function small(str){text(str,{size:8.5,color:muted,gap:3});}
- function refLine(r){text(`${r.title}. ${r.journal}, ${r.year}.`,{size:9,gap:1});if(r.url){ensure(6);doc.setFontSize(8);doc.setTextColor(...teal);doc.textWithLink(ascii(r.url),M,y,{url:r.url});y+=7;}}
+ function refLine(r){text(`${r.title}. ${r.journal}, ${r.year_display||r.year}.`,{size:9,gap:1});if(r.url){ensure(6);doc.setFontSize(8);doc.setTextColor(...teal);doc.textWithLink(ascii(r.url),M,y,{url:r.url});y+=7;}}
  doc.setProperties({title:'BIOC557 Functional Summary - '+s.dataset,subject:'Current analysis, functional results and supporting literature',author:'BIOC557 | Huan Zhong'});
  small('BIOC557 / MULTI-OMICS LAB');text('Functional summary',{size:26,bold:true,gap:6});text(s.dataset,{size:16,bold:true,gap:5});
  small(`${s.model} | ${s.samples} matched samples | ${s.views.join(' + ')} | Workspace ${sessionId}`);
@@ -37,9 +37,13 @@ function downloadSummaryPdf(s,save=true){
   text('Leading measured features',{size:10,bold:true});for(const [view,rows] of Object.entries(f.strongest_features))small(`${view}: `+rows.slice(0,4).map(r=>`${r.label} (${r.weight.toFixed(3)})`).join(', '));
   X=M;C=W-2*M;y=Math.max(y,leftEnd);
  }
+ newPage();heading('Reading by factor');small(s.related_reading_policy);
+ for(const f of s.factors){ensure(30);text(f.label+' | '+(f.themes[0]?.category||'Functional assignment open'),{size:12,bold:true});
+  for(const r of f.related_reading||[]){const ref=s.references.find(x=>x.id===r.id);if(!ref)continue;const before=doc.getNumberOfPages();ensure(23);if(doc.getNumberOfPages()>before)text(f.label+' | reading continued',{size:11,bold:true});text('['+refIds[r.id]+'] '+ref.journal+', '+(ref.year_display||ref.year)+' | '+r.role,{size:9,bold:true,gap:1});text(r.relevance,{size:9,gap:3});}y+=4;
+ }
  newPage();heading('Methods and reproducibility');text(s.method,{size:10});small(`Report-wide correction covers ${s.tested_term_queries} term tests across components, views, annotation catalogs and weight directions. Complete-linkage term clustering uses kappa >= ${s.cluster_kappa}, with at least three shared model genes. Positive/negative queries select up to ${s.top_n} features each. Views contributing at least 1% reconstruction enter annotation queries.`);
  text('Interpretation selection',{size:12,bold:true});small(s.interpretation_policy);text('Settings',{size:12,bold:true});for(const [key,value] of Object.entries(s.parameters))small(`${key}: ${value}`);
- newPage();heading('References');for(const [i,r] of allRefs.entries()){ensure(23);refLine({...r,title:'['+(i+1)+'] '+r.title});}
+ newPage();heading('References');for(const [i,r] of allRefs.entries()){doc.setFont('helvetica','normal');doc.setFontSize(9);const title='['+(i+1)+'] '+r.title;const lines=doc.splitTextToSize(ascii(title+'. '+r.journal+', '+(r.year_display||r.year)+'.'),C).length;ensure(lines*4.05+8);refLine({...r,title});}
  newPage();heading('Abbreviations and explanations');const glossaryTop=y;X=M;C=82;let column=0;
  for(const [term,full,explanation] of courseGlossary){const lines=doc.splitTextToSize(ascii(full+' '+explanation),82).length;const need=10+lines*3.5;if(y+need>B){if(column===0){column=1;X=110;y=glossaryTop;}else{newPage();X=M;heading('Abbreviations, continued');column=0;}}text(`${term} - ${full}`,{size:9,bold:true,gap:1});small(explanation);}
  X=M;C=W-2*M;

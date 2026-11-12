@@ -1,16 +1,21 @@
 [
   [
+    "RIS",
+    "Research Information Systems citation format",
+    "A reference-file format that can be imported into Zotero, EndNote and other citation managers."
+  ],
+  [
     "Pareto",
     "Pareto scaling",
     "Divides each feature by the square root of its standard deviation; centering is controlled separately."
   ],
   [
-    "ρ",
+    "\u03c1",
     "Spearman rank correlation coefficient",
     "Describes how two quantities vary together by rank."
   ],
   [
-    "κ",
+    "\u03ba",
     "Cohen kappa similarity",
     "Measures agreement between term-gene membership profiles beyond chance."
   ],
@@ -110,7 +115,7 @@
     "The probability of a result at least this extreme under the specified null model."
   ],
   [
-    "R²",
+    "R\u00b2",
     "Coefficient of determination",
     "Fraction of the model input reconstructed relative to a zero baseline; with centering on, it describes variation around the mean."
   ],
@@ -160,7 +165,7 @@
     "Separates compounds before measurement."
   ],
   [
-    "LC–MS",
+    "LC\u2013MS",
     "Liquid Chromatography-Mass Spectrometry",
     "Combines compound separation with mass-spectrometric detection."
   ],

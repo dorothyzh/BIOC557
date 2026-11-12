@@ -36,7 +36,8 @@
       "agroecosystem"
     ],
     "url": "https://doi.org/10.1002/pmic.70033",
-    "source": "CrossRef publisher-deposited metadata"
+    "source": "CrossRef publisher-deposited metadata",
+    "year_display": "2026 (online 2025)"
   },
   {
     "id": "bee_dscam",
@@ -75,7 +76,26 @@
       "feeding"
     ],
     "url": "https://doi.org/10.3390/insects15040215",
-    "source": "CrossRef publisher-deposited metadata"
+    "source": "CrossRef publisher-deposited metadata",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head",
+        "Abdomen"
+      ],
+      "categories": [
+        "Metabolism and biosynthesis",
+        "Nutrient and small-molecule metabolism",
+        "Lipid and membrane metabolism",
+        "Protein synthesis and turnover"
+      ],
+      "relevance": "Compares dietary protein sources using vitellogenin, abdominal lipid and hypopharyngeal-gland measurements.",
+      "priority": 7,
+      "study_wide": false,
+      "features": []
+    }
   },
   {
     "id": "bee_varroa",
@@ -94,7 +114,26 @@
       "cuticle"
     ],
     "url": "https://doi.org/10.1002/pmic.202300312",
-    "source": "CrossRef publisher-deposited metadata"
+    "source": "CrossRef publisher-deposited metadata",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head",
+        "Abdomen",
+        "Midgut"
+      ],
+      "categories": [
+        "Stress and immune response",
+        "Cellular homeostasis",
+        "Protein synthesis and turnover"
+      ],
+      "relevance": "Examines peroxisomal response pathways during Varroa parasitism and deformed wing virus infection.",
+      "priority": 7,
+      "study_wide": false,
+      "features": []
+    }
   },
   {
     "id": "bee_energy",
@@ -114,7 +153,26 @@
       "tricarboxyl"
     ],
     "url": "https://doi.org/10.1096/fj.202300654r",
-    "source": "CrossRef publisher-deposited metadata"
+    "source": "CrossRef publisher-deposited metadata",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head",
+        "Abdomen",
+        "Midgut"
+      ],
+      "categories": [
+        "Energy and mitochondrial function",
+        "Metabolism and biosynthesis",
+        "Nutrient and small-molecule metabolism"
+      ],
+      "relevance": "Measures age-dependent flexibility of honeybee energetic metabolism; physiological context for metabolic annotations.",
+      "priority": 7,
+      "study_wide": false,
+      "features": []
+    }
   },
   {
     "id": "bee_development",
@@ -133,7 +191,26 @@
       "metabolic"
     ],
     "url": "https://doi.org/10.7554/elife.88772",
-    "source": "CrossRef publisher-deposited metadata"
+    "source": "CrossRef publisher-deposited metadata",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Abdomen",
+        "Midgut"
+      ],
+      "categories": [
+        "Growth and development",
+        "Nutrient and small-molecule metabolism",
+        "Energy and mitochondrial function",
+        "Metabolism and biosynthesis"
+      ],
+      "relevance": "Uses larval imidacloprid exposure to examine molting and nutrient-energy metabolism during development.",
+      "priority": 3,
+      "study_wide": false,
+      "features": []
+    }
   },
   {
     "id": "ccle_protein",
@@ -193,6 +270,3906 @@
     "kind": "biological",
     "tags": [],
     "url": "https://doi.org/10.1038/s41467-025-58614-8",
-    "source": "CrossRef publisher-deposited metadata; primary publisher abstract reviewed"
+    "source": "CrossRef publisher-deposited metadata; primary publisher abstract reviewed",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head"
+      ],
+      "categories": [
+        "Gene-expression and biosynthetic regulation",
+        "RNA processing and gene regulation",
+        "Cell communication and adhesion",
+        "Growth and development"
+      ],
+      "relevance": "Maps cell-type and spatial gene-regulatory programs in nurse and forager brains.",
+      "priority": 10,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_gut_brain",
+    "doi": "10.1016/j.jare.2025.07.045",
+    "title": "Comprehension of the age-dependent gut and brain interaction of honey bee workers by integration of multi omics approaches",
+    "journal": "Journal of Advanced Research",
+    "year": 2026,
+    "year_display": "2026",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1016/j.jare.2025.07.045",
+    "authors": [
+      {
+        "given": "Cassandra",
+        "family": "Uthoff"
+      },
+      {
+        "given": "Yelyzaveta",
+        "family": "Yakovlyeva"
+      },
+      {
+        "given": "Beatrice",
+        "family": "Engelmann"
+      },
+      {
+        "given": "Ulrike",
+        "family": "Rolle-Kampczyk"
+      },
+      {
+        "given": "Sven-Bastiaan",
+        "family": "Haange"
+      },
+      {
+        "given": "Abdulrahim T.",
+        "family": "Alkassab"
+      },
+      {
+        "given": "Jens",
+        "family": "Pistorius"
+      },
+      {
+        "given": "Fynn",
+        "family": "Brix"
+      },
+      {
+        "given": "Silvio",
+        "family": "Waschina"
+      },
+      {
+        "given": "Andreas S.",
+        "family": "Thum"
+      },
+      {
+        "given": "Nico",
+        "family": "Jehmlich"
+      },
+      {
+        "given": "Martin",
+        "family": "von Bergen"
+      }
+    ],
+    "pmid": "40749788",
+    "pmcid": "PMC13001044",
+    "publication_types": [
+      "Research Support, Non-U.S. Gov't",
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head",
+        "Midgut"
+      ],
+      "categories": [
+        "Metabolism and biosynthesis",
+        "Nutrient and small-molecule metabolism",
+        "Energy and mitochondrial function",
+        "Protein synthesis and turnover",
+        "Gene-expression and biosynthetic regulation",
+        "Cellular homeostasis",
+        "Functional annotation profile"
+      ],
+      "relevance": "Combines brain and gut proteomics with metabolomics across worker ages, including amino-acid and energy pathways.",
+      "priority": 10,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_brain_cells",
+    "doi": "10.1016/j.isci.2022.104643",
+    "title": "Single-cell transcriptomic analysis of honeybee brains identifies vitellogenin as caste differentiation-related factor",
+    "journal": "iScience",
+    "year": 2022,
+    "year_display": "2022",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1016/j.isci.2022.104643",
+    "authors": [
+      {
+        "given": "Wenxin",
+        "family": "Zhang"
+      },
+      {
+        "given": "Liangliang",
+        "family": "Wang"
+      },
+      {
+        "given": "Yinjiao",
+        "family": "Zhao"
+      },
+      {
+        "given": "Yufei",
+        "family": "Wang"
+      },
+      {
+        "given": "Chaoyang",
+        "family": "Chen"
+      },
+      {
+        "given": "Yu",
+        "family": "Hu"
+      },
+      {
+        "given": "Yuanxiang",
+        "family": "Zhu"
+      },
+      {
+        "given": "Hao",
+        "family": "Sun"
+      },
+      {
+        "given": "Ying",
+        "family": "Cheng"
+      },
+      {
+        "given": "Qinmiao",
+        "family": "Sun"
+      },
+      {
+        "given": "Jian",
+        "family": "Zhang"
+      },
+      {
+        "given": "Dahua",
+        "family": "Chen"
+      }
+    ],
+    "pmid": "35800778",
+    "pmcid": "PMC9254125",
+    "publication_types": [
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head"
+      ],
+      "categories": [
+        "Gene-expression and biosynthetic regulation",
+        "RNA processing and gene regulation",
+        "Cell communication and adhesion",
+        "Growth and development"
+      ],
+      "relevance": "Resolves brain cell types and caste-associated RNA expression; relevant to cellular composition in bulk head profiles.",
+      "priority": 10,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_methyl_stress",
+    "doi": "10.1242/jeb.246894",
+    "title": "Transcriptional control of a metabolic switch regulating cellular methylation reactions is part of a common response to stress in divergent bee species",
+    "journal": "Journal of Experimental Biology",
+    "year": 2024,
+    "year_display": "2024",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1242/jeb.246894",
+    "authors": [
+      {
+        "given": "Helen V.",
+        "family": "Kogan"
+      },
+      {
+        "given": "Shannon G.",
+        "family": "Macleod"
+      },
+      {
+        "given": "Nicole C.",
+        "family": "Rondeau"
+      },
+      {
+        "given": "Joanna",
+        "family": "Raup-Collado"
+      },
+      {
+        "given": "Victoria A.",
+        "family": "Cordero"
+      },
+      {
+        "given": "David",
+        "family": "Rovnyak"
+      },
+      {
+        "given": "Corey A.",
+        "family": "Marshalleck"
+      },
+      {
+        "given": "Meghna",
+        "family": "Mallapan"
+      },
+      {
+        "given": "Melissa E.",
+        "family": "Flores"
+      },
+      {
+        "given": "Jonathan W.",
+        "family": "Snow"
+      }
+    ],
+    "pmid": "38736357",
+    "pmcid": "PMC11415054",
+    "publication_types": [
+      "Research Support, Non-U.S. Gov't",
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head",
+        "Abdomen",
+        "Midgut"
+      ],
+      "categories": [
+        "Gene-expression and biosynthetic regulation",
+        "RNA processing and gene regulation",
+        "Metabolism and biosynthesis",
+        "Cellular homeostasis",
+        "Stress and immune response",
+        "Nutrient and small-molecule metabolism"
+      ],
+      "relevance": "Links stress-induced glycine N-methyltransferase transcription with midgut sarcosine measurements and cellular methylation metabolism.",
+      "priority": 8,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_lipogenesis",
+    "doi": "10.1242/jeb.247777",
+    "title": "Fat body lipogenic capacity in honey bee workers is affected by age, social role, and dietary protein",
+    "journal": "Journal of Experimental Biology",
+    "year": 2024,
+    "year_display": "2024",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1242/jeb.247777",
+    "authors": [
+      {
+        "given": "Sebastian",
+        "family": "Scofield"
+      },
+      {
+        "given": "Gro. V.",
+        "family": "Amdam"
+      }
+    ],
+    "pmid": "39206624",
+    "pmcid": null,
+    "publication_types": [
+      "Research Support, Non-U.S. Gov't",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Abdomen"
+      ],
+      "categories": [
+        "Lipid and membrane metabolism",
+        "Metabolism and biosynthesis",
+        "Nutrient and small-molecule metabolism",
+        "Energy and mitochondrial function"
+      ],
+      "relevance": "Measures abdominal fatty-acid-synthase and lipase activity across worker age, social role and diets.",
+      "priority": 10,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_small_hsp",
+    "doi": "10.1038/s41598-021-01547-1",
+    "title": "Honey bee sHSP are responsive to diverse proteostatic stresses and potentially promising biomarkers of honey bee stress",
+    "journal": "Scientific Reports",
+    "year": 2021,
+    "year_display": "2021",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1038/s41598-021-01547-1",
+    "authors": [
+      {
+        "given": "Samantha R.",
+        "family": "Shih"
+      },
+      {
+        "given": "Dunay M.",
+        "family": "Bach"
+      },
+      {
+        "given": "Nicole C.",
+        "family": "Rondeau"
+      },
+      {
+        "given": "Jessica",
+        "family": "Sam"
+      },
+      {
+        "given": "Natalie L.",
+        "family": "Lovinger"
+      },
+      {
+        "given": "Allison J.",
+        "family": "Lopatkin"
+      },
+      {
+        "given": "Jonathan W.",
+        "family": "Snow"
+      }
+    ],
+    "pmid": "34764357",
+    "pmcid": "PMC8586346",
+    "publication_types": [
+      "Research Support, Non-U.S. Gov't",
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head",
+        "Abdomen",
+        "Midgut"
+      ],
+      "categories": [
+        "Cellular homeostasis",
+        "Stress and immune response",
+        "Protein synthesis and turnover"
+      ],
+      "relevance": "Tests small heat-shock-protein responses to several controlled disruptions of protein homeostasis.",
+      "priority": 8,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_gut_regeneration",
+    "doi": "10.1242/jeb.242262",
+    "title": "Thermal stress induces tissue damage and a broad shift in regenerative signaling pathways in the honey bee digestive tract",
+    "journal": "Journal of Experimental Biology",
+    "year": 2021,
+    "year_display": "2021",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1242/jeb.242262",
+    "authors": [
+      {
+        "given": "Dunay M.",
+        "family": "Bach"
+      },
+      {
+        "given": "Miriam A.",
+        "family": "Holzman"
+      },
+      {
+        "given": "Fatoumata",
+        "family": "Wague"
+      },
+      {
+        "given": "JJ L.",
+        "family": "Miranda"
+      },
+      {
+        "given": "Allison J.",
+        "family": "Lopatkin"
+      },
+      {
+        "given": "Jennifer H.",
+        "family": "Mansfield"
+      },
+      {
+        "given": "Jonathan W.",
+        "family": "Snow"
+      }
+    ],
+    "pmid": "34477881",
+    "pmcid": null,
+    "publication_types": [
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Midgut"
+      ],
+      "categories": [
+        "Cellular homeostasis",
+        "Stress and immune response",
+        "Growth and development",
+        "Gene-expression and biosynthetic regulation",
+        "RNA processing and gene regulation"
+      ],
+      "relevance": "Measures heat-associated epithelial damage and regenerative transcription in the honeybee digestive tract.",
+      "priority": 9,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_heat_rna",
+    "doi": "10.3389/fevo.2023.1099015",
+    "title": "Comparative transcriptome analysis of adult worker bees under short-term heat stress",
+    "journal": "Frontiers in Ecology and Evolution",
+    "year": 2023,
+    "year_display": "2023",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.3389/fevo.2023.1099015",
+    "authors": [
+      {
+        "given": "Bing",
+        "family": "Zhang"
+      },
+      {
+        "given": "Xinyu",
+        "family": "Li"
+      },
+      {
+        "given": "Yusuo",
+        "family": "Jiang"
+      },
+      {
+        "given": "Jinjia",
+        "family": "Liu"
+      },
+      {
+        "given": "Jiangchao",
+        "family": "Zhang"
+      },
+      {
+        "given": "Weihua",
+        "family": "Ma"
+      }
+    ],
+    "pmid": null,
+    "pmcid": null,
+    "publication_types": [],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head",
+        "Abdomen",
+        "Midgut"
+      ],
+      "categories": [
+        "Protein synthesis and turnover",
+        "Cellular homeostasis",
+        "Stress and immune response"
+      ],
+      "relevance": "Identifies folding and endoplasmic-reticulum processing responses in heat-exposed adult workers; tissue tests emphasize the thorax.",
+      "priority": 6,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_butyrate",
+    "doi": "10.1038/s41467-026-69073-0",
+    "title": "Gut microbiota-derived butyrate primes systemic immunity in honey bees by mediating lipid metabolic reprogramming",
+    "journal": "Nature Communications",
+    "year": 2026,
+    "year_display": "2026",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1038/s41467-026-69073-0",
+    "authors": [
+      {
+        "given": "Jiaming",
+        "family": "Liu"
+      },
+      {
+        "given": "Yashuai",
+        "family": "Wu"
+      },
+      {
+        "given": "Zhenfang",
+        "family": "Li"
+      },
+      {
+        "given": "Junbo",
+        "family": "Tang"
+      },
+      {
+        "given": "Xin",
+        "family": "Zhou"
+      },
+      {
+        "given": "Shiqi",
+        "family": "Luo"
+      }
+    ],
+    "pmid": "41629354",
+    "pmcid": "PMC13031938",
+    "publication_types": [
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Abdomen",
+        "Midgut"
+      ],
+      "categories": [
+        "Lipid and membrane metabolism",
+        "Metabolism and biosynthesis",
+        "Nutrient and small-molecule metabolism",
+        "Cellular homeostasis",
+        "Stress and immune response",
+        "Functional annotation profile"
+      ],
+      "relevance": "Tests microbiota-derived butyrate and fat-body lipid remodeling as a route to systemic immune activation.",
+      "priority": 10,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_supplement",
+    "doi": "10.1128/msystems.00283-26",
+    "title": "Bacterial supplementation shapes honey bee gut microbiota and host metabolism under controlled and field conditions",
+    "journal": "mSystems",
+    "year": 2026,
+    "year_display": "2026",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1128/msystems.00283-26",
+    "authors": [
+      {
+        "given": "Saetbyeol",
+        "family": "Lee"
+      },
+      {
+        "given": "Pavel",
+        "family": "Dobes"
+      },
+      {
+        "given": "Anna",
+        "family": "Mascellani Bergo"
+      },
+      {
+        "given": "Jiri",
+        "family": "Killer"
+      },
+      {
+        "given": "Jacek",
+        "family": "Marciniak"
+      },
+      {
+        "given": "Jana",
+        "family": "Hurychova"
+      },
+      {
+        "given": "Sara",
+        "family": "Sreibr"
+      },
+      {
+        "given": "Martin",
+        "family": "Kamler"
+      },
+      {
+        "given": "Vojtech",
+        "family": "Purnoch"
+      },
+      {
+        "given": "Lucie",
+        "family": "Hlinakova"
+      },
+      {
+        "given": "Dalibor",
+        "family": "Titera"
+      },
+      {
+        "given": "Ondrej",
+        "family": "Cinek"
+      },
+      {
+        "given": "James C.",
+        "family": "Carolan"
+      },
+      {
+        "given": "Pavel",
+        "family": "Hyrsl"
+      },
+      {
+        "given": "Jaroslav",
+        "family": "Havlik"
+      }
+    ],
+    "pmid": "42165584",
+    "pmcid": "PMC13289173",
+    "publication_types": [
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Midgut"
+      ],
+      "categories": [
+        "Metabolism and biosynthesis",
+        "Nutrient and small-molecule metabolism",
+        "Energy and mitochondrial function",
+        "Protein synthesis and turnover",
+        "Stress and immune response",
+        "Cellular homeostasis",
+        "Functional annotation profile"
+      ],
+      "relevance": "Combines gut proteomics and metabolomics after bacterial supplementation in cages and field colonies.",
+      "priority": 10,
+      "study_wide": true,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_co2_brain",
+    "doi": "10.3390/insects17060630",
+    "title": "Effects of Carbon Dioxide on Hemolymph and Brain Proteomes in Honey Bee Workers (Apis mellifera L.)",
+    "journal": "Insects",
+    "year": 2026,
+    "year_display": "2026",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.3390/insects17060630",
+    "authors": [
+      {
+        "given": "Ying",
+        "family": "Wang"
+      },
+      {
+        "given": "Beibei",
+        "family": "Ma"
+      },
+      {
+        "given": "Yu",
+        "family": "Fang"
+      }
+    ],
+    "pmid": "42355364",
+    "pmcid": "PMC13300576",
+    "publication_types": [
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head"
+      ],
+      "categories": [
+        "Cellular homeostasis",
+        "Stress and immune response",
+        "Metabolism and biosynthesis",
+        "Nutrient and small-molecule metabolism",
+        "Energy and mitochondrial function",
+        "Protein synthesis and turnover"
+      ],
+      "relevance": "Measures stage-specific brain proteome responses to carbon dioxide, including clearance, antioxidant and amino-acid pathways.",
+      "priority": 9,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_propolis",
+    "doi": "10.1093/femsmc/xtag019",
+    "title": "A propolis-rich hive environment affects redox gene expression and gut microbiota at the individual and social level in honey bees",
+    "journal": "FEMS Microbes",
+    "year": 2026,
+    "year_display": "2026",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1093/femsmc/xtag019",
+    "authors": [
+      {
+        "given": "Kirk E",
+        "family": "Anderson"
+      },
+      {
+        "given": "Duan C",
+        "family": "Copeland"
+      },
+      {
+        "given": "Brendon M",
+        "family": "Mott"
+      },
+      {
+        "given": "Oliver L",
+        "family": "Kortenkamp"
+      },
+      {
+        "given": "Robert J",
+        "family": "Erickson"
+      },
+      {
+        "given": "Nathan O",
+        "family": "Allen"
+      },
+      {
+        "given": "Patrick W",
+        "family": "Maes"
+      },
+      {
+        "given": "Naomi",
+        "family": "Chao"
+      },
+      {
+        "given": "Hollie",
+        "family": "Dalenberg"
+      },
+      {
+        "given": "Marla",
+        "family": "Spivak"
+      }
+    ],
+    "pmid": "42089012",
+    "pmcid": "PMC13137985",
+    "publication_types": [
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head",
+        "Abdomen",
+        "Midgut"
+      ],
+      "categories": [
+        "Cellular homeostasis",
+        "Stress and immune response"
+      ],
+      "relevance": "Tests propolis exposure and redox-gene expression in fat body and head glands, alongside gut microbiota.",
+      "priority": 9,
+      "study_wide": false,
+      "features": [
+        "Def1"
+      ]
+    }
+  },
+  {
+    "id": "bee_nosema",
+    "doi": "10.1021/acs.jproteome.3c00095",
+    "title": "Proteomics and Immune Response Differences in Apis mellifera and Apis cerana Inoculated with Three Nosema ceranae Isolates",
+    "journal": "Journal of Proteome Research",
+    "year": 2023,
+    "year_display": "2023",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1021/acs.jproteome.3c00095",
+    "authors": [
+      {
+        "given": "Thunyarat",
+        "family": "Chantaphanwattana"
+      },
+      {
+        "given": "Camille",
+        "family": "Houdelet"
+      },
+      {
+        "given": "Chainarong",
+        "family": "Sinpoo"
+      },
+      {
+        "given": "S\u00e9bastien N.",
+        "family": "Voisin"
+      },
+      {
+        "given": "Michel",
+        "family": "Bocquet"
+      },
+      {
+        "given": "Terd",
+        "family": "Disayathanoowat"
+      },
+      {
+        "given": "Panuwan",
+        "family": "Chantawannakul"
+      },
+      {
+        "given": "Philippe",
+        "family": "Bulet"
+      }
+    ],
+    "pmid": "37163710",
+    "pmcid": null,
+    "publication_types": [
+      "Research Support, Non-U.S. Gov't",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Midgut"
+      ],
+      "categories": [
+        "Cellular homeostasis",
+        "Stress and immune response",
+        "Protein synthesis and turnover",
+        "Functional annotation profile"
+      ],
+      "relevance": "Combines protein and RNA measurements of midgut immune responses to Nosema isolates in two Apis species.",
+      "priority": 9,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "bee_diet_heat",
+    "doi": "10.3390/insects17080780",
+    "title": "Diet Quality Shapes Metabolic and Immune Transcriptional Responses of Honey Bees Under Acute Heat Stress",
+    "journal": "Insects",
+    "year": 2026,
+    "year_display": "2026",
+    "species": "bee",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.3390/insects17080780",
+    "authors": [
+      {
+        "given": "Hyunjee",
+        "family": "Kim"
+      },
+      {
+        "given": "Olga",
+        "family": "Frunze"
+      },
+      {
+        "given": "Sang Mi",
+        "family": "Han"
+      },
+      {
+        "given": "Soon Ok",
+        "family": "Woo"
+      },
+      {
+        "given": "Jewon",
+        "family": "Jung"
+      },
+      {
+        "given": "Hyung-Wook",
+        "family": "Kwon"
+      }
+    ],
+    "pmid": "42652435",
+    "pmcid": "PMC13513611",
+    "publication_types": [
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "bee"
+      ],
+      "tissues": [
+        "Head",
+        "Abdomen",
+        "Midgut"
+      ],
+      "categories": [
+        "Metabolism and biosynthesis",
+        "Nutrient and small-molecule metabolism",
+        "Cellular homeostasis",
+        "Stress and immune response",
+        "Gene-expression and biosynthetic regulation"
+      ],
+      "relevance": "Tests dietary effects on metabolic and immune-gene expression before and after acute heat exposure in adult workers.",
+      "priority": 7,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "cancer_emt_lipids",
+    "doi": "10.1016/j.bbalip.2025.159679",
+    "title": "Distinct lipidomic profiles in breast cancer cell lines relate to proliferation and EMT phenotypes",
+    "journal": "Biochimica et Biophysica Acta (BBA) - Molecular and Cell Biology of Lipids",
+    "year": 2025,
+    "year_display": "2025",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1016/j.bbalip.2025.159679",
+    "authors": [
+      {
+        "given": "Hanneke",
+        "family": "Leegwater"
+      },
+      {
+        "given": "Zhengzheng",
+        "family": "Zhang"
+      },
+      {
+        "given": "Xiaobing",
+        "family": "Zhang"
+      },
+      {
+        "given": "Xuesong",
+        "family": "Wang"
+      },
+      {
+        "given": "Thomas",
+        "family": "Hankemeier"
+      },
+      {
+        "given": "Annelien J.M.",
+        "family": "Zweemer"
+      },
+      {
+        "given": "Bob",
+        "family": "van de Water"
+      },
+      {
+        "given": "Erik",
+        "family": "Danen"
+      },
+      {
+        "given": "Menno",
+        "family": "Hoekstra"
+      },
+      {
+        "given": "Amy C.",
+        "family": "Harms"
+      },
+      {
+        "given": "Alida",
+        "family": "Kindt"
+      },
+      {
+        "given": "Sylvia E.",
+        "family": "Le D\u00e9v\u00e9dec"
+      }
+    ],
+    "pmid": "40763903",
+    "pmcid": null,
+    "publication_types": [
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "ccle"
+      ],
+      "tissues": [],
+      "categories": [
+        "Lipid and membrane metabolism",
+        "Metabolism and biosynthesis",
+        "Cell communication and adhesion",
+        "Growth and development",
+        "Functional annotation profile"
+      ],
+      "relevance": "Profiles 52 breast cancer lines and relates lipid classes to epithelial\u2013mesenchymal state and proliferation.",
+      "priority": 10,
+      "study_wide": true,
+      "features": []
+    }
+  },
+  {
+    "id": "cancer_fasn",
+    "doi": "10.1186/s13058-025-01991-1",
+    "title": "Lipid metabolic reprogramming drives triglyceride storage and variable sensitivity to FASN inhibition in endocrine-resistant breast cancer cells",
+    "journal": "Breast Cancer Research",
+    "year": 2025,
+    "year_display": "2025",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1186/s13058-025-01991-1",
+    "authors": [
+      {
+        "given": "Ashley V.",
+        "family": "Ward"
+      },
+      {
+        "given": "Duncan",
+        "family": "Riley"
+      },
+      {
+        "given": "Kirsten E.",
+        "family": "Cosper"
+      },
+      {
+        "given": "Jessica",
+        "family": "Finlay-Schultz"
+      },
+      {
+        "given": "Heather M.",
+        "family": "Brechbuhl"
+      },
+      {
+        "given": "Andrew E.",
+        "family": "Libby"
+      },
+      {
+        "given": "Kaitlyn B.",
+        "family": "Hill"
+      },
+      {
+        "given": "Rohan R.",
+        "family": "Varshney"
+      },
+      {
+        "given": "Peter",
+        "family": "Kabos"
+      },
+      {
+        "given": "Michael C.",
+        "family": "Rudolph"
+      },
+      {
+        "given": "Carol A.",
+        "family": "Sartorius"
+      }
+    ],
+    "pmid": "40055794",
+    "pmcid": "PMC11889759",
+    "publication_types": [
+      "Research Support, Non-U.S. Gov't",
+      "research-article",
+      "Journal Article",
+      "Research Support, N.I.H., Extramural"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "ccle"
+      ],
+      "tissues": [],
+      "categories": [
+        "Lipid and membrane metabolism",
+        "Metabolism and biosynthesis",
+        "Nutrient and small-molecule metabolism"
+      ],
+      "relevance": "Combines expression profiling, lipidomics and isotope tracing in endocrine-resistant breast cancer models.",
+      "priority": 10,
+      "study_wide": false,
+      "features": [
+        "FASN"
+      ]
+    }
+  },
+  {
+    "id": "cancer_grhl2",
+    "doi": "10.1186/s12964-022-01029-5",
+    "title": "GRHL2-controlled gene expression networks in luminal breast cancer",
+    "journal": "Cell Communication and Signaling",
+    "year": 2023,
+    "year_display": "2023",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1186/s12964-022-01029-5",
+    "authors": [
+      {
+        "given": "Zi",
+        "family": "Wang"
+      },
+      {
+        "given": "Bircan",
+        "family": "Coban"
+      },
+      {
+        "given": "Haoyu",
+        "family": "Wu"
+      },
+      {
+        "given": "Jihed",
+        "family": "Chouaref"
+      },
+      {
+        "given": "Lucia",
+        "family": "Daxinger"
+      },
+      {
+        "given": "Michelle T.",
+        "family": "Paulsen"
+      },
+      {
+        "given": "Mats",
+        "family": "Ljungman"
+      },
+      {
+        "given": "Marcel",
+        "family": "Smid"
+      },
+      {
+        "given": "John W. M.",
+        "family": "Martens"
+      },
+      {
+        "given": "Erik H. J.",
+        "family": "Danen"
+      }
+    ],
+    "pmid": "36691073",
+    "pmcid": "PMC9869538",
+    "publication_types": [
+      "Video-Audio Media",
+      "Research Support, Non-U.S. Gov't",
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "ccle"
+      ],
+      "tissues": [],
+      "categories": [
+        "Gene-expression and biosynthetic regulation",
+        "RNA processing and gene regulation",
+        "Cell communication and adhesion",
+        "Growth and development"
+      ],
+      "relevance": "Perturbs Grainyhead-like 2 (GRHL2) in luminal breast cancer and maps its transcriptional networks, including epithelial-state genes.",
+      "priority": 10,
+      "study_wide": false,
+      "features": [
+        "GRHL2"
+      ]
+    }
+  },
+  {
+    "id": "cancer_dhrs3",
+    "doi": "10.1111/pcmr.13208",
+    "title": "The Lipid Droplet Protein DHRS3 Is a Regulator of Melanoma Cell State",
+    "journal": "Pigment Cell & Melanoma Research",
+    "year": 2025,
+    "year_display": "2025 (online 2024)",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1111/pcmr.13208",
+    "authors": [
+      {
+        "given": "Eleanor",
+        "family": "Johns"
+      },
+      {
+        "given": "Yilun",
+        "family": "Ma"
+      },
+      {
+        "given": "Pakavarin",
+        "family": "Louphrasitthiphol"
+      },
+      {
+        "given": "Christopher",
+        "family": "Peralta"
+      },
+      {
+        "given": "Miranda V.",
+        "family": "Hunter"
+      },
+      {
+        "given": "Jeremy H.",
+        "family": "Raymond"
+      },
+      {
+        "given": "Henrik",
+        "family": "Molina"
+      },
+      {
+        "given": "Colin R.",
+        "family": "Goding"
+      },
+      {
+        "given": "Richard M.",
+        "family": "White"
+      }
+    ],
+    "pmid": "39479752",
+    "pmcid": "PMC12244328",
+    "publication_types": [
+      "Research Support, Non-U.S. Gov't",
+      "research-article",
+      "Journal Article",
+      "Research Support, N.I.H., Extramural"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "ccle"
+      ],
+      "tissues": [],
+      "categories": [
+        "Lipid and membrane metabolism",
+        "Metabolism and biosynthesis",
+        "Cell communication and adhesion",
+        "Growth and development",
+        "Functional annotation profile"
+      ],
+      "relevance": "Uses melanoma lipid-droplet proteomics and dehydrogenase/reductase 3 (DHRS3) perturbation to study transitions between cell states.",
+      "priority": 9,
+      "study_wide": true,
+      "features": []
+    }
+  },
+  {
+    "id": "cancer_pan_targets",
+    "doi": "10.1016/j.cell.2024.05.039",
+    "title": "Pan-cancer proteogenomics expands the landscape of therapeutic targets",
+    "journal": "Cell",
+    "year": 2024,
+    "year_display": "2024",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1016/j.cell.2024.05.039",
+    "authors": [
+      {
+        "given": "Sara R.",
+        "family": "Savage"
+      },
+      {
+        "given": "Xinpei",
+        "family": "Yi"
+      },
+      {
+        "given": "Jonathan T.",
+        "family": "Lei"
+      },
+      {
+        "given": "Bo",
+        "family": "Wen"
+      },
+      {
+        "given": "Hongwei",
+        "family": "Zhao"
+      },
+      {
+        "given": "Yuxing",
+        "family": "Liao"
+      },
+      {
+        "given": "Eric J.",
+        "family": "Jaehnig"
+      },
+      {
+        "given": "Lauren K.",
+        "family": "Somes"
+      },
+      {
+        "given": "Paul W.",
+        "family": "Shafer"
+      },
+      {
+        "given": "Tobie D.",
+        "family": "Lee"
+      },
+      {
+        "given": "Zile",
+        "family": "Fu"
+      },
+      {
+        "given": "Yongchao",
+        "family": "Dou"
+      },
+      {
+        "given": "Zhiao",
+        "family": "Shi"
+      },
+      {
+        "given": "Daming",
+        "family": "Gao"
+      },
+      {
+        "given": "Valentina",
+        "family": "Hoyos"
+      },
+      {
+        "given": "Qiang",
+        "family": "Gao"
+      },
+      {
+        "given": "Bing",
+        "family": "Zhang"
+      }
+    ],
+    "pmid": "38917788",
+    "pmcid": "PMC12010439",
+    "publication_types": [
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "ccle"
+      ],
+      "tissues": [],
+      "categories": [
+        "Gene-expression and biosynthetic regulation",
+        "RNA processing and gene regulation",
+        "Protein synthesis and turnover",
+        "Functional annotation profile"
+      ],
+      "relevance": "Integrates tumor proteogenomics with cell-line screens and examines determinants of RNA\u2013protein correspondence.",
+      "priority": 7,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "cancer_pan_immunity",
+    "doi": "10.1016/j.cell.2024.01.027",
+    "title": "Pan-cancer proteogenomics characterization of tumor immunity",
+    "journal": "Cell",
+    "year": 2024,
+    "year_display": "2024",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1016/j.cell.2024.01.027",
+    "authors": [
+      {
+        "given": "Francesca",
+        "family": "Petralia"
+      },
+      {
+        "given": "Weiping",
+        "family": "Ma"
+      },
+      {
+        "given": "Tomer M.",
+        "family": "Yaron"
+      },
+      {
+        "given": "Francesca Pia",
+        "family": "Caruso"
+      },
+      {
+        "given": "Nicole",
+        "family": "Tignor"
+      },
+      {
+        "given": "Joshua M.",
+        "family": "Wang"
+      },
+      {
+        "given": "Daniel",
+        "family": "Charytonowicz"
+      },
+      {
+        "given": "Jared L.",
+        "family": "Johnson"
+      },
+      {
+        "given": "Emily M.",
+        "family": "Huntsman"
+      },
+      {
+        "given": "Giacomo B.",
+        "family": "Marino"
+      },
+      {
+        "given": "Anna",
+        "family": "Calinawan"
+      },
+      {
+        "given": "John Erol",
+        "family": "Evangelista"
+      },
+      {
+        "given": "Myvizhi Esai",
+        "family": "Selvan"
+      },
+      {
+        "given": "Shrabanti",
+        "family": "Chowdhury"
+      },
+      {
+        "given": "Dmitry",
+        "family": "Rykunov"
+      },
+      {
+        "given": "Azra",
+        "family": "Krek"
+      },
+      {
+        "given": "Xiaoyu",
+        "family": "Song"
+      },
+      {
+        "given": "Berk",
+        "family": "Turhan"
+      },
+      {
+        "given": "Karen E.",
+        "family": "Christianson"
+      },
+      {
+        "given": "David A.",
+        "family": "Lewis"
+      },
+      {
+        "given": "Eden Z.",
+        "family": "Deng"
+      },
+      {
+        "given": "Daniel J.B.",
+        "family": "Clarke"
+      },
+      {
+        "given": "Jeffrey R.",
+        "family": "Whiteaker"
+      },
+      {
+        "given": "Jacob J.",
+        "family": "Kennedy"
+      },
+      {
+        "given": "Lei",
+        "family": "Zhao"
+      },
+      {
+        "given": "Rossana Lazcano",
+        "family": "Segura"
+      },
+      {
+        "given": "Harsh",
+        "family": "Batra"
+      },
+      {
+        "given": "Maria Gabriela",
+        "family": "Raso"
+      },
+      {
+        "given": "Edwin Roger",
+        "family": "Parra"
+      },
+      {
+        "given": "Rama",
+        "family": "Soundararajan"
+      },
+      {
+        "given": "Ximing",
+        "family": "Tang"
+      },
+      {
+        "given": "Yize",
+        "family": "Li"
+      },
+      {
+        "given": "Xinpei",
+        "family": "Yi"
+      },
+      {
+        "given": "Shankha",
+        "family": "Satpathy"
+      },
+      {
+        "given": "Ying",
+        "family": "Wang"
+      },
+      {
+        "given": "Maciej",
+        "family": "Wiznerowicz"
+      },
+      {
+        "given": "Tania J.",
+        "family": "Gonz\u00e1lez-Robles"
+      },
+      {
+        "given": "Antonio",
+        "family": "Iavarone"
+      },
+      {
+        "given": "Sara J.C.",
+        "family": "Gosline"
+      },
+      {
+        "given": "Boris",
+        "family": "Reva"
+      },
+      {
+        "given": "Ana I.",
+        "family": "Robles"
+      },
+      {
+        "given": "Alexey I.",
+        "family": "Nesvizhskii"
+      },
+      {
+        "given": "D.R.",
+        "family": "Mani"
+      },
+      {
+        "given": "Michael A.",
+        "family": "Gillette"
+      },
+      {
+        "given": "Robert J.",
+        "family": "Klein"
+      },
+      {
+        "given": "Marcin",
+        "family": "Cieslik"
+      },
+      {
+        "given": "Bing",
+        "family": "Zhang"
+      },
+      {
+        "given": "Amanda G.",
+        "family": "Paulovich"
+      },
+      {
+        "given": "Robert",
+        "family": "Sebra"
+      },
+      {
+        "given": "Zeynep H.",
+        "family": "G\u00fcm\u00fc\u015f"
+      },
+      {
+        "given": "Galen",
+        "family": "Hostetter"
+      },
+      {
+        "given": "David",
+        "family": "Feny\u00f6"
+      },
+      {
+        "given": "Gilbert S.",
+        "family": "Omenn"
+      },
+      {
+        "given": "Lewis C.",
+        "family": "Cantley"
+      },
+      {
+        "given": "Avi",
+        "family": "Ma'ayan"
+      },
+      {
+        "given": "Alexander J.",
+        "family": "Lazar"
+      },
+      {
+        "given": "Michele",
+        "family": "Ceccarelli"
+      },
+      {
+        "given": "Pei",
+        "family": "Wang"
+      },
+      {
+        "given": "Jennifer",
+        "family": "Abelin"
+      },
+      {
+        "given": "Fran\u00e7ois",
+        "family": "Aguet"
+      },
+      {
+        "given": "Yo",
+        "family": "Akiyama"
+      },
+      {
+        "given": "Eunkyung",
+        "family": "An"
+      },
+      {
+        "given": "Shankara",
+        "family": "Anand"
+      },
+      {
+        "given": "Meenakshi",
+        "family": "Anurag"
+      },
+      {
+        "given": "\u00d6zg\u00fcn",
+        "family": "Babur"
+      },
+      {
+        "given": "Jasmin",
+        "family": "Bavarva"
+      },
+      {
+        "given": "Chet",
+        "family": "Birger"
+      },
+      {
+        "given": "Michael J.",
+        "family": "Birrer"
+      },
+      {
+        "given": "Song",
+        "family": "Cao"
+      },
+      {
+        "given": "Steven A.",
+        "family": "Carr"
+      },
+      {
+        "given": "Daniel W.",
+        "family": "Chan"
+      },
+      {
+        "given": "Arul M.",
+        "family": "Chinnaiyan"
+      },
+      {
+        "given": "Hanbyul",
+        "family": "Cho"
+      },
+      {
+        "given": "Karl",
+        "family": "Clauser"
+      },
+      {
+        "given": "Antonio",
+        "family": "Colaprico"
+      },
+      {
+        "given": "Daniel Cui",
+        "family": "Zhou"
+      },
+      {
+        "given": "Felipe",
+        "family": "da Veiga Leprevost"
+      },
+      {
+        "given": "Corbin",
+        "family": "Day"
+      },
+      {
+        "given": "Saravana M.",
+        "family": "Dhanasekaran"
+      },
+      {
+        "given": "Li",
+        "family": "Ding"
+      },
+      {
+        "given": "Marcin J.",
+        "family": "Domagalski"
+      },
+      {
+        "given": "Yongchao",
+        "family": "Dou"
+      },
+      {
+        "given": "Brian J.",
+        "family": "Druker"
+      },
+      {
+        "given": "Nathan",
+        "family": "Edwards"
+      },
+      {
+        "given": "Matthew J.",
+        "family": "Ellis"
+      },
+      {
+        "given": "Steven M.",
+        "family": "Foltz"
+      },
+      {
+        "given": "Alicia",
+        "family": "Francis"
+      },
+      {
+        "given": "Yifat",
+        "family": "Geffen"
+      },
+      {
+        "given": "Gad",
+        "family": "Getz"
+      },
+      {
+        "given": "David I.",
+        "family": "Heiman"
+      },
+      {
+        "given": "Runyu",
+        "family": "Hong"
+      },
+      {
+        "given": "Yingwei",
+        "family": "Hu"
+      },
+      {
+        "given": "Chen",
+        "family": "Huang"
+      },
+      {
+        "given": "Eric J.",
+        "family": "Jaehnig"
+      },
+      {
+        "given": "Scott D.",
+        "family": "Jewell"
+      },
+      {
+        "given": "Jiayi",
+        "family": "Ji"
+      },
+      {
+        "given": "Wen",
+        "family": "Jiang"
+      },
+      {
+        "given": "Lizabeth",
+        "family": "Katsnelson"
+      },
+      {
+        "given": "Karen A.",
+        "family": "Ketchum"
+      },
+      {
+        "given": "Iga",
+        "family": "Kolodziejczak"
+      },
+      {
+        "given": "Karsten",
+        "family": "Krug"
+      },
+      {
+        "given": "Chandan",
+        "family": "Kumar-Sinha"
+      },
+      {
+        "given": "Jonathan T.",
+        "family": "Lei"
+      },
+      {
+        "given": "Wen-Wei",
+        "family": "Liang"
+      },
+      {
+        "given": "Yuxing",
+        "family": "Liao"
+      },
+      {
+        "given": "Caleb M.",
+        "family": "Lindgren"
+      },
+      {
+        "given": "Tao",
+        "family": "Liu"
+      },
+      {
+        "given": "Wenke",
+        "family": "Liu"
+      },
+      {
+        "given": "Jason",
+        "family": "McDermott"
+      },
+      {
+        "given": "Wilson",
+        "family": "McKerrow"
+      },
+      {
+        "given": "Mehdi",
+        "family": "Mesri"
+      },
+      {
+        "given": "Michael Brodie",
+        "family": "Mumphrey"
+      },
+      {
+        "given": "Chelsea J.",
+        "family": "Newton"
+      },
+      {
+        "given": "Robert",
+        "family": "Oldroyd"
+      },
+      {
+        "given": "Samuel H.",
+        "family": "Payne"
+      },
+      {
+        "given": "Pietro",
+        "family": "Pugliese"
+      },
+      {
+        "given": "Karin D.",
+        "family": "Rodland"
+      },
+      {
+        "given": "Fernanda Martins",
+        "family": "Rodrigues"
+      },
+      {
+        "given": "Kelly V.",
+        "family": "Ruggles"
+      },
+      {
+        "given": "Sara R.",
+        "family": "Savage"
+      },
+      {
+        "given": "Eric E.",
+        "family": "Schadt"
+      },
+      {
+        "given": "Michael",
+        "family": "Schnaubelt"
+      },
+      {
+        "given": "Tobias",
+        "family": "Schraink"
+      },
+      {
+        "given": "Stephan",
+        "family": "Sch\u00fcrer"
+      },
+      {
+        "given": "Zhiao",
+        "family": "Shi"
+      },
+      {
+        "given": "Richard D.",
+        "family": "Smith"
+      },
+      {
+        "given": "Feng",
+        "family": "Song"
+      },
+      {
+        "given": "Yizhe",
+        "family": "Song"
+      },
+      {
+        "given": "Vasileios",
+        "family": "Stathias"
+      },
+      {
+        "given": "Erik P.",
+        "family": "Storrs"
+      },
+      {
+        "given": "Jimin",
+        "family": "Tan"
+      },
+      {
+        "given": "Nadezhda V.",
+        "family": "Terekhanova"
+      },
+      {
+        "given": "Ratna R.",
+        "family": "Thangudu"
+      },
+      {
+        "given": "Mathangi",
+        "family": "Thiagarajan"
+      },
+      {
+        "given": "Liang-Bo",
+        "family": "Wang"
+      },
+      {
+        "given": "Bo",
+        "family": "Wen"
+      },
+      {
+        "given": "Yige",
+        "family": "Wu"
+      },
+      {
+        "given": "Matthew A.",
+        "family": "Wyczalkowski"
+      },
+      {
+        "given": "Lijun",
+        "family": "Yao"
+      },
+      {
+        "given": "Qing Kay",
+        "family": "Li"
+      },
+      {
+        "given": "Hui",
+        "family": "Zhang"
+      },
+      {
+        "given": "Qing",
+        "family": "Zhang"
+      },
+      {
+        "given": "Xu",
+        "family": "Zhang"
+      },
+      {
+        "given": "Zhen",
+        "family": "Zhang"
+      }
+    ],
+    "pmid": "38359819",
+    "pmcid": "PMC10988632",
+    "publication_types": [
+      "Research Support, Non-U.S. Gov't",
+      "research-article",
+      "Journal Article",
+      "Research Support, N.I.H., Extramural"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "ccle"
+      ],
+      "tissues": [],
+      "categories": [
+        "Stress and immune response",
+        "Cellular homeostasis"
+      ],
+      "relevance": "Integrates tumor proteogenomes to define immune subtypes and pathway activity; tissue context for immune annotations.",
+      "priority": 8,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "cancer_media",
+    "doi": "10.1016/j.mcpro.2026.101569",
+    "title": "Proteomic Profiling Reveals How Physiological Media Reshape Cancer Cell Proteomes and Signaling Networks",
+    "journal": "Molecular & Cellular Proteomics",
+    "year": 2026,
+    "year_display": "2026",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1016/j.mcpro.2026.101569",
+    "authors": [
+      {
+        "given": "Colin",
+        "family": "Zenge"
+      },
+      {
+        "given": "Brittany Q.",
+        "family": "Pham"
+      },
+      {
+        "given": "Ki Hong",
+        "family": "Nam"
+      },
+      {
+        "given": "Elana",
+        "family": "Apfelbaum"
+      },
+      {
+        "given": "Heeseon",
+        "family": "An"
+      },
+      {
+        "given": "Alban",
+        "family": "Ordureau"
+      }
+    ],
+    "pmid": "41997234",
+    "pmcid": "PMC13195775",
+    "publication_types": [
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "ccle"
+      ],
+      "tissues": [],
+      "categories": [
+        "Energy and mitochondrial function",
+        "Metabolism and biosynthesis",
+        "Nutrient and small-molecule metabolism",
+        "Cellular homeostasis",
+        "Stress and immune response",
+        "Protein synthesis and turnover"
+      ],
+      "relevance": "Compares cancer-cell proteomes in conventional and plasma-like media, revealing nutrient-dependent metabolic and signaling changes.",
+      "priority": 9,
+      "study_wide": true,
+      "features": []
+    }
+  },
+  {
+    "id": "islet_stress",
+    "doi": "10.1016/j.cmet.2024.09.006",
+    "title": "Multi-omic human pancreatic islet endoplasmic reticulum and cytokine stress response mapping provides type 2 diabetes genetic insights",
+    "journal": "Cell Metabolism",
+    "year": 2024,
+    "year_display": "2024",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1016/j.cmet.2024.09.006",
+    "authors": [
+      {
+        "given": "Eishani K.",
+        "family": "Sokolowski"
+      },
+      {
+        "given": "Romy",
+        "family": "Kursawe"
+      },
+      {
+        "given": "Vijay",
+        "family": "Selvam"
+      },
+      {
+        "given": "Redwan M.",
+        "family": "Bhuiyan"
+      },
+      {
+        "given": "Asa",
+        "family": "Thibodeau"
+      },
+      {
+        "given": "Chi",
+        "family": "Zhao"
+      },
+      {
+        "given": "Cassandra N.",
+        "family": "Spracklen"
+      },
+      {
+        "given": "Duygu",
+        "family": "Ucar"
+      },
+      {
+        "given": "Michael L.",
+        "family": "Stitzel"
+      }
+    ],
+    "pmid": "39383866",
+    "pmcid": "PMC11798411",
+    "publication_types": [
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "islets"
+      ],
+      "tissues": [],
+      "categories": [
+        "Stress and immune response",
+        "Cellular homeostasis",
+        "Gene-expression and biosynthetic regulation",
+        "RNA processing and gene regulation",
+        "Functional annotation profile"
+      ],
+      "relevance": "Profiles RNA and chromatin responses to endoplasmic-reticulum and cytokine stress in human islets.",
+      "priority": 10,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "islet_nutrients",
+    "doi": "10.1016/j.cmet.2024.06.001",
+    "title": "Proteomic predictors of individualized nutrient-specific insulin secretion in health and disease",
+    "journal": "Cell Metabolism",
+    "year": 2024,
+    "year_display": "2024",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1016/j.cmet.2024.06.001",
+    "authors": [
+      {
+        "given": "Jelena",
+        "family": "Kolic"
+      },
+      {
+        "given": "WenQing Grace",
+        "family": "Sun"
+      },
+      {
+        "given": "Haoning Howard",
+        "family": "Cen"
+      },
+      {
+        "given": "Jessica D.",
+        "family": "Ewald"
+      },
+      {
+        "given": "Jason C.",
+        "family": "Rogalski"
+      },
+      {
+        "given": "Shugo",
+        "family": "Sasaki"
+      },
+      {
+        "given": "Han",
+        "family": "Sun"
+      },
+      {
+        "given": "Varsha",
+        "family": "Rajesh"
+      },
+      {
+        "given": "Yi Han",
+        "family": "Xia"
+      },
+      {
+        "given": "Renata",
+        "family": "Moravcova"
+      },
+      {
+        "given": "S\u00f8s",
+        "family": "Skovs\u00f8"
+      },
+      {
+        "given": "Aliya F.",
+        "family": "Spigelman"
+      },
+      {
+        "given": "Jocelyn E.",
+        "family": "Manning Fox"
+      },
+      {
+        "given": "James",
+        "family": "Lyon"
+      },
+      {
+        "given": "Leanne",
+        "family": "Beet"
+      },
+      {
+        "given": "Jianguo",
+        "family": "Xia"
+      },
+      {
+        "given": "Francis C.",
+        "family": "Lynn"
+      },
+      {
+        "given": "Anna L.",
+        "family": "Gloyn"
+      },
+      {
+        "given": "Leonard J.",
+        "family": "Foster"
+      },
+      {
+        "given": "Patrick E.",
+        "family": "MacDonald"
+      },
+      {
+        "given": "James D.",
+        "family": "Johnson"
+      }
+    ],
+    "pmid": "38959864",
+    "pmcid": "PMC11250105",
+    "publication_types": [
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "islets"
+      ],
+      "tissues": [],
+      "categories": [
+        "Metabolism and biosynthesis",
+        "Nutrient and small-molecule metabolism",
+        "Energy and mitochondrial function",
+        "Lipid and membrane metabolism",
+        "Functional annotation profile"
+      ],
+      "relevance": "Links multi-omics to glucose-, amino-acid- and fatty-acid-stimulated insulin release across 140 human donors.",
+      "priority": 10,
+      "study_wide": true,
+      "features": []
+    }
+  },
+  {
+    "id": "islet_translation",
+    "doi": "10.1172/jci173280",
+    "title": "Sustained hyperglycemia specifically targets translation of mRNAs for insulin secretion",
+    "journal": "Journal of Clinical Investigation",
+    "year": 2023,
+    "year_display": "2023",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1172/jci173280",
+    "authors": [
+      {
+        "given": "Abigael",
+        "family": "Cheruiyot"
+      },
+      {
+        "given": "Jennifer",
+        "family": "Hollister-Lock"
+      },
+      {
+        "given": "Brooke",
+        "family": "Sullivan"
+      },
+      {
+        "given": "Hui",
+        "family": "Pan"
+      },
+      {
+        "given": "Jonathan M.",
+        "family": "Dreyfuss"
+      },
+      {
+        "given": "Susan",
+        "family": "Bonner-Weir"
+      },
+      {
+        "given": "Jean E.",
+        "family": "Schaffer"
+      }
+    ],
+    "pmid": "38032734",
+    "pmcid": "PMC10849759",
+    "publication_types": [
+      "Research Support, Non-U.S. Gov't",
+      "research-article",
+      "Journal Article",
+      "Research Support, N.I.H., Extramural"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "islets"
+      ],
+      "tissues": [],
+      "categories": [
+        "Gene-expression and biosynthetic regulation",
+        "RNA processing and gene regulation",
+        "Protein synthesis and turnover",
+        "Metabolism and biosynthesis",
+        "Transport and cell organization"
+      ],
+      "relevance": "Combines ribosome profiling and nascent proteomics to test chronic-glucose effects on insulin-secretory protein production.",
+      "priority": 9,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "islet_multiome",
+    "doi": "10.1038/s41556-023-01150-8",
+    "title": "Single-nucleus multi-omics of human stem cell-derived islets identifies deficiencies in lineage specification",
+    "journal": "Nature Cell Biology",
+    "year": 2023,
+    "year_display": "2023",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1038/s41556-023-01150-8",
+    "authors": [
+      {
+        "given": "Punn",
+        "family": "Augsornworawat"
+      },
+      {
+        "given": "Nathaniel J.",
+        "family": "Hogrebe"
+      },
+      {
+        "given": "Matthew",
+        "family": "Ishahak"
+      },
+      {
+        "given": "Mason D.",
+        "family": "Schmidt"
+      },
+      {
+        "given": "Erica",
+        "family": "Marquez"
+      },
+      {
+        "given": "Marlie M.",
+        "family": "Maestas"
+      },
+      {
+        "given": "Daniel A.",
+        "family": "Veronese-Paniagua"
+      },
+      {
+        "given": "Sarah E.",
+        "family": "Gale"
+      },
+      {
+        "given": "Julia R.",
+        "family": "Miller"
+      },
+      {
+        "given": "Leonardo",
+        "family": "Velazco-Cruz"
+      },
+      {
+        "given": "Jeffrey R.",
+        "family": "Millman"
+      }
+    ],
+    "pmid": "37188763",
+    "pmcid": "PMC10264244",
+    "publication_types": [
+      "Research Support, Non-U.S. Gov't",
+      "research-article",
+      "Research Support, U.S. Gov't, Non-P.H.S.",
+      "Journal Article",
+      "Research Support, N.I.H., Extramural"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "islets"
+      ],
+      "tissues": [],
+      "categories": [
+        "Gene-expression and biosynthetic regulation",
+        "RNA processing and gene regulation",
+        "Growth and development",
+        "Transport and cell organization",
+        "Cell communication and adhesion",
+        "Functional annotation profile"
+      ],
+      "relevance": "Compares chromatin and RNA profiles of stem-cell-derived and primary islets to resolve endocrine cell identity.",
+      "priority": 8,
+      "study_wide": false,
+      "features": []
+    }
+  },
+  {
+    "id": "islet_proteoforms",
+    "doi": "10.1002/pmic.70044",
+    "title": "Characterization of Cytokine Treatment on Human Pancreatic Islets by Top\u2010Down Proteomics",
+    "journal": "PROTEOMICS",
+    "year": 2025,
+    "year_display": "2025",
+    "species": "human",
+    "kind": "biological",
+    "tags": [],
+    "url": "https://doi.org/10.1002/pmic.70044",
+    "authors": [
+      {
+        "given": "Ashley N.",
+        "family": "Ives"
+      },
+      {
+        "given": "Tyler J.",
+        "family": "Sagendorf"
+      },
+      {
+        "given": "Lorenz",
+        "family": "Nierves"
+      },
+      {
+        "given": "Tai\u2010Tu",
+        "family": "Lin"
+      },
+      {
+        "given": "Ercument",
+        "family": "Dirice"
+      },
+      {
+        "given": "Rohit N.",
+        "family": "Kulkarni"
+      },
+      {
+        "given": "Ljiljana",
+        "family": "Pa\u0161a\u2010Toli\u0107"
+      },
+      {
+        "given": "Wei\u2010Jun",
+        "family": "Qian"
+      },
+      {
+        "given": "James M.",
+        "family": "Fulcher"
+      }
+    ],
+    "pmid": "40977091",
+    "pmcid": "PMC12716117",
+    "publication_types": [
+      "research-article",
+      "Journal Article"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "reading": {
+      "studies": [
+        "islets"
+      ],
+      "tissues": [],
+      "categories": [
+        "Stress and immune response",
+        "Cellular homeostasis",
+        "Protein synthesis and turnover",
+        "Functional annotation profile"
+      ],
+      "relevance": "Measures intact hormone and inflammatory proteoforms in cytokine-treated human islets; includes glucagon processing.",
+      "priority": 9,
+      "study_wide": false,
+      "features": [
+        "GCG"
+      ]
+    }
+  },
+  {
+    "id": "go_resource",
+    "doi": "10.1093/genetics/iyad031",
+    "title": "The Gene Ontology knowledgebase in 2023",
+    "journal": "GENETICS",
+    "year": 2023,
+    "year_display": "2023",
+    "species": "all",
+    "kind": "method",
+    "tags": [],
+    "url": "https://doi.org/10.1093/genetics/iyad031",
+    "authors": [
+      {
+        "given": "",
+        "family": ""
+      },
+      {
+        "given": "Suzi A",
+        "family": "Aleksander"
+      },
+      {
+        "given": "James",
+        "family": "Balhoff"
+      },
+      {
+        "given": "Seth",
+        "family": "Carbon"
+      },
+      {
+        "given": "J Michael",
+        "family": "Cherry"
+      },
+      {
+        "given": "Harold J",
+        "family": "Drabkin"
+      },
+      {
+        "given": "Dustin",
+        "family": "Ebert"
+      },
+      {
+        "given": "Marc",
+        "family": "Feuermann"
+      },
+      {
+        "given": "Pascale",
+        "family": "Gaudet"
+      },
+      {
+        "given": "Nomi L",
+        "family": "Harris"
+      },
+      {
+        "given": "David P",
+        "family": "Hill"
+      },
+      {
+        "given": "Raymond",
+        "family": "Lee"
+      },
+      {
+        "given": "Huaiyu",
+        "family": "Mi"
+      },
+      {
+        "given": "Sierra",
+        "family": "Moxon"
+      },
+      {
+        "given": "Christopher J",
+        "family": "Mungall"
+      },
+      {
+        "given": "Anushya",
+        "family": "Muruganugan"
+      },
+      {
+        "given": "Tremayne",
+        "family": "Mushayahama"
+      },
+      {
+        "given": "Paul W",
+        "family": "Sternberg"
+      },
+      {
+        "given": "Paul D",
+        "family": "Thomas"
+      },
+      {
+        "given": "Kimberly",
+        "family": "Van Auken"
+      },
+      {
+        "given": "Jolene",
+        "family": "Ramsey"
+      },
+      {
+        "given": "Deborah A",
+        "family": "Siegele"
+      },
+      {
+        "given": "Rex L",
+        "family": "Chisholm"
+      },
+      {
+        "given": "Petra",
+        "family": "Fey"
+      },
+      {
+        "given": "Maria Cristina",
+        "family": "Aspromonte"
+      },
+      {
+        "given": "Maria Victoria",
+        "family": "Nugnes"
+      },
+      {
+        "given": "Federica",
+        "family": "Quaglia"
+      },
+      {
+        "given": "Silvio",
+        "family": "Tosatto"
+      },
+      {
+        "given": "Michelle",
+        "family": "Giglio"
+      },
+      {
+        "given": "Suvarna",
+        "family": "Nadendla"
+      },
+      {
+        "given": "Giulia",
+        "family": "Antonazzo"
+      },
+      {
+        "given": "Helen",
+        "family": "Attrill"
+      },
+      {
+        "given": "Gil",
+        "family": "dos Santos"
+      },
+      {
+        "given": "Steven",
+        "family": "Marygold"
+      },
+      {
+        "given": "Victor",
+        "family": "Strelets"
+      },
+      {
+        "given": "Christopher J",
+        "family": "Tabone"
+      },
+      {
+        "given": "Jim",
+        "family": "Thurmond"
+      },
+      {
+        "given": "Pinglei",
+        "family": "Zhou"
+      },
+      {
+        "given": "Saadullah H",
+        "family": "Ahmed"
+      },
+      {
+        "given": "Praoparn",
+        "family": "Asanitthong"
+      },
+      {
+        "given": "Diana",
+        "family": "Luna Buitrago"
+      },
+      {
+        "given": "Meltem N",
+        "family": "Erdol"
+      },
+      {
+        "given": "Matthew C",
+        "family": "Gage"
+      },
+      {
+        "given": "Mohamed",
+        "family": "Ali Kadhum"
+      },
+      {
+        "given": "Kan Yan Chloe",
+        "family": "Li"
+      },
+      {
+        "given": "Miao",
+        "family": "Long"
+      },
+      {
+        "given": "Aleksandra",
+        "family": "Michalak"
+      },
+      {
+        "given": "Angeline",
+        "family": "Pesala"
+      },
+      {
+        "given": "Armalya",
+        "family": "Pritazahra"
+      },
+      {
+        "given": "Shirin C C",
+        "family": "Saverimuttu"
+      },
+      {
+        "given": "Renzhi",
+        "family": "Su"
+      },
+      {
+        "given": "Kate E",
+        "family": "Thurlow"
+      },
+      {
+        "given": "Ruth C",
+        "family": "Lovering"
+      },
+      {
+        "given": "Colin",
+        "family": "Logie"
+      },
+      {
+        "given": "Snezhana",
+        "family": "Oliferenko"
+      },
+      {
+        "given": "Judith",
+        "family": "Blake"
+      },
+      {
+        "given": "Karen",
+        "family": "Christie"
+      },
+      {
+        "given": "Lori",
+        "family": "Corbani"
+      },
+      {
+        "given": "Mary E",
+        "family": "Dolan"
+      },
+      {
+        "given": "Harold J",
+        "family": "Drabkin"
+      },
+      {
+        "given": "David P",
+        "family": "Hill"
+      },
+      {
+        "given": "Li",
+        "family": "Ni"
+      },
+      {
+        "given": "Dmitry",
+        "family": "Sitnikov"
+      },
+      {
+        "given": "Cynthia",
+        "family": "Smith"
+      },
+      {
+        "given": "Alayne",
+        "family": "Cuzick"
+      },
+      {
+        "given": "James",
+        "family": "Seager"
+      },
+      {
+        "given": "Laurel",
+        "family": "Cooper"
+      },
+      {
+        "given": "Justin",
+        "family": "Elser"
+      },
+      {
+        "given": "Pankaj",
+        "family": "Jaiswal"
+      },
+      {
+        "given": "Parul",
+        "family": "Gupta"
+      },
+      {
+        "given": "Pankaj",
+        "family": "Jaiswal"
+      },
+      {
+        "given": "Sushma",
+        "family": "Naithani"
+      },
+      {
+        "given": "Manuel",
+        "family": "Lera-Ramirez"
+      },
+      {
+        "given": "Kim",
+        "family": "Rutherford"
+      },
+      {
+        "given": "Valerie",
+        "family": "Wood"
+      },
+      {
+        "given": "Jeffrey L",
+        "family": "De Pons"
+      },
+      {
+        "given": "Melinda R",
+        "family": "Dwinell"
+      },
+      {
+        "given": "G Thomas",
+        "family": "Hayman"
+      },
+      {
+        "given": "Mary L",
+        "family": "Kaldunski"
+      },
+      {
+        "given": "Anne E",
+        "family": "Kwitek"
+      },
+      {
+        "given": "Stanley J F",
+        "family": "Laulederkind"
+      },
+      {
+        "given": "Marek A",
+        "family": "Tutaj"
+      },
+      {
+        "given": "Mahima",
+        "family": "Vedi"
+      },
+      {
+        "given": "Shur-Jen",
+        "family": "Wang"
+      },
+      {
+        "given": "Peter",
+        "family": "D\u2019Eustachio"
+      },
+      {
+        "given": "Lucila",
+        "family": "Aimo"
+      },
+      {
+        "given": "Kristian",
+        "family": "Axelsen"
+      },
+      {
+        "given": "Alan",
+        "family": "Bridge"
+      },
+      {
+        "given": "Nevila",
+        "family": "Hyka-Nouspikel"
+      },
+      {
+        "given": "Anne",
+        "family": "Morgat"
+      },
+      {
+        "given": "Suzi A",
+        "family": "Aleksander"
+      },
+      {
+        "given": "J Michael",
+        "family": "Cherry"
+      },
+      {
+        "given": "Stacia R",
+        "family": "Engel"
+      },
+      {
+        "given": "Kalpana",
+        "family": "Karra"
+      },
+      {
+        "given": "Stuart R",
+        "family": "Miyasato"
+      },
+      {
+        "given": "Robert S",
+        "family": "Nash"
+      },
+      {
+        "given": "Marek S",
+        "family": "Skrzypek"
+      },
+      {
+        "given": "Shuai",
+        "family": "Weng"
+      },
+      {
+        "given": "Edith D",
+        "family": "Wong"
+      },
+      {
+        "given": "Erika",
+        "family": "Bakker"
+      },
+      {
+        "given": "Tanya Z",
+        "family": "Berardini"
+      },
+      {
+        "given": "Leonore",
+        "family": "Reiser"
+      },
+      {
+        "given": "Andrea",
+        "family": "Auchincloss"
+      },
+      {
+        "given": "Kristian",
+        "family": "Axelsen"
+      },
+      {
+        "given": "Ghislaine",
+        "family": "Argoud-Puy"
+      },
+      {
+        "given": "Marie-Claude",
+        "family": "Blatter"
+      },
+      {
+        "given": "Emmanuel",
+        "family": "Boutet"
+      },
+      {
+        "given": "Lionel",
+        "family": "Breuza"
+      },
+      {
+        "given": "Alan",
+        "family": "Bridge"
+      },
+      {
+        "given": "Cristina",
+        "family": "Casals-Casas"
+      },
+      {
+        "given": "Elisabeth",
+        "family": "Coudert"
+      },
+      {
+        "given": "Anne",
+        "family": "Estreicher"
+      },
+      {
+        "given": "Maria",
+        "family": "Livia Famiglietti"
+      },
+      {
+        "given": "Marc",
+        "family": "Feuermann"
+      },
+      {
+        "given": "Arnaud",
+        "family": "Gos"
+      },
+      {
+        "given": "Nadine",
+        "family": "Gruaz-Gumowski"
+      },
+      {
+        "given": "Chantal",
+        "family": "Hulo"
+      },
+      {
+        "given": "Nevila",
+        "family": "Hyka-Nouspikel"
+      },
+      {
+        "given": "Florence",
+        "family": "Jungo"
+      },
+      {
+        "given": "Philippe",
+        "family": "Le Mercier"
+      },
+      {
+        "given": "Damien",
+        "family": "Lieberherr"
+      },
+      {
+        "given": "Patrick",
+        "family": "Masson"
+      },
+      {
+        "given": "Anne",
+        "family": "Morgat"
+      },
+      {
+        "given": "Ivo",
+        "family": "Pedruzzi"
+      },
+      {
+        "given": "Lucille",
+        "family": "Pourcel"
+      },
+      {
+        "given": "Sylvain",
+        "family": "Poux"
+      },
+      {
+        "given": "Catherine",
+        "family": "Rivoire"
+      },
+      {
+        "given": "Shyamala",
+        "family": "Sundaram"
+      },
+      {
+        "given": "Alex",
+        "family": "Bateman"
+      },
+      {
+        "given": "Emily",
+        "family": "Bowler-Barnett"
+      },
+      {
+        "given": "Hema",
+        "family": "Bye-A-Jee"
+      },
+      {
+        "given": "Paul",
+        "family": "Denny"
+      },
+      {
+        "given": "Alexandr",
+        "family": "Ignatchenko"
+      },
+      {
+        "given": "Rizwan",
+        "family": "Ishtiaq"
+      },
+      {
+        "given": "Antonia",
+        "family": "Lock"
+      },
+      {
+        "given": "Yvonne",
+        "family": "Lussi"
+      },
+      {
+        "given": "Michele",
+        "family": "Magrane"
+      },
+      {
+        "given": "Maria J",
+        "family": "Martin"
+      },
+      {
+        "given": "Sandra",
+        "family": "Orchard"
+      },
+      {
+        "given": "Pedro",
+        "family": "Raposo"
+      },
+      {
+        "given": "Elena",
+        "family": "Speretta"
+      },
+      {
+        "given": "Nidhi",
+        "family": "Tyagi"
+      },
+      {
+        "given": "Kate",
+        "family": "Warner"
+      },
+      {
+        "given": "Rossana",
+        "family": "Zaru"
+      },
+      {
+        "given": "Alexander D",
+        "family": "Diehl"
+      },
+      {
+        "given": "Raymond",
+        "family": "Lee"
+      },
+      {
+        "given": "Juancarlos",
+        "family": "Chan"
+      },
+      {
+        "given": "Stavros",
+        "family": "Diamantakis"
+      },
+      {
+        "given": "Daniela",
+        "family": "Raciti"
+      },
+      {
+        "given": "Magdalena",
+        "family": "Zarowiecki"
+      },
+      {
+        "given": "Malcolm",
+        "family": "Fisher"
+      },
+      {
+        "given": "Christina",
+        "family": "James-Zorn"
+      },
+      {
+        "given": "Virgilio",
+        "family": "Ponferrada"
+      },
+      {
+        "given": "Aaron",
+        "family": "Zorn"
+      },
+      {
+        "given": "Sridhar",
+        "family": "Ramachandran"
+      },
+      {
+        "given": "Leyla",
+        "family": "Ruzicka"
+      },
+      {
+        "given": "Monte",
+        "family": "Westerfield"
+      },
+      {
+        "given": "Suzi A",
+        "family": "Aleksander"
+      },
+      {
+        "given": "James",
+        "family": "Balhoff"
+      },
+      {
+        "given": "Seth",
+        "family": "Carbon"
+      },
+      {
+        "given": "J Michael",
+        "family": "Cherry"
+      },
+      {
+        "given": "Harold J",
+        "family": "Drabkin"
+      },
+      {
+        "given": "Dustin",
+        "family": "Ebert"
+      },
+      {
+        "given": "Marc",
+        "family": "Feuermann"
+      },
+      {
+        "given": "Pascale",
+        "family": "Gaudet"
+      },
+      {
+        "given": "Nomi L",
+        "family": "Harris"
+      },
+      {
+        "given": "David P",
+        "family": "Hill"
+      },
+      {
+        "given": "Raymond",
+        "family": "Lee"
+      },
+      {
+        "given": "Huaiyu",
+        "family": "Mi"
+      },
+      {
+        "given": "Sierra",
+        "family": "Moxon"
+      },
+      {
+        "given": "Christopher J",
+        "family": "Mungall"
+      },
+      {
+        "given": "Anushya",
+        "family": "Muruganugan"
+      },
+      {
+        "given": "Tremayne",
+        "family": "Mushayahama"
+      },
+      {
+        "given": "Paul W",
+        "family": "Sternberg"
+      },
+      {
+        "given": "Paul D",
+        "family": "Thomas"
+      },
+      {
+        "given": "Kimberly",
+        "family": "Van Auken"
+      },
+      {
+        "given": "Jolene",
+        "family": "Ramsey"
+      },
+      {
+        "given": "Deborah A",
+        "family": "Siegele"
+      },
+      {
+        "given": "Rex L",
+        "family": "Chisholm"
+      },
+      {
+        "given": "Petra",
+        "family": "Fey"
+      },
+      {
+        "given": "Maria Cristina",
+        "family": "Aspromonte"
+      },
+      {
+        "given": "Maria Victoria",
+        "family": "Nugnes"
+      },
+      {
+        "given": "Federica",
+        "family": "Quaglia"
+      },
+      {
+        "given": "Silvio",
+        "family": "Tosatto"
+      },
+      {
+        "given": "Michelle",
+        "family": "Giglio"
+      },
+      {
+        "given": "Suvarna",
+        "family": "Nadendla"
+      },
+      {
+        "given": "Giulia",
+        "family": "Antonazzo"
+      },
+      {
+        "given": "Helen",
+        "family": "Attrill"
+      },
+      {
+        "given": "Gil",
+        "family": "dos Santos"
+      },
+      {
+        "given": "Steven",
+        "family": "Marygold"
+      },
+      {
+        "given": "Victor",
+        "family": "Strelets"
+      },
+      {
+        "given": "Christopher J",
+        "family": "Tabone"
+      },
+      {
+        "given": "Jim",
+        "family": "Thurmond"
+      },
+      {
+        "given": "Pinglei",
+        "family": "Zhou"
+      },
+      {
+        "given": "Saadullah H",
+        "family": "Ahmed"
+      },
+      {
+        "given": "Praoparn",
+        "family": "Asanitthong"
+      },
+      {
+        "given": "Diana",
+        "family": "Luna Buitrago"
+      },
+      {
+        "given": "Meltem N",
+        "family": "Erdol"
+      },
+      {
+        "given": "Matthew C",
+        "family": "Gage"
+      },
+      {
+        "given": "Mohamed",
+        "family": "Ali Kadhum"
+      },
+      {
+        "given": "Kan Yan Chloe",
+        "family": "Li"
+      },
+      {
+        "given": "Miao",
+        "family": "Long"
+      },
+      {
+        "given": "Aleksandra",
+        "family": "Michalak"
+      },
+      {
+        "given": "Angeline",
+        "family": "Pesala"
+      },
+      {
+        "given": "Armalya",
+        "family": "Pritazahra"
+      },
+      {
+        "given": "Shirin C C",
+        "family": "Saverimuttu"
+      },
+      {
+        "given": "Renzhi",
+        "family": "Su"
+      },
+      {
+        "given": "Kate E",
+        "family": "Thurlow"
+      },
+      {
+        "given": "Ruth C",
+        "family": "Lovering"
+      },
+      {
+        "given": "Colin",
+        "family": "Logie"
+      },
+      {
+        "given": "Snezhana",
+        "family": "Oliferenko"
+      },
+      {
+        "given": "Judith",
+        "family": "Blake"
+      },
+      {
+        "given": "Karen",
+        "family": "Christie"
+      },
+      {
+        "given": "Lori",
+        "family": "Corbani"
+      },
+      {
+        "given": "Mary E",
+        "family": "Dolan"
+      },
+      {
+        "given": "Harold J",
+        "family": "Drabkin"
+      },
+      {
+        "given": "David P",
+        "family": "Hill"
+      },
+      {
+        "given": "Li",
+        "family": "Ni"
+      },
+      {
+        "given": "Dmitry",
+        "family": "Sitnikov"
+      },
+      {
+        "given": "Cynthia",
+        "family": "Smith"
+      },
+      {
+        "given": "Alayne",
+        "family": "Cuzick"
+      },
+      {
+        "given": "James",
+        "family": "Seager"
+      },
+      {
+        "given": "Laurel",
+        "family": "Cooper"
+      },
+      {
+        "given": "Justin",
+        "family": "Elser"
+      },
+      {
+        "given": "Pankaj",
+        "family": "Jaiswal"
+      },
+      {
+        "given": "Parul",
+        "family": "Gupta"
+      },
+      {
+        "given": "Pankaj",
+        "family": "Jaiswal"
+      },
+      {
+        "given": "Sushma",
+        "family": "Naithani"
+      },
+      {
+        "given": "Manuel",
+        "family": "Lera-Ramirez"
+      },
+      {
+        "given": "Kim",
+        "family": "Rutherford"
+      },
+      {
+        "given": "Valerie",
+        "family": "Wood"
+      },
+      {
+        "given": "Jeffrey L",
+        "family": "De Pons"
+      },
+      {
+        "given": "Melinda R",
+        "family": "Dwinell"
+      },
+      {
+        "given": "G Thomas",
+        "family": "Hayman"
+      },
+      {
+        "given": "Mary L",
+        "family": "Kaldunski"
+      },
+      {
+        "given": "Anne E",
+        "family": "Kwitek"
+      },
+      {
+        "given": "Stanley J F",
+        "family": "Laulederkind"
+      },
+      {
+        "given": "Marek A",
+        "family": "Tutaj"
+      },
+      {
+        "given": "Mahima",
+        "family": "Vedi"
+      },
+      {
+        "given": "Shur-Jen",
+        "family": "Wang"
+      },
+      {
+        "given": "Peter",
+        "family": "D\u2019Eustachio"
+      },
+      {
+        "given": "Lucila",
+        "family": "Aimo"
+      },
+      {
+        "given": "Kristian",
+        "family": "Axelsen"
+      },
+      {
+        "given": "Alan",
+        "family": "Bridge"
+      },
+      {
+        "given": "Nevila",
+        "family": "Hyka-Nouspikel"
+      },
+      {
+        "given": "Anne",
+        "family": "Morgat"
+      },
+      {
+        "given": "Suzi A",
+        "family": "Aleksander"
+      },
+      {
+        "given": "J Michael",
+        "family": "Cherry"
+      },
+      {
+        "given": "Stacia R",
+        "family": "Engel"
+      },
+      {
+        "given": "Kalpana",
+        "family": "Karra"
+      },
+      {
+        "given": "Stuart R",
+        "family": "Miyasato"
+      },
+      {
+        "given": "Robert S",
+        "family": "Nash"
+      },
+      {
+        "given": "Marek S",
+        "family": "Skrzypek"
+      },
+      {
+        "given": "Shuai",
+        "family": "Weng"
+      },
+      {
+        "given": "Edith D",
+        "family": "Wong"
+      },
+      {
+        "given": "Erika",
+        "family": "Bakker"
+      },
+      {
+        "given": "Tanya Z",
+        "family": "Berardini"
+      },
+      {
+        "given": "Leonore",
+        "family": "Reiser"
+      },
+      {
+        "given": "Andrea",
+        "family": "Auchincloss"
+      },
+      {
+        "given": "Kristian",
+        "family": "Axelsen"
+      },
+      {
+        "given": "Ghislaine",
+        "family": "Argoud-Puy"
+      },
+      {
+        "given": "Marie-Claude",
+        "family": "Blatter"
+      },
+      {
+        "given": "Emmanuel",
+        "family": "Boutet"
+      },
+      {
+        "given": "Lionel",
+        "family": "Breuza"
+      },
+      {
+        "given": "Alan",
+        "family": "Bridge"
+      },
+      {
+        "given": "Cristina",
+        "family": "Casals-Casas"
+      },
+      {
+        "given": "Elisabeth",
+        "family": "Coudert"
+      },
+      {
+        "given": "Anne",
+        "family": "Estreicher"
+      },
+      {
+        "given": "Maria",
+        "family": "Livia Famiglietti"
+      },
+      {
+        "given": "Marc",
+        "family": "Feuermann"
+      },
+      {
+        "given": "Arnaud",
+        "family": "Gos"
+      },
+      {
+        "given": "Nadine",
+        "family": "Gruaz-Gumowski"
+      },
+      {
+        "given": "Chantal",
+        "family": "Hulo"
+      },
+      {
+        "given": "Nevila",
+        "family": "Hyka-Nouspikel"
+      },
+      {
+        "given": "Florence",
+        "family": "Jungo"
+      },
+      {
+        "given": "Philippe",
+        "family": "Le Mercier"
+      },
+      {
+        "given": "Damien",
+        "family": "Lieberherr"
+      },
+      {
+        "given": "Patrick",
+        "family": "Masson"
+      },
+      {
+        "given": "Anne",
+        "family": "Morgat"
+      },
+      {
+        "given": "Ivo",
+        "family": "Pedruzzi"
+      },
+      {
+        "given": "Lucille",
+        "family": "Pourcel"
+      },
+      {
+        "given": "Sylvain",
+        "family": "Poux"
+      },
+      {
+        "given": "Catherine",
+        "family": "Rivoire"
+      },
+      {
+        "given": "Shyamala",
+        "family": "Sundaram"
+      },
+      {
+        "given": "Alex",
+        "family": "Bateman"
+      },
+      {
+        "given": "Emily",
+        "family": "Bowler-Barnett"
+      },
+      {
+        "given": "Hema",
+        "family": "Bye-A-Jee"
+      },
+      {
+        "given": "Paul",
+        "family": "Denny"
+      },
+      {
+        "given": "Alexandr",
+        "family": "Ignatchenko"
+      },
+      {
+        "given": "Rizwan",
+        "family": "Ishtiaq"
+      },
+      {
+        "given": "Antonia",
+        "family": "Lock"
+      },
+      {
+        "given": "Yvonne",
+        "family": "Lussi"
+      },
+      {
+        "given": "Michele",
+        "family": "Magrane"
+      },
+      {
+        "given": "Maria J",
+        "family": "Martin"
+      },
+      {
+        "given": "Sandra",
+        "family": "Orchard"
+      },
+      {
+        "given": "Pedro",
+        "family": "Raposo"
+      },
+      {
+        "given": "Elena",
+        "family": "Speretta"
+      },
+      {
+        "given": "Nidhi",
+        "family": "Tyagi"
+      },
+      {
+        "given": "Kate",
+        "family": "Warner"
+      },
+      {
+        "given": "Rossana",
+        "family": "Zaru"
+      },
+      {
+        "given": "Alexander D",
+        "family": "Diehl"
+      },
+      {
+        "given": "Raymond",
+        "family": "Lee"
+      },
+      {
+        "given": "Juancarlos",
+        "family": "Chan"
+      },
+      {
+        "given": "Stavros",
+        "family": "Diamantakis"
+      },
+      {
+        "given": "Daniela",
+        "family": "Raciti"
+      },
+      {
+        "given": "Magdalena",
+        "family": "Zarowiecki"
+      },
+      {
+        "given": "Malcolm",
+        "family": "Fisher"
+      },
+      {
+        "given": "Christina",
+        "family": "James-Zorn"
+      },
+      {
+        "given": "Virgilio",
+        "family": "Ponferrada"
+      },
+      {
+        "given": "Aaron",
+        "family": "Zorn"
+      },
+      {
+        "given": "Sridhar",
+        "family": "Ramachandran"
+      },
+      {
+        "given": "Leyla",
+        "family": "Ruzicka"
+      },
+      {
+        "given": "Monte",
+        "family": "Westerfield"
+      }
+    ],
+    "pmid": "36866529",
+    "pmcid": "PMC10158837",
+    "publication_types": [
+      "Research Support, Non-U.S. Gov't",
+      "research-article",
+      "Review",
+      "Research Support, U.S. Gov't, Non-P.H.S.",
+      "Journal Article",
+      "Research Support, N.I.H., Extramural"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "applies_to": [
+      "bee",
+      "ccle",
+      "islets"
+    ]
+  },
+  {
+    "id": "reactome_resource",
+    "doi": "10.1093/nar/gkad1025",
+    "title": "The Reactome Pathway Knowledgebase 2024",
+    "journal": "Nucleic Acids Research",
+    "year": 2024,
+    "year_display": "2024 (online 2023)",
+    "species": "all",
+    "kind": "method",
+    "tags": [],
+    "url": "https://doi.org/10.1093/nar/gkad1025",
+    "authors": [
+      {
+        "given": "Marija",
+        "family": "Milacic"
+      },
+      {
+        "given": "Deidre",
+        "family": "Beavers"
+      },
+      {
+        "given": "Patrick",
+        "family": "Conley"
+      },
+      {
+        "given": "Chuqiao",
+        "family": "Gong"
+      },
+      {
+        "given": "Marc",
+        "family": "Gillespie"
+      },
+      {
+        "given": "Johannes",
+        "family": "Griss"
+      },
+      {
+        "given": "Robin",
+        "family": "Haw"
+      },
+      {
+        "given": "Bijay",
+        "family": "Jassal"
+      },
+      {
+        "given": "Lisa",
+        "family": "Matthews"
+      },
+      {
+        "given": "Bruce",
+        "family": "May"
+      },
+      {
+        "given": "Robert",
+        "family": "Petryszak"
+      },
+      {
+        "given": "Eliot",
+        "family": "Ragueneau"
+      },
+      {
+        "given": "Karen",
+        "family": "Rothfels"
+      },
+      {
+        "given": "Cristoffer",
+        "family": "Sevilla"
+      },
+      {
+        "given": "Veronica",
+        "family": "Shamovsky"
+      },
+      {
+        "given": "Ralf",
+        "family": "Stephan"
+      },
+      {
+        "given": "Krishna",
+        "family": "Tiwari"
+      },
+      {
+        "given": "Thawfeek",
+        "family": "Varusai"
+      },
+      {
+        "given": "Joel",
+        "family": "Weiser"
+      },
+      {
+        "given": "Adam",
+        "family": "Wright"
+      },
+      {
+        "given": "Guanming",
+        "family": "Wu"
+      },
+      {
+        "given": "Lincoln",
+        "family": "Stein"
+      },
+      {
+        "given": "Henning",
+        "family": "Hermjakob"
+      },
+      {
+        "given": "Peter",
+        "family": "D\u2019Eustachio"
+      }
+    ],
+    "pmid": "37941124",
+    "pmcid": "PMC10767911",
+    "publication_types": [
+      "research-article",
+      "Journal Article",
+      "Research Support, N.I.H., Extramural"
+    ],
+    "source": "CrossRef metadata verified; PubMed/Europe PMC or publisher abstract reviewed, 2026-11-11",
+    "applies_to": [
+      "ccle",
+      "islets"
+    ]
   }
 ]
