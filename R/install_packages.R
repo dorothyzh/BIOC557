@@ -8,7 +8,7 @@ lab_install_packages <- function(packages=NULL, force=FALSE) {
   .libPaths(unique(c(normalizePath(project_library), .libPaths())))
   options(repos=c(CRAN='https://cloud.r-project.org'), timeout=max(600, getOption('timeout')))
   config <- if (file.exists('lab_config.json')) paste(readLines('lab_config.json', warn=FALSE),collapse=' ') else ''
-  needs_mofa <- grepl('"method"[[:space:]]*:[[:space:]]*"mofa"',config)
+  needs_mofa <- isTRUE(getOption('BIOC557.install_mofa', grepl('"method"[[:space:]]*:[[:space:]]*"mofa"',config)))
   if (is.null(packages)) packages <- c('rmarkdown','knitr','jsonlite','ggplot2','patchwork','ggrepel','svglite',if(needs_mofa)c('reticulate','BiocManager'))
   missing <- if(force)packages else packages[!vapply(packages, requireNamespace, logical(1), quietly=TRUE)]
   if ('reticulate'%in%packages && requireNamespace('reticulate',quietly=TRUE) && utils::packageVersion('reticulate')<'1.41') missing<-union(missing,'reticulate')

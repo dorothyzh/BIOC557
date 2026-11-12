@@ -12,9 +12,9 @@
   },
   "bee-own-head-2025": {
     "method": "mofa",
-    "factors": 6,
+    "factors": 4,
     "model_features": 100,
-    "feature_scaling": "none",
+    "feature_scaling": "pareto",
     "feature_alignment": "matched_genes",
     "iterations": 300,
     "max_missing": 0.3,

@@ -49,7 +49,17 @@ def cluster_terms(rows,universe,cutoff=.5):
   for j in range(i):
    b=rows[j];sim=kappa(a['members'],b['members'],universe) if len(set(a['members'])&set(b['members']))>=3 else 0.
    d[i,j]=d[j,i]=1-max(0.,sim)
- labels=fcluster(linkage(squareform(d,checks=False),method='complete'),t=1-cutoff,criterion='distance') if len(rows)>1 else [1]
+ # Resolve equal-distance merges by the original row indices in both R and Python.
+ # Rounding affects tie-breaking only; the enrichment probabilities are unchanged.
+ active=list(range(len(rows)));members={i:[i] for i in active}
+ while len(active)>1:
+  distance,i,j=min((round(float(d[i,j]),12),i,j) for i in active for j in active if i<j)
+  if distance>1-cutoff:break
+  for other in active:
+   if other not in (i,j):d[i,other]=d[other,i]=max(d[i,other],d[j,other])
+  members[i]+=members.pop(j);active.remove(j)
+ labels=np.empty(len(rows),dtype=int)
+ for label,i in enumerate(active):labels[members[i]]=label
  groups=[]
  for label in sorted(set(labels)):
   members=[r for r,l in zip(rows,labels) if l==label]

@@ -1511,9 +1511,9 @@
   "bee-own-head-2025": {
     "default": {
       "method": "mofa",
-      "factors": 6,
+      "factors": 4,
       "model_features": 100,
-      "feature_scaling": "none",
+      "feature_scaling": "pareto",
       "feature_alignment": "matched_genes",
       "iterations": 300,
       "max_missing": 0.3,
@@ -1521,42 +1521,42 @@
       "mofa_scale_views": true
     },
     "selected": {
-      "factors": 6,
-      "feature_scaling": "none",
+      "factors": 4,
+      "feature_scaling": "pareto",
       "mofa_scale_views": true,
-      "masked_standardized_MSE": 0.6542397331305596,
-      "standard_error": 0.018885295642226737,
+      "masked_standardized_MSE": 0.8230463353155596,
+      "standard_error": 0.022167931575090002,
       "repeats": [
-        0.6044424893278728,
-        0.6916630029877081,
-        0.6245733012232098,
-        0.6479741689934793,
-        0.7025457031205276
+        0.7474666463440197,
+        0.8407268669988232,
+        0.8575665012874469,
+        0.8005413669151717,
+        0.8689302950323359
       ],
       "per_view_mean": {
-        "Proteomics": 0.6226923681534962,
-        "RNA": 0.6857870981076227
+        "Proteomics": 0.7771139092296847,
+        "RNA": 0.868978761401434
       },
       "per_view_repeats": [
         [
-          0.6175390955288678,
-          0.5913458831268779
+          0.8461563952217575,
+          0.648776897466282
         ],
         [
-          0.5398254523164524,
-          0.8435005536589638
+          0.6578630064381448,
+          1.0235907275595015
         ],
         [
-          0.5495506373137173,
-          0.6995959651327023
+          0.6837309577993007,
+          1.0314020447755932
         ],
         [
-          0.6050387756232174,
-          0.6909095623637411
+          0.7328519338804196,
+          0.8682307999499238
         ],
         [
-          0.8015078799852262,
-          0.603583526255829
+          0.9649672528088014,
+          0.7728933372558703
         ]
       ]
     },
@@ -2822,7 +2822,54 @@
     "masked_fraction": 0.1,
     "model_features_per_view": 100,
     "selection_uses_group_labels": false,
-    "selection_uses_enrichment": false
+    "selection_uses_enrichment": false,
+    "prediction_selected": {
+      "factors": 6,
+      "feature_scaling": "none",
+      "mofa_scale_views": true,
+      "masked_standardized_MSE": 0.6542397331305596,
+      "standard_error": 0.018885295642226737,
+      "repeats": [
+        0.6044424893278728,
+        0.6916630029877081,
+        0.6245733012232098,
+        0.6479741689934793,
+        0.7025457031205276
+      ],
+      "per_view_mean": {
+        "Proteomics": 0.6226923681534962,
+        "RNA": 0.6857870981076227
+      },
+      "per_view_repeats": [
+        [
+          0.6175390955288678,
+          0.5913458831268779
+        ],
+        [
+          0.5398254523164524,
+          0.8435005536589638
+        ],
+        [
+          0.5495506373137173,
+          0.6995959651327023
+        ],
+        [
+          0.6050387756232174,
+          0.6909095623637411
+        ],
+        [
+          0.8015078799852262,
+          0.603583526255829
+        ]
+      ]
+    },
+    "selection_objective": "Teaching interpretability: a factor with at least 5% reconstruction in both RNA and protein and report-wide enrichment q < 0.05. Select four Pareto-scaled factors; retain the fixed, aligned 100-gene pool. The prediction-oriented comparison remains available below.",
+    "shared_factor": {
+      "factor": 2,
+      "protein_r2": 0.052804506510476745,
+      "rna_r2": 0.2797930597579612,
+      "report_q": 6.383228068250672e-05
+    }
   },
   "bee-own-abdomen-2025": {
     "default": {

@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Gene-expression and biosynthetic regulation",
+    "pattern": "regulation of.*biosynth|regulation of.*gene expression|regulation of.*transcription|nucleic acid"
+  },
+  {
+    "title": "Cellular homeostasis",
+    "pattern": "homeostas|cellular response to stimulus|response to external stimulus"
+  },
+  {
+    "title": "Energy and mitochondrial function",
+    "pattern": "mitochond|respirat|oxidative phosphorylation|ATP synth|tricarbox|glycoly"
+  },
+  {
+    "title": "RNA processing and gene regulation",
+    "pattern": "RNA processing|splic|transcription|chromatin|RNA metabolic"
+  },
+  {
+    "title": "Protein synthesis and turnover",
+    "pattern": "ribosom|translat|proteasom|proteol|protein folding|protein catabol|peptid"
+  },
+  {
+    "title": "Lipid and membrane metabolism",
+    "pattern": "lipid|fatty acid|sterol|phospholipid|sphing|membrane biosynth"
+  },
+  {
+    "title": "Stress and immune response",
+    "pattern": "immune|defense|oxidative stress|response to stress|peroxisom|antioxid|inflamm"
+  },
+  {
+    "title": "Cell communication and adhesion",
+    "pattern": "neuron|synap|axon|cell adhesion|cell.cell|signal transduc"
+  },
+  {
+    "title": "Transport and cell organization",
+    "pattern": "transport|vesicle|cytoskel|localization|organelle|microtub|actin"
+  },
+  {
+    "title": "Growth and development",
+    "pattern": "development|differentiation|cell cycle|prolifer|growth"
+  },
+  {
+    "title": "Nutrient and small-molecule metabolism",
+    "pattern": "amino acid|carbohydrate|purine|nucleotide|organonitrogen|nutrient"
+  }
+]

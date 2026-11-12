@@ -22,8 +22,8 @@ plot_pathway_results<-function(e){
  d<-head(e$rows[e$rows$overlap>0,,drop=FALSE],15)
  if(!nrow(d))return(ggplot2::ggplot()+ggplot2::annotate('text',x=0,y=0,label='No mapped overlaps for this selection')+ggplot2::theme_void())
  d$name<-factor(d$name,levels=rev(d$name))
- if(e$mode=='coverage')p<-ggplot2::ggplot(d,ggplot2::aes(overlap,name,size=overlap))+ggplot2::geom_point(color='#C38B3B',alpha=.85)+ggplot2::labs(title='Mapped measured metabolites by pathway',subtitle='Coverage, not enrichment or pathway activity',x='Mapped measured compounds',y=NULL,size='Count')
- else p<-ggplot2::ggplot(d,ggplot2::aes(gene_ratio,name,size=overlap,color=-log10(pmax(q_value,1e-300))))+ggplot2::geom_point(alpha=.85)+ggplot2::scale_color_gradient(low='#92BAB0',high='#566E9E')+ggplot2::labs(title='Top-weight gene-set or pathway candidates',subtitle=paste(e$view,'| BH across',e$tested_terms,'tested terms |',e$significant_terms,'q < 0.05'),x='Fraction of mapped query in term',y=NULL,size='Overlap',color='-log10(q)')
+ if(e$mode=='coverage')p<-ggplot2::ggplot(d,ggplot2::aes(overlap,name,size=overlap))+ggplot2::geom_point(color='#C38B3B',alpha=.85)+ggplot2::labs(title='Mapped measured metabolites by pathway',subtitle='Coverage, not enrichment or pathway activity',x='Mapped measured compounds',y='Pathway',size='Count')
+ else p<-ggplot2::ggplot(d,ggplot2::aes(gene_ratio,name,size=overlap,color=-log10(pmax(q_value,1e-300))))+ggplot2::geom_point(alpha=.85)+ggplot2::scale_color_gradient(low='#92BAB0',high='#566E9E')+ggplot2::labs(title='Top-weight gene-set or pathway candidates',subtitle=paste(e$view,'| BH across',e$tested_terms,'tested terms |',e$significant_terms,'q < 0.05'),x='Fraction of mapped query in term',y='GO term or pathway',size='Selected features',color='-log10(q)')
  p+ggplot2::scale_size_area(max_size=8)+lab_theme()+ggplot2::theme(axis.text.y=ggplot2::element_text(size=9),legend.position='right')
 }
 factor_network<-function(lab,mofa,factor=1,top_per_view=6,mode='factor',threshold=.6){

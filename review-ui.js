@@ -1,5 +1,5 @@
 'use strict';
-// Per-study choices come from the reproducible, label-free defaults review.
+// Per-study teaching choices and prediction benchmarks are documented in Data & methods.
 function applyStudyDefaults(data){
  const id=data.teaching?.id||'ccle',uploaded=data.source?.kind==='user-upload';
  const shared=data.views.find(v=>v.name==='Proteomics')?.features.filter(f=>data.views.find(v=>v.name==='RNA')?.features.includes(f))||[];
@@ -13,14 +13,14 @@ function applyStudyDefaults(data){
 const summaryBeforeReview=renderStudySummary;
 renderStudySummary=function(){summaryBeforeReview();const t=dataset.teaching||{},p=validatedDefaults[t.id||'ccle'];if(!p)return;const bridge=$('public-study-overview').querySelector('.mofa-bridge strong');if(bridge)bridge.textContent=p.method==='pca'?'Joint PCA':'MOFA';
  const scaling={pareto:'Pareto scaling',unit_variance:'unit-variance scaling',none:'source feature scales'}[p.feature_scaling];
- $('public-study-overview').insertAdjacentHTML('beforeend',`<div class="default-explainer"><b>Recommended settings</b><p>${p.method==='pca'?'Start with joint PCA for these six donors. Select MOFA to compare a factor model.':`MOFA · ${p.factors} factors · ${scaling} · whole-view scaling ${p.mofa_scale_views?'on':'off'} · ${p.model_features} features per view.`} Protein and RNA use verified common genes in the same order. <a href="sources.html?v=20261112y#gene-alignment">How matching and defaults work ↗</a></p></div>`);
+ $('public-study-overview').insertAdjacentHTML('beforeend',`<div class="default-explainer"><b>Recommended settings</b><p>${p.method==='pca'?'Start with joint PCA for these six donors. Select MOFA to compare a factor model.':`MOFA · ${p.factors} factors · ${scaling} · whole-view scaling ${p.mofa_scale_views?'on':'off'} · ${p.model_features} features per view.`} ${t.id==='bee-own-head-2025'?'Follow Factor 2: protein 5.3%, RNA 28.0%; Summary enrichment q = 6.4 × 10⁻⁵. ':''}Protein and RNA use verified common genes in the same order. <a href="sources.html?v=20261112r2#gene-alignment">How matching and defaults work ↗</a></p></div>`);
 };
 const metadataBeforeReview=metadata;
 metadata=function(){return metadataBeforeReview()+`<span>${result.gene_alignment?.mode==='matched_genes'?result.gene_alignment.model_pairs.length+' protein–RNA genes aligned by ID and column order':'Independent view features'}</span>`;};
 // Start interpretation in the strongest measured layer, before any term tests.
 const finishRunBeforeDefaults=finishRun;
 finishRun=function(value){
- if(value.mofa){const k=Math.min(factorIndex,value.mofa.factors-1),r2=value.mofa.variance_explained.map(row=>row[k]);const view=value.views[r2.indexOf(Math.max(...r2))].name;
+ if(value.mofa){const p=validatedDefaults[dataset.teaching?.id];if(dataset.teaching?.id==='bee-own-head-2025'&&value.parameters.challenge==='none'&&p&&['factors','feature_scaling','mofa_scale_views','model_features','mofa_center'].every(key=>value.parameters[key]===p[key]))factorIndex=1;const k=Math.min(factorIndex,value.mofa.factors-1),r2=value.mofa.variance_explained.map(row=>row[k]);const view=value.views[r2.indexOf(Math.max(...r2))].name;
   pathwaySettings={view,catalog:view==='Metabolomics'?'Metabolite_pathways':'GO_BP',mode:'ora',top_n:20,direction:'absolute'};
  }
  finishRunBeforeDefaults(value);

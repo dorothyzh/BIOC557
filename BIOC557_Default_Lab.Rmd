@@ -16,6 +16,7 @@ output:
 ```{r setup, include=FALSE}
 source("R/install_packages.R")
 source("R/default_workflow.R")
+source("R/web_workflow.R")
 knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, error=FALSE,
                      fig.width=9, fig.height=5.8, fig.align="center", dpi=144)
 dir.create("outputs", showWarnings=FALSE)
@@ -177,11 +178,13 @@ course_save_figure(score_plot, "08_sample_factor_scores")
 
 # Follow one factor
 
-For this worked example we follow the factor with the largest RNA contribution.
-This rule is fixed before looking at the study groups or the enrichment results.
+The bee head example follows Factor 2, which has contributions from both protein
+and RNA and a significant functional theme in the website Summary. The other
+worked examples follow the factor with the largest RNA contribution.
 
 ```{r choose-factor}
-focus_factor <- which.max(mofa$variance_explained["RNA", ])
+focus_factor <- if(!is.null(course$config$focus_factor)) course$config$focus_factor else
+  which.max(mofa$variance_explained["RNA", ])
 focus_factor
 ```
 
@@ -226,6 +229,24 @@ write.csv(go_result$rows, "outputs/GO_results.csv", row.names=FALSE)
 
 **Think about it:** Which annotated functions appear among the selected genes?
 Read the q values alongside the overlapping genes.
+
+
+# Functional summary across all factors
+
+The contribution percentages describe how much each molecular layer contributes.
+The summary q values adjust enrichment tests across all factors, views, catalogs
+and weight directions in this report.
+
+```{r functional-summary, fig.width=13, fig.height=7}
+categories <- jsonlite::fromJSON("data/functional_categories.json", simplifyVector=FALSE)
+functional <- web_functional_summary(lab, mofa, annotations, top_n=20,
+                                     categories=categories)
+knitr::kable(functional$factors, digits=4)
+summary_plot <- web_summary_plot(functional)
+course_save_figure(summary_plot, "12_functional_summary", width=13, height=7)
+write.csv(functional$tests,"outputs/Summary_all_term_tests.csv",row.names=FALSE)
+write.csv(functional$themes,"outputs/Summary_functional_themes.csv",row.names=FALSE)
+```
 
 # Save the completed analysis
 

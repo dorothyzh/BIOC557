@@ -238,19 +238,25 @@ def analyze(data, parameters=None):
               'views': [], 'challenge': {'kind': params.challenge, 'synthetic': params.challenge in ['break_pairing', 'missing']}}
     if params.challenge == 'break_pairing':
         perm = rng.permutation(len(ids))
+        result['challenge']['permutation'] = perm.tolist()
         source_views[-1]['values'] = source_views[-1]['values'][perm]
         result['challenge']['description'] = 'Teaching perturbation: values in the final view were deliberately assigned to the wrong sample IDs.'
     elif params.challenge == 'missing':
+        result['challenge']['masked_indices_by_view'] = {}
         for v in source_views:
             mask = rng.random(v['values'].shape) < params.mask_fraction
+            result['challenge']['masked_indices_by_view'][v['name']] = np.argwhere(mask).tolist()
             v['values'][mask] = np.nan
         result['challenge']['description'] = 'Teaching perturbation: extra values were randomly hidden, independently of group.'
     elif params.challenge == 'shuffle_rows':
         # Re-run the actual ID alignment after a harmless row-order permutation.
         permuted = dict(data, views=[])
+        result['challenge']['shuffle_operations'] = {}
         for v in data['views']:
             perm = rng.permutation(len(v['sample_ids']))
             columns = rng.permutation(len(v['features']))
+            result['challenge']['shuffle_operations'][v['name']] = {
+                'rows': perm.tolist(), 'columns': columns.tolist()}
             permuted['views'].append(dict(v, sample_ids=[v['sample_ids'][i] for i in perm],
                                          features=[v['features'][j] for j in columns],
                                          values=[[v['values'][i][j] for j in columns] for i in perm]))

@@ -1,0 +1,7114 @@
+{
+  "selected": {
+    "factor": 2,
+    "protein_r2": 0.052804506510476745,
+    "rna_r2": 0.2797930597579612,
+    "report_q": 6.383228068250672e-05
+  },
+  "parameters": {
+    "method": "mofa",
+    "factors": 4,
+    "model_features": 100,
+    "feature_scaling": "pareto",
+    "feature_alignment": "matched_genes",
+    "iterations": 300,
+    "max_missing": 0.3,
+    "mofa_center": true,
+    "mofa_scale_views": true
+  },
+  "objective": "Teaching interpretability: a factor with at least 5% reconstruction in both RNA and protein and report-wide enrichment q < 0.05. Select four Pareto-scaled factors; retain the fixed, aligned 100-gene pool. The prediction-oriented comparison remains available below.",
+  "seed_checks": [
+    {
+      "seed": 557,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.052804506510476745,
+        "RNA": 0.2797930597579612
+      },
+      "q": 6.383228068250672e-05,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "seed": 558,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.052804506510476745,
+        "RNA": 0.2797930597579612
+      },
+      "q": 6.383228068250672e-05,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "seed": 559,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.052804506510476745,
+        "RNA": 0.2797930597579612
+      },
+      "q": 6.383228068250672e-05,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "seed": 560,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.052804506510476745,
+        "RNA": 0.2797930597579612
+      },
+      "q": 6.383228068250672e-05,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "seed": 561,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.052804506510476745,
+        "RNA": 0.2797930597579612
+      },
+      "q": 6.383228068250672e-05,
+      "category": "Gene-expression and biosynthetic regulation"
+    }
+  ],
+  "comparisons": [
+    {
+      "tissue": "head",
+      "K": 2,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.0017678940553246258,
+        "RNA": 0.4199570572585992
+      },
+      "q": 0.010091644204851752,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "small molecule metabolic process",
+          "q": 0.010091644204851752,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "carbohydrate metabolic process",
+          "q": 0.09010953568283031,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "organic substance metabolic process",
+          "q": 0.4864494806562423,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cell adhesion",
+          "q": 0.6397748163785898,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 2,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.033196142969007414,
+        "RNA": 0.16954761491298043
+      },
+      "q": 3.191614034125336e-05,
+      "sig": 33,
+      "category": "Gene-expression and biosynthetic regulation",
+      "themes": [
+        {
+          "title": "regulation of biosynthetic process",
+          "q": 3.191614034125336e-05,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "RNA metabolic process",
+          "q": 0.0032858426389423693,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "regulation of biological process",
+          "q": 0.008050314465408805,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "cell communication",
+          "q": 0.16695254431103487,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "carbohydrate metabolic process",
+          "q": 0.20124320124320116,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.004180279070471693,
+        "RNA": 0.4216800312865997
+      },
+      "q": 0.010363623219836622,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "small molecule metabolic process",
+          "q": 0.010363623219836622,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "carbohydrate metabolic process",
+          "q": 0.07985129732895371,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "organic substance metabolic process",
+          "q": 0.30047217602416315,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cell adhesion",
+          "q": 0.9105409371680305,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3355968488607719,
+        "RNA": 0.007479875738099384
+      },
+      "q": 0.27081923830217686,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "cellular catabolic process",
+          "q": 0.27081923830217686,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "response to external stimulus",
+          "q": 0.3978501037172528,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "Phagocytosis - Apis mellifera (honey bee)",
+          "q": 0.42112554112554096,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "response to stimulus",
+          "q": 0.6604860261796661,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "establishment of localization in cell",
+          "q": 0.9775381850853547,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.039080461284900614,
+        "RNA": 0.16955068991080724
+      },
+      "q": 4.255485378833781e-05,
+      "sig": 31,
+      "category": "Gene-expression and biosynthetic regulation",
+      "themes": [
+        {
+          "title": "regulation of biosynthetic process",
+          "q": 4.255485378833781e-05,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "RNA metabolic process",
+          "q": 0.004381123518589826,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "regulation of biological process",
+          "q": 0.010363623219836622,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "cell communication",
+          "q": 0.22260339241471316,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "carbohydrate metabolic process",
+          "q": 0.3415284924718887,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.008324801115473845,
+        "RNA": 0.42132413554599735
+      },
+      "q": 0.012954529024795776,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "small molecule metabolic process",
+          "q": 0.012954529024795776,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "carbohydrate metabolic process",
+          "q": 0.09981412166119215,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "organic substance metabolic process",
+          "q": 0.4192635014290648,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cell adhesion",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3417454315854406,
+        "RNA": 0.0077623489966763826
+      },
+      "q": 0.26936417879814095,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "cellular catabolic process",
+          "q": 0.26936417879814095,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "response to stress",
+          "q": 0.4535925290642272,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "regulation of biological process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "Phagocytosis - Apis mellifera (honey bee)",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "cellular metabolic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.04586816980916564,
+        "RNA": 0.1695272906794918
+      },
+      "q": 5.3193567235422265e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation",
+      "themes": [
+        {
+          "title": "regulation of biosynthetic process",
+          "q": 5.3193567235422265e-05,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "RNA metabolic process",
+          "q": 0.005476404398237282,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "regulation of biological process",
+          "q": 0.012954529024795776,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "negative regulation of biosynthetic process",
+          "q": 0.4535925290642272,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "positive regulation of biosynthetic process",
+          "q": 0.4535925290642272,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.18436972681185926,
+        "RNA": 0.004419942867261661
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "cellular biosynthetic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "transport",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.009384092070920058,
+        "RNA": 0.4194888258198368
+      },
+      "q": 0.3308677359329271,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "small molecule metabolic process",
+          "q": 0.3308677359329271,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "organic substance metabolic process",
+          "q": 0.589856817877693,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "carbohydrate metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cell adhesion",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3418671909451104,
+        "RNA": 0.008077976862572833
+      },
+      "q": 0.32323701455776915,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "cellular catabolic process",
+          "q": 0.32323701455776915,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "response to stress",
+          "q": 0.5443110348770727,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "regulation of biological process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "Phagocytosis - Apis mellifera (honey bee)",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "cellular metabolic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.04422327769260914,
+        "RNA": 0.16802671880724251
+      },
+      "q": 6.383228068250672e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation",
+      "themes": [
+        {
+          "title": "regulation of biosynthetic process",
+          "q": 6.383228068250672e-05,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "RNA metabolic process",
+          "q": 0.0065716852778847385,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "regulation of biological process",
+          "q": 0.01610062893081761,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "negative regulation of biosynthetic process",
+          "q": 0.5443110348770727,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "positive regulation of biosynthetic process",
+          "q": 0.5443110348770727,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.18570379004392956,
+        "RNA": 0.0020937815925049508
+      },
+      "q": 0.5522259984966423,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "cellular biosynthetic process",
+          "q": 0.5522259984966423,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "transport",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "negative regulation of biosynthetic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0005934792058504001,
+        "RNA": 0.06208004849623794
+      },
+      "q": 0.15887784258625165,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "organic substance metabolic process",
+          "q": 0.15887784258625165,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "carboxylic acid metabolic process",
+          "q": 0.27255366282178595,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular localization",
+          "q": 0.6709322212909775,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "lipid metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "Lysosome biogenesis - Apis mellifera (honey bee)",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.0009021820988220908,
+        "RNA": 0.4187807201311571
+      },
+      "q": 0.3550775702694828,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "small molecule metabolic process",
+          "q": 0.3550775702694828,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "organic substance metabolic process",
+          "q": 0.5561507139989676,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "carbohydrate metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cell adhesion",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.32987618377664185,
+        "RNA": 0.009255079967857127
+      },
+      "q": 0.23447244579320048,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "cellular catabolic process",
+          "q": 0.23447244579320048,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "Phagocytosis - Apis mellifera (honey bee)",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "negative regulation of biological process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.2000885642275828,
+        "RNA": 0.005832758765793811
+      },
+      "q": 0.34321251542203496,
+      "sig": 0,
+      "category": "Functional annotation profile",
+      "themes": [
+        {
+          "title": "biological regulation",
+          "q": 0.34321251542203496,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "cellular homeostasis",
+          "q": 0.41998581129015894,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "Phagocytosis - Apis mellifera (honey bee)",
+          "q": 0.4456479690522242,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "cell communication",
+          "q": 0.9554219365540122,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "regulation of nitrogen compound metabolic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.18113348049755684,
+        "RNA": 0.0034810070451763986
+      },
+      "q": 0.9554219365540122,
+      "sig": 0,
+      "category": "Transport and cell organization",
+      "themes": [
+        {
+          "title": "transport",
+          "q": 0.9554219365540122,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0004152919754047968,
+        "RNA": 0.16568025222462868
+      },
+      "q": 6.383228068250672e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation",
+      "themes": [
+        {
+          "title": "regulation of biosynthetic process",
+          "q": 6.383228068250672e-05,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "RNA metabolic process",
+          "q": 0.0065716852778847385,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "regulation of biological process",
+          "q": 0.01610062893081761,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "Phagocytosis - Apis mellifera (honey bee)",
+          "q": 0.3550775702694828,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "negative regulation of biosynthetic process",
+          "q": 0.5199388989870545,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.00043320707492600086,
+        "RNA": 0.06881763328005919
+      },
+      "q": 0.305276774164771,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "organic substance metabolic process",
+          "q": 0.305276774164771,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular localization",
+          "q": 0.5263667150459603,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "lipid metabolic process",
+          "q": 0.9431913481538707,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "small molecule metabolic process",
+          "q": 0.9431913481538707,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "organophosphate metabolic process",
+          "q": 0.9554219365540122,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.046596446561744664,
+        "RNA": 0.6983142154188373
+      },
+      "q": 0.033479278309478215,
+      "sig": 2,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "macromolecule metabolic process",
+          "q": 0.033479278309478215,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "carboxylic acid biosynthetic process",
+          "q": 0.44466108905275104,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "biosynthetic process",
+          "q": 0.5960343875989378,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "Cytoskeleton in muscle cells - Apis mellifera (honey bee)",
+          "q": 0.5960343875989378,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "protein maturation",
+          "q": 0.709244928828026,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3538387157193985,
+        "RNA": 0.0014122008087603666
+      },
+      "q": 0.005764999465927908,
+      "sig": 3,
+      "category": "Protein synthesis and turnover",
+      "themes": [
+        {
+          "title": "proteolysis",
+          "q": 0.005764999465927908,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "gene expression",
+          "q": 0.3451284960076793,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.025976376486470665,
+        "RNA": 0.6900044168487749
+      },
+      "q": 0.05579879718246369,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "macromolecule metabolic process",
+          "q": 0.05579879718246369,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "small molecule biosynthetic process",
+          "q": 0.3735219755684276,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "biosynthetic process",
+          "q": 0.6829094436764307,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "cellular anatomical entity morphogenesis",
+          "q": 0.880793369073976,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular aromatic compound metabolic process",
+          "q": 0.9356768090106153,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3531138394648867,
+        "RNA": 0.004940366210346103
+      },
+      "q": 0.00960833244321318,
+      "sig": 3,
+      "category": "Protein synthesis and turnover",
+      "themes": [
+        {
+          "title": "proteolysis",
+          "q": 0.00960833244321318,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "gene expression",
+          "q": 0.47062976728319905,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.11920398570079616,
+        "RNA": 0.04247332979248086
+      },
+      "q": 0.9356768090106153,
+      "sig": 0,
+      "category": "Nutrient and small-molecule metabolism",
+      "themes": [
+        {
+          "title": "carbohydrate metabolic process",
+          "q": 0.9356768090106153,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "proteolysis",
+          "q": 0.9356768090106153,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "catabolic process",
+          "q": 0.9356768090106153,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "lipid metabolic process",
+          "q": 0.9356768090106153,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.03961376534386951,
+        "RNA": 0.690884982072927
+      },
+      "q": 0.06695855661895643,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "macromolecule metabolic process",
+          "q": 0.06695855661895643,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "small molecule biosynthetic process",
+          "q": 0.6212312928138227,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "biosynthetic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "cellular aromatic compound metabolic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "cellular anatomical entity morphogenesis",
+          "q": 1.0,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3533075727875097,
+        "RNA": 0.004892063355431242
+      },
+      "q": 0.011529998931855816,
+      "sig": 3,
+      "category": "Protein synthesis and turnover",
+      "themes": [
+        {
+          "title": "proteolysis",
+          "q": 0.011529998931855816,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "gene expression",
+          "q": 0.6212312928138227,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "fatty acid elongation",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.12198805424068448,
+        "RNA": 0.03903962084766699
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Nutrient and small-molecule metabolism",
+      "themes": [
+        {
+          "title": "carbohydrate metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "proteolysis",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "catabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "small molecule biosynthetic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.13701313881009736,
+        "RNA": 0.000701335786209345
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization",
+      "themes": [
+        {
+          "title": "macromolecule localization",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.03693669255084342,
+        "RNA": 0.6884391200521585
+      },
+      "q": 0.10415775474059889,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "macromolecule metabolic process",
+          "q": 0.10415775474059889,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "small molecule biosynthetic process",
+          "q": 0.5365179347028469,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "biosynthetic process",
+          "q": 0.9047416871717201,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "localization",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular aromatic compound metabolic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3546657438556341,
+        "RNA": 0.0026080343244739845
+      },
+      "q": 0.10415775474059889,
+      "sig": 0,
+      "category": "Protein synthesis and turnover",
+      "themes": [
+        {
+          "title": "proteolysis",
+          "q": 0.10415775474059889,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "gene expression",
+          "q": 0.34184155795046317,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.11592900342280588,
+        "RNA": 0.047010255833668024
+      },
+      "q": 0.8909245604083948,
+      "sig": 0,
+      "category": "Nutrient and small-molecule metabolism",
+      "themes": [
+        {
+          "title": "carbohydrate metabolic process",
+          "q": 0.8909245604083948,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "proteolysis",
+          "q": 0.8909245604083948,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.136501618409699,
+        "RNA": 0.00034076637700941603
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization",
+      "themes": [
+        {
+          "title": "macromolecule localization",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.001209238221985931,
+        "RNA": 0.04760628821219859
+      },
+      "q": 0.34184155795046317,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism",
+      "themes": [
+        {
+          "title": "lipid metabolic process",
+          "q": 0.34184155795046317,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "Fatty acid elongation - Apis mellifera (honey bee)",
+          "q": 0.34184155795046317,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "multicellular organism development",
+          "q": 0.6153148043108339,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05136444613922486,
+        "RNA": 0.687634359483297
+      },
+      "q": 0.0892780754919419,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "macromolecule metabolic process",
+          "q": 0.0892780754919419,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "localization",
+          "q": 0.8648081204866197,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "carboxylic acid metabolic process",
+          "q": 0.8648081204866197,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "Cytoskeleton in muscle cells - Apis mellifera (honey bee)",
+          "q": 0.8648081204866197,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "biosynthetic process",
+          "q": 0.9044400072343518,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3478723808220373,
+        "RNA": 6.861753542997118e-05
+      },
+      "q": 0.015373331909141088,
+      "sig": 3,
+      "category": "Protein synthesis and turnover",
+      "themes": [
+        {
+          "title": "proteolysis",
+          "q": 0.015373331909141088,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "gene expression",
+          "q": 0.8283083904184304,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "fatty acid elongation",
+          "q": 0.8648081204866197,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.12893299782275092,
+        "RNA": 0.012864418769118702
+      },
+      "q": 0.8648081204866197,
+      "sig": 0,
+      "category": "Functional annotation profile",
+      "themes": [
+        {
+          "title": "cellular component organization",
+          "q": 0.8648081204866197,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular nitrogen compound metabolic process",
+          "q": 0.8648081204866197,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "biological regulation",
+          "q": 0.8944033213212721,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.1380410045938687,
+        "RNA": 0.00033539758022405053
+      },
+      "q": 0.8648081204866197,
+      "sig": 0,
+      "category": "Transport and cell organization",
+      "themes": [
+        {
+          "title": "macromolecule localization",
+          "q": 0.8648081204866197,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0007640883248923869,
+        "RNA": 0.04845052586271348
+      },
+      "q": 0.8648081204866197,
+      "sig": 0,
+      "category": "Growth and development",
+      "themes": [
+        {
+          "title": "multicellular organism development",
+          "q": 0.8648081204866197,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "lipid metabolic process",
+          "q": 0.8648081204866197,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0005461185057654694,
+        "RNA": 0.03104235059744065
+      },
+      "q": 0.8283083904184304,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "cellular catabolic process",
+          "q": 0.8283083904184304,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "regulation of cellular process",
+          "q": 0.8648081204866197,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "catabolic process",
+          "q": 0.8648081204866197,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "small molecule metabolic process",
+          "q": 0.8648081204866197,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular metabolic process",
+          "q": 0.8648081204866197,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3379789440453722,
+        "RNA": 0.014172495359914161
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Growth and development",
+      "themes": [
+        {
+          "title": "anatomical structure development",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "establishment of localization",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "macromolecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "nucleoside phosphate metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "organonitrogen compound metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.08537448233415201,
+        "RNA": 0.1459905985453408
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile",
+      "themes": [
+        {
+          "title": "cell surface receptor signaling pathway",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "generation of precursor metabolites and energy",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "positive regulation of macromolecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "amide metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3378939291812951,
+        "RNA": 0.017797037385541503
+      },
+      "q": 0.5166932974518544,
+      "sig": 0,
+      "category": "Growth and development",
+      "themes": [
+        {
+          "title": "anatomical structure development",
+          "q": 0.5166932974518544,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "cellular response to stimulus",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "establishment of localization",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "positive regulation of macromolecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "proteolysis",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.0999149532876713,
+        "RNA": 0.14582969798753376
+      },
+      "q": 0.8392229417206291,
+      "sig": 0,
+      "category": "Functional annotation profile",
+      "themes": [
+        {
+          "title": "cell surface receptor signaling pathway",
+          "q": 0.8392229417206291,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "generation of precursor metabolites and energy",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "positive regulation of macromolecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "amide metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.18008595033655062,
+        "RNA": 0.024386890997085575
+      },
+      "q": 0.23681776133209995,
+      "sig": 0,
+      "category": "Functional annotation profile",
+      "themes": [
+        {
+          "title": "response to stimulus",
+          "q": 0.23681776133209995,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "cellular response to stimulus",
+          "q": 0.23681776133209995,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "negative regulation of biosynthetic process",
+          "q": 0.23681776133209995,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "gene expression",
+          "q": 0.23681776133209995,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "regulation of cellular process",
+          "q": 0.5166932974518544,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3306943328374383,
+        "RNA": 0.008800119121958327
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Growth and development",
+      "themes": [
+        {
+          "title": "anatomical structure development",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.10560324292208223,
+        "RNA": 0.14528499288816965
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile",
+      "themes": [
+        {
+          "title": "generation of precursor metabolites and energy",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "positive regulation of macromolecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "response to stress",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "multicellular organismal process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.18527737581656256,
+        "RNA": 0.03736070688141557
+      },
+      "q": 0.6124467791744,
+      "sig": 0,
+      "category": "Cellular homeostasis",
+      "themes": [
+        {
+          "title": "cellular response to stimulus",
+          "q": 0.6124467791744,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "response to stimulus",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "regulation of cellular process",
+          "q": 1.0,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "negative regulation of nitrogen compound metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "lipid metabolic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0009250508982856509,
+        "RNA": 0.1291088785555211
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "negative regulation of nitrogen compound metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "developmental process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "gene expression",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "positive regulation of macromolecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "aromatic compound catabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.32589165688808175,
+        "RNA": 0.009068663376384456
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "organophosphate metabolic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.11189042262531779,
+        "RNA": 0.13979907251699009
+      },
+      "q": 0.7597903176071538,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation",
+      "themes": [
+        {
+          "title": "negative regulation of gene expression",
+          "q": 0.7597903176071538,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "regulation of biosynthetic process",
+          "q": 0.7597903176071538,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular metabolic process",
+          "q": 0.7597903176071538,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "amide metabolic process",
+          "q": 0.7597903176071538,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "positive regulation of macromolecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.1925269382338024,
+        "RNA": 0.035795003845497275
+      },
+      "q": 0.7145212423701334,
+      "sig": 0,
+      "category": "Cellular homeostasis",
+      "themes": [
+        {
+          "title": "cellular response to stimulus",
+          "q": 0.7145212423701334,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "response to stimulus",
+          "q": 0.7597903176071538,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "regulation of cellular process",
+          "q": 0.7597903176071538,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "RNA metabolic process",
+          "q": 0.7597903176071538,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "DNA-templated transcription",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0006593141053240492,
+        "RNA": 0.1191404244779869
+      },
+      "q": 0.7859899837315384,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis",
+      "themes": [
+        {
+          "title": "negative regulation of nitrogen compound metabolic process",
+          "q": 0.7859899837315384,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "gene expression",
+          "q": 0.9460853079682514,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "developmental process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "positive regulation of macromolecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "aromatic compound catabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0006120465865139257,
+        "RNA": 0.04665816323380734
+      },
+      "q": 0.7597903176071538,
+      "sig": 0,
+      "category": "Functional annotation profile",
+      "themes": [
+        {
+          "title": "cell surface receptor signaling pathway",
+          "q": 0.7597903176071538,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular component organization",
+          "q": 0.7597903176071538,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "negative regulation of cellular process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "biological regulation",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "positive regulation of macromolecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.323627010728349,
+        "RNA": 0.014777833400737461
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Cellular homeostasis",
+      "themes": [
+        {
+          "title": "cellular response to stimulus",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "response to stimulus",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular localization",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "lipid metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "small molecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.11115804151559461,
+        "RNA": 0.13375444178247786
+      },
+      "q": 0.6475485661424606,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation",
+      "themes": [
+        {
+          "title": "negative regulation of gene expression",
+          "q": 0.6475485661424606,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "regulation of biosynthetic process",
+          "q": 0.6669005922570628,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular metabolic process",
+          "q": 0.6669005922570628,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "generation of precursor metabolites and energy",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "protein metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.19590814272466872,
+        "RNA": 0.0330441936060214
+      },
+      "q": 0.3442627436817811,
+      "sig": 0,
+      "category": "Cellular homeostasis",
+      "themes": [
+        {
+          "title": "cellular response to stimulus",
+          "q": 0.3442627436817811,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "RNA metabolic process",
+          "q": 0.6669005922570628,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "response to stimulus",
+          "q": 0.7112243803794118,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "regulation of cellular process",
+          "q": 0.7112243803794118,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "DNA-templated transcription",
+          "q": 0.9860332011955467,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.00037969261876058535,
+        "RNA": 0.1017493716994382
+      },
+      "q": 0.86418587769959,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation",
+      "themes": [
+        {
+          "title": "negative regulation of gene expression",
+          "q": 0.86418587769959,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "gene expression",
+          "q": 0.9860332011955467,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "regulation of cellular process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "developmental process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "aromatic compound catabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.022671240284665273,
+        "RNA": 0.05923474582057309
+      },
+      "q": 0.86418587769959,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism",
+      "themes": [
+        {
+          "title": "lipid metabolic process",
+          "q": 0.86418587769959,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        },
+        {
+          "title": "cell surface receptor signaling pathway",
+          "q": 0.9860332011955467,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular localization",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "organic substance metabolic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics"
+          ]
+        },
+        {
+          "title": "small molecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "Proteomics",
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0004459107464668266,
+        "RNA": 0.06325928553813909
+      },
+      "q": 0.09053815047404103,
+      "sig": 0,
+      "category": "Functional annotation profile",
+      "themes": [
+        {
+          "title": "cellular component organization",
+          "q": 0.09053815047404103,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "cellular component assembly",
+          "q": 0.6475485661424606,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "anatomical structure development",
+          "q": 0.9860332011955467,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "negative regulation of cellular process",
+          "q": 0.9939169680150254,
+          "views": [
+            "RNA"
+          ]
+        },
+        {
+          "title": "positive regulation of macromolecule metabolic process",
+          "q": 1.0,
+          "views": [
+            "RNA"
+          ]
+        }
+      ]
+    },
+    {
+      "tissue": "head",
+      "K": 2,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3343050321072528,
+        "RNA": 0.006201821554303932
+      },
+      "q": 0.2580102202743712,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 2,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.03390277912837858,
+        "RNA": 0.16996533004774472
+      },
+      "q": 3.191614034125336e-05,
+      "sig": 31,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.00485190251546086,
+        "RNA": 0.4219273906335984
+      },
+      "q": 0.010363623219836622,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.335659865586597,
+        "RNA": 0.007429561492068304
+      },
+      "q": 0.27081923830217686,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.039373803018602826,
+        "RNA": 0.1696169467596471
+      },
+      "q": 4.255485378833781e-05,
+      "sig": 31,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.008750471750302746,
+        "RNA": 0.42161206577428356
+      },
+      "q": 0.012954529024795776,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3417332861329754,
+        "RNA": 0.0076743107416742395
+      },
+      "q": 0.26936417879814095,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.04614281514374008,
+        "RNA": 0.16958671284488847
+      },
+      "q": 5.3193567235422265e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.18428794160039352,
+        "RNA": 0.00446294943583514
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.001613924759416796,
+        "RNA": 0.42222127176177526
+      },
+      "q": 0.012954529024795776,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3293592065338915,
+        "RNA": 0.008904691669380127
+      },
+      "q": 0.15904138765042666,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.2043686844919731,
+        "RNA": 0.0028992245874350786
+      },
+      "q": 0.09725478520834106,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.17935010160986298,
+        "RNA": 0.006439589147190117
+      },
+      "q": 0.6756513926325248,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.00043099112236122394,
+        "RNA": 0.16939084715521846
+      },
+      "q": 5.3193567235422265e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.0011051769363088493,
+        "RNA": 0.41883743397063533
+      },
+      "q": 0.3732866764371486,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3303632150712008,
+        "RNA": 0.009202258662942109
+      },
+      "q": 0.23447244579320048,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.2000504373980816,
+        "RNA": 0.005842500225688885
+      },
+      "q": 0.3527461964059804,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.1804907648652896,
+        "RNA": 0.00362918616854524
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.00039251629099545937,
+        "RNA": 0.17202787194331848
+      },
+      "q": 6.383228068250672e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0006496936030390144,
+        "RNA": 0.062151120506576785
+      },
+      "q": 0.527816761092919,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "head",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.33569326725386306,
+        "RNA": 0.012419079483894313
+      },
+      "q": 0.34401362703249494,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.039553898860879455,
+        "RNA": 0.2807529498279391
+      },
+      "q": 4.255485378833781e-05,
+      "sig": 31,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.33566264274054103,
+        "RNA": 0.017346406780709756
+      },
+      "q": 0.33147146354693524,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.04713677768316793,
+        "RNA": 0.2798440148794127
+      },
+      "q": 5.3193567235422265e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.005694374765965682,
+        "RNA": 0.3050185132020792
+      },
+      "q": 0.012954529024795776,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3363501166407833,
+        "RNA": 0.018095563262458092
+      },
+      "q": 0.42047091324587854,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.05365316169469736,
+        "RNA": 0.27982999864556024
+      },
+      "q": 8.510970757667562e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.0103375034891513,
+        "RNA": 0.30552451301589456
+      },
+      "q": 0.020727246439673244,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.18112815668647786,
+        "RNA": 0.010667430256014687
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.33083406191837983,
+        "RNA": 0.019044563394241654
+      },
+      "q": 0.3352087558376865,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.0011496164376800788,
+        "RNA": 0.3046698484919259
+      },
+      "q": 0.13548204620454962,
+      "sig": 0,
+      "category": "Nutrient and small-molecule metabolism"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.00030268310545134014,
+        "RNA": 0.2800483833632994
+      },
+      "q": 7.447099412959117e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.20761106720617029,
+        "RNA": 0.0012242241808906318
+      },
+      "q": 0.13548204620454962,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.1642975600167067,
+        "RNA": 0.01423030136728487
+      },
+      "q": 0.510333842660451,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3247813018075064,
+        "RNA": 0.019816539109243192
+      },
+      "q": 0.3126299277242673,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.001155563630389933,
+        "RNA": 0.3010868576089306
+      },
+      "q": 0.32618190102466826,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.0004055543099377168,
+        "RNA": 0.275304063582855
+      },
+      "q": 0.00020669500411478359,
+      "sig": 29,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.20301011341720876,
+        "RNA": 0.01010103542563101
+      },
+      "q": 0.36967463037192333,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.1778000073088727,
+        "RNA": 0.0071533579427097704
+      },
+      "q": 0.8699776983256045,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0004725080118366254,
+        "RNA": 0.10770766650260932
+      },
+      "q": 0.22507694366385653,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.04008299153304962,
+        "RNA": 0.27965555867119074
+      },
+      "q": 3.191614034125336e-05,
+      "sig": 33,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.002238803013130619,
+        "RNA": 0.3040959227076424
+      },
+      "q": 0.007772717414877467,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3356785542154025,
+        "RNA": 0.01737272180431082
+      },
+      "q": 0.33147146354693524,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.04671035560410797,
+        "RNA": 0.27980612767516055
+      },
+      "q": 5.3193567235422265e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.005524481804799808,
+        "RNA": 0.30495696605322664
+      },
+      "q": 0.012954529024795776,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3366281972218049,
+        "RNA": 0.017863691593603237
+      },
+      "q": 0.31535318493440895,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.052804506510476745,
+        "RNA": 0.2797930597579612
+      },
+      "q": 6.383228068250672e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.009798848339634625,
+        "RNA": 0.3053789323405002
+      },
+      "q": 0.015545434829754934,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.1812785978395981,
+        "RNA": 0.009879804513535984
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.32706288339315204,
+        "RNA": 0.0190939513136269
+      },
+      "q": 0.23935728841389214,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.0011706982820529621,
+        "RNA": 0.3048097227008396
+      },
+      "q": 0.1435165208750114,
+      "sig": 0,
+      "category": "Nutrient and small-molecule metabolism"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.00035133902418060803,
+        "RNA": 0.27985317204669724
+      },
+      "q": 7.447099412959117e-05,
+      "sig": 30,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.21016307452633087,
+        "RNA": 0.0017489145547656682
+      },
+      "q": 0.3234653015754329,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.16845628242845512,
+        "RNA": 0.01492723660034323
+      },
+      "q": 0.46218914052267257,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3248354751928998,
+        "RNA": 0.019851272990979774
+      },
+      "q": 0.3126299277242673,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.0010656088951196407,
+        "RNA": 0.30102364498880774
+      },
+      "q": 0.32618190102466826,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.00042834142474823533,
+        "RNA": 0.2752031956748333
+      },
+      "q": 0.00020669500411478359,
+      "sig": 29,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.20275239607644135,
+        "RNA": 0.010237534536073789
+      },
+      "q": 0.36967463037192333,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.17789519513450625,
+        "RNA": 0.007130977470057975
+      },
+      "q": 0.8699776983256045,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0005308957052575503,
+        "RNA": 0.10802007564494798
+      },
+      "q": 0.22507694366385653,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.0413140017320085,
+        "RNA": 0.33926592107073905
+      },
+      "q": 0.00023253187962913154,
+      "sig": 29,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3367736280786573,
+        "RNA": 0.014974888464894698
+      },
+      "q": 0.3535695611167309,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05124952778892189,
+        "RNA": 0.33943338438617665
+      },
+      "q": 0.0002906648495364144,
+      "sig": 29,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.33633171855738286,
+        "RNA": 0.022261832542794457
+      },
+      "q": 0.37882452976792597,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.005583166541626716,
+        "RNA": 0.23757117789340054
+      },
+      "q": 0.008247517681479946,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05688005079161229,
+        "RNA": 0.3390076757128807
+      },
+      "q": 0.0004069307893509802,
+      "sig": 28,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.33398023379128916,
+        "RNA": 0.021817711619021463
+      },
+      "q": 0.32792160897164985,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.009608046516378366,
+        "RNA": 0.23797865905533877
+      },
+      "q": 0.011546524754071924,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.1766151272884312,
+        "RNA": 0.010055061983256008
+      },
+      "q": 0.15240708976558032,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.33282353831891376,
+        "RNA": 0.024262352316767766
+      },
+      "q": 0.25195504043567596,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.0003113988902977427,
+        "RNA": 0.3394820921508751
+      },
+      "q": 0.00018085812860043566,
+      "sig": 29,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.000970525478734996,
+        "RNA": 0.23674406304078877
+      },
+      "q": 0.15617974330515946,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.20527026272579718,
+        "RNA": 0.0014997218170023086
+      },
+      "q": 0.3352087558376865,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.1581811208817384,
+        "RNA": 0.018577151724091245
+      },
+      "q": 0.510333842660451,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3264108958781694,
+        "RNA": 0.026427667327606263
+      },
+      "q": 0.4899521531100478,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.00035514997424457295,
+        "RNA": 0.3349536895845098
+      },
+      "q": 0.010024707699567006,
+      "sig": 9,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.0009281151519219266,
+        "RNA": 0.23305243650292007
+      },
+      "q": 0.4899521531100478,
+      "sig": 0,
+      "category": "Cell communication and adhesion"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.202146322004494,
+        "RNA": 0.011124157512920507
+      },
+      "q": 0.4899521531100478,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.17009814770766252,
+        "RNA": 0.008745111464932731
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0006975797188671917,
+        "RNA": 0.12500619400833524
+      },
+      "q": 0.7957002074345056,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.041282545773610124,
+        "RNA": 0.33926194489843875
+      },
+      "q": 0.00023253187962913154,
+      "sig": 29,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.33676904063448265,
+        "RNA": 0.014921452594061524
+      },
+      "q": 0.3535695611167309,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05123035219054739,
+        "RNA": 0.33943044899844255
+      },
+      "q": 0.0002906648495364144,
+      "sig": 29,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3363287969381743,
+        "RNA": 0.02223727479460491
+      },
+      "q": 0.37882452976792597,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.00555642139735435,
+        "RNA": 0.23757018638610605
+      },
+      "q": 0.008247517681479946,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05686388360448946,
+        "RNA": 0.3390068943383263
+      },
+      "q": 0.00034879781944369733,
+      "sig": 28,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.33399298994326154,
+        "RNA": 0.02178388947560339
+      },
+      "q": 0.32323701455776915,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.009580222264595095,
+        "RNA": 0.2379765428940822
+      },
+      "q": 0.009897021217775935,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.17660507590171404,
+        "RNA": 0.009990127138307825
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.33280094109594327,
+        "RNA": 0.02426391751074175
+      },
+      "q": 0.25195504043567596,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.0003088244482265523,
+        "RNA": 0.33948068487648375
+      },
+      "q": 0.00018085812860043566,
+      "sig": 29,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.0009603878057107273,
+        "RNA": 0.2367425345173103
+      },
+      "q": 0.15617974330515946,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.20528108304466552,
+        "RNA": 0.0014894141416152973
+      },
+      "q": 0.3352087558376865,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "head",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.15820158347179303,
+        "RNA": 0.01858139013881399
+      },
+      "q": 0.510333842660451,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3261988307637599,
+        "RNA": 0.02645213568498883
+      },
+      "q": 0.4899521531100478,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.00035961869441702987,
+        "RNA": 0.3349001606275296
+      },
+      "q": 0.010024707699567006,
+      "sig": 9,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.0009378440637302088,
+        "RNA": 0.23301448350585852
+      },
+      "q": 0.4899521531100478,
+      "sig": 0,
+      "category": "Cell communication and adhesion"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.20203650387262995,
+        "RNA": 0.011222953321225249
+      },
+      "q": 0.4899521531100478,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.17048398556274325,
+        "RNA": 0.008712007555328638
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "head",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0006847336276039062,
+        "RNA": 0.125129166642861
+      },
+      "q": 0.7957002074345056,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.046540503893647944,
+        "RNA": 0.6982981571503574
+      },
+      "q": 0.033479278309478215,
+      "sig": 2,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3538428577620474,
+        "RNA": 0.0012556011306700254
+      },
+      "q": 0.005764999465927908,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.025933991442333548,
+        "RNA": 0.690007511965655
+      },
+      "q": 0.05579879718246369,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3530906844956765,
+        "RNA": 0.0049317214334417825
+      },
+      "q": 0.00960833244321318,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.11915305389526942,
+        "RNA": 0.042436976665520265
+      },
+      "q": 0.9356768090106153,
+      "sig": 0,
+      "category": "Nutrient and small-molecule metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.039909787435502,
+        "RNA": 0.6909507148387868
+      },
+      "q": 0.06695855661895643,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.35318115735494715,
+        "RNA": 0.004896383034738161
+      },
+      "q": 0.011529998931855816,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.12196939213113045,
+        "RNA": 0.03876721242744907
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Nutrient and small-molecule metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.1370701308436839,
+        "RNA": 0.0006645681827456285
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.03677190733187918,
+        "RNA": 0.6884238911008691
+      },
+      "q": 0.10415775474059889,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.35473367373494225,
+        "RNA": 0.0024069719569701498
+      },
+      "q": 0.10415775474059889,
+      "sig": 0,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.11590533416321414,
+        "RNA": 0.04687435401660345
+      },
+      "q": 0.8909245604083948,
+      "sig": 0,
+      "category": "Nutrient and small-molecule metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.13655783152622558,
+        "RNA": 0.00034243121436272617
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0011313834385793253,
+        "RNA": 0.04779291570890476
+      },
+      "q": 0.34184155795046317,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05093749271075332,
+        "RNA": 0.6876045053040444
+      },
+      "q": 0.0892780754919419,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3420048623296682,
+        "RNA": 7.048565304679233e-05
+      },
+      "q": 0.049935275179326895,
+      "sig": 1,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.14789128430063903,
+        "RNA": 0.0003304025937731492
+      },
+      "q": 0.848882253278206,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.12767838988884694,
+        "RNA": 0.014181281134430734
+      },
+      "q": 0.848882253278206,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0008080134000135741,
+        "RNA": 0.04918286770193192
+      },
+      "q": 0.848882253278206,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": false,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0005513967987738067,
+        "RNA": 0.031093181528126346
+      },
+      "q": 0.848882253278206,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.049056311138503395,
+        "RNA": 0.5387218073586504
+      },
+      "q": 0.011271096865351134,
+      "sig": 2,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.33534202193252427,
+        "RNA": 0.0015521677615815133
+      },
+      "q": 0.0012174994271722862,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.03126436987636427,
+        "RNA": 0.5181348554260159
+      },
+      "q": 0.022542193730702268,
+      "sig": 2,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.33433257971009134,
+        "RNA": 0.010470764100656949
+      },
+      "q": 0.011529998931855816,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.12547533981320647,
+        "RNA": 0.09141747339453554
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05484941393988396,
+        "RNA": 0.5360944307005127
+      },
+      "q": 0.03506563469220353,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.33413262179479974,
+        "RNA": 0.011360965089601605
+      },
+      "q": 0.028759071544992684,
+      "sig": 2,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.12926146542796446,
+        "RNA": 0.05572084341602701
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.13991779494463086,
+        "RNA": 0.0008275553832356453
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.04972657933237179,
+        "RNA": 0.5262334352460292
+      },
+      "q": 0.026299226019152647,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3348308979021808,
+        "RNA": 0.00038648726126899735
+      },
+      "q": 0.013451665420498452,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.1228664429182732,
+        "RNA": 0.07617000670804608
+      },
+      "q": 0.7615464548622743,
+      "sig": 0,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.14046073936243963,
+        "RNA": 0.000391194510971804
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0011736902525364412,
+        "RNA": 0.08914941609961913
+      },
+      "q": 0.2406150871983634,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05646550947417828,
+        "RNA": 0.5333608922307425
+      },
+      "q": 0.030056258307603025,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3268061702755012,
+        "RNA": 8.590220636028878e-05
+      },
+      "q": 0.015373331909141088,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.14192140107154738,
+        "RNA": 0.028256057724468597
+      },
+      "q": 0.8509043109156552,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.1409570478638854,
+        "RNA": 0.0008704260585526979
+      },
+      "q": 0.8509043109156552,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.000855787507436534,
+        "RNA": 0.09086455303076857
+      },
+      "q": 0.8509043109156552,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.000543188671589756,
+        "RNA": 0.07325957087712265
+      },
+      "q": 0.8509043109156552,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.049063688832541974,
+        "RNA": 0.5387274621170178
+      },
+      "q": 0.011271096865351134,
+      "sig": 2,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3353449062421554,
+        "RNA": 0.0016299003477491247
+      },
+      "q": 0.0012174994271722862,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.03131626722109415,
+        "RNA": 0.5181706459558599
+      },
+      "q": 0.022542193730702268,
+      "sig": 2,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3343326969987185,
+        "RNA": 0.010475353136183196
+      },
+      "q": 0.011529998931855816,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.12548291360816244,
+        "RNA": 0.09132612544584529
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.054848251565703054,
+        "RNA": 0.5360963585378995
+      },
+      "q": 0.026299226019152647,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3341459285589511,
+        "RNA": 0.011348202225401671
+      },
+      "q": 0.013451665420498452,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.1292597778506096,
+        "RNA": 0.05572068155602683
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.13991899595174684,
+        "RNA": 0.0008369968095444102
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.04974828244226115,
+        "RNA": 0.5262567232835783
+      },
+      "q": 0.026299226019152647,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3348214973625794,
+        "RNA": 0.00038698764283351395
+      },
+      "q": 0.013451665420498452,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.12287078771448234,
+        "RNA": 0.07612340873553292
+      },
+      "q": 0.7615464548622743,
+      "sig": 0,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.1404742352710786,
+        "RNA": 0.00039441689788077827
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0011703086713072963,
+        "RNA": 0.08914270049347828
+      },
+      "q": 0.2406150871983634,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05646779913626554,
+        "RNA": 0.5333643797137995
+      },
+      "q": 0.030056258307603025,
+      "sig": 1,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.32680923868996103,
+        "RNA": 8.688159443959176e-05
+      },
+      "q": 0.015373331909141088,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.14192162720401524,
+        "RNA": 0.028250132653488635
+      },
+      "q": 0.8509043109156552,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.14095834715312605,
+        "RNA": 0.0008674951995717439
+      },
+      "q": 0.8509043109156552,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0008564599161733355,
+        "RNA": 0.09086753587695118
+      },
+      "q": 0.8509043109156552,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0005467480978998962,
+        "RNA": 0.07325505860357973
+      },
+      "q": 0.8509043109156552,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.048718070361824295,
+        "RNA": 0.34335982423938827
+      },
+      "q": 0.004681432048061897,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3183172264929379,
+        "RNA": 0.001013432130233305
+      },
+      "q": 0.0003691042410927775,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.04786820761204935,
+        "RNA": 0.3392763813424229
+      },
+      "q": 0.009362864096123793,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3160061463774988,
+        "RNA": 0.01842928084461315
+      },
+      "q": 0.000738208482185555,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.13459015357666304,
+        "RNA": 0.10648150013306623
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Nutrient and small-molecule metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05531485957214155,
+        "RNA": 0.34049562696354274
+      },
+      "q": 0.010923341445477758,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3169714460723536,
+        "RNA": 0.018088805437968203
+      },
+      "q": 9.818733883575511e-05,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.13761841981867395,
+        "RNA": 0.09836653723153843
+      },
+      "q": 0.8052998240179183,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.1411206451763115,
+        "RNA": 0.0007491481152911428
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05326957438941715,
+        "RNA": 0.33320219244975036
+      },
+      "q": 0.010923341445477758,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.31763572281700236,
+        "RNA": 0.00035633740580975903
+      },
+      "q": 0.0008612432292164808,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.13107477685822488,
+        "RNA": 0.11770991222111593
+      },
+      "q": 0.26843327467263944,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.14118433551240706,
+        "RNA": 0.0005024271614022524
+      },
+      "q": 0.9657024012100587,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.001230484107367591,
+        "RNA": 0.13445522085695238
+      },
+      "q": 0.18694460200415955,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.054748058911715636,
+        "RNA": 0.33302612874572113
+      },
+      "q": 0.012483818794831724,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3065036896900485,
+        "RNA": 9.312127818883464e-05
+      },
+      "q": 0.0009842779762474067,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.15612057684101377,
+        "RNA": 0.05653805546325952
+      },
+      "q": 0.20202643668742204,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0015262554135143658,
+        "RNA": 0.1411056539526795
+      },
+      "q": 0.05024386395852498,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.14073558060413638,
+        "RNA": 0.000743892849372374
+      },
+      "q": 0.7967341476013895,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.00044811612396000733,
+        "RNA": 0.11830502671717291
+      },
+      "q": 0.09229722064662507,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.048704132036663794,
+        "RNA": 0.3433568032054052
+      },
+      "q": 0.004681432048061897,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.31831290856190764,
+        "RNA": 0.0010030650028672872
+      },
+      "q": 0.0003691042410927775,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.047854682151050376,
+        "RNA": 0.3392726408221607
+      },
+      "q": 0.009362864096123793,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.31599965185051493,
+        "RNA": 0.018431151375826516
+      },
+      "q": 0.000738208482185555,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.13458678412341274,
+        "RNA": 0.1064790627446971
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Nutrient and small-molecule metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05530795262928656,
+        "RNA": 0.34049234166403586
+      },
+      "q": 0.010923341445477758,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.31696640012516075,
+        "RNA": 0.01809534262933532
+      },
+      "q": 9.818733883575511e-05,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.1376179881615356,
+        "RNA": 0.0983670443770085
+      },
+      "q": 0.8052998240179183,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.14111652617902604,
+        "RNA": 0.0007391387783778347
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.05326466208216496,
+        "RNA": 0.33320016652988615
+      },
+      "q": 0.010923341445477758,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.31763129432517545,
+        "RNA": 0.0003526755860868702
+      },
+      "q": 0.0008612432292164808,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.1310808154430846,
+        "RNA": 0.11770072975545398
+      },
+      "q": 0.26843327467263944,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.14118298971897325,
+        "RNA": 0.0004888428319737015
+      },
+      "q": 0.9657024012100587,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0012245069649700069,
+        "RNA": 0.13445512302346807
+      },
+      "q": 0.18694460200415955,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.0547529540810634,
+        "RNA": 0.33304302903389327
+      },
+      "q": 0.012483818794831724,
+      "sig": 3,
+      "category": "Protein synthesis and turnover"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.3065037308457823,
+        "RNA": 9.193635852133841e-05
+      },
+      "q": 0.0009842779762474067,
+      "sig": 3,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.1561193268635428,
+        "RNA": 0.056520352183476175
+      },
+      "q": 0.20202643668742204,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.00152171052739003,
+        "RNA": 0.14111660932163106
+      },
+      "q": 0.05024386395852498,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.14073416696126984,
+        "RNA": 0.0007156456642903875
+      },
+      "q": 0.7967341476013895,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "abdomen",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0004476438884694067,
+        "RNA": 0.11825614978268273
+      },
+      "q": 0.09229722064662507,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3379811705193977,
+        "RNA": 0.017731342767251856
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.08466676544220997,
+        "RNA": 0.14673022157292814
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3380353100136382,
+        "RNA": 0.01819932032489191
+      },
+      "q": 0.5166932974518544,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.09951163349293002,
+        "RNA": 0.14570895009124285
+      },
+      "q": 0.8392229417206291,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.18004319817707792,
+        "RNA": 0.023636623649134214
+      },
+      "q": 0.23681776133209995,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.336474547110417,
+        "RNA": 0.017310082922809
+      },
+      "q": 0.718733625301618,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.10206385872149448,
+        "RNA": 0.14494232809662455
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.17910465130349862,
+        "RNA": 0.033433705386844426
+      },
+      "q": 0.35067245428022475,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0011273389488520857,
+        "RNA": 0.1288377068151222
+      },
+      "q": 0.7597903176071538,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3265293422983866,
+        "RNA": 0.00921501325803542
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.1118188557021923,
+        "RNA": 0.13989387263359765
+      },
+      "q": 0.7597903176071538,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.1917315167742092,
+        "RNA": 0.03564332892895783
+      },
+      "q": 0.7145212423701334,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0005137988807654148,
+        "RNA": 0.1197918351866547
+      },
+      "q": 0.7859899837315384,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0004969033563752001,
+        "RNA": 0.04552013894457774
+      },
+      "q": 0.7597903176071538,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.32539434435543013,
+        "RNA": 0.015390867020848686
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.10893205074368484,
+        "RNA": 0.12511397120449264
+      },
+      "q": 0.9209579607359442,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.195055166244805,
+        "RNA": 0.030493210392904757
+      },
+      "q": 0.3442627436817811,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.00038928653428216276,
+        "RNA": 0.1013259329797993
+      },
+      "q": 0.9867406722170831,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.023559447441098613,
+        "RNA": 0.07144337749091956
+      },
+      "q": 0.9497378970089422,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "none",
+      "view_scale": true,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.000415517077008265,
+        "RNA": 0.06756870249530722
+      },
+      "q": 0.23656742543217163,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.33641584379042666,
+        "RNA": 0.026773191817089814
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.08807886450538394,
+        "RNA": 0.19510330524858654
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.33541153337998586,
+        "RNA": 0.02877746737229203
+      },
+      "q": 0.5166932974518544,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.09937835253452765,
+        "RNA": 0.19345503948413956
+      },
+      "q": 0.7898568863252979,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.1856431402378229,
+        "RNA": 0.04182021391688251
+      },
+      "q": 0.23681776133209995,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.32617351041472153,
+        "RNA": 0.012478149054872434
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.10637024582412324,
+        "RNA": 0.19235013161846048
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.19176063118837228,
+        "RNA": 0.06029887672333056
+      },
+      "q": 0.7145212423701334,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0010749718488662907,
+        "RNA": 0.16249773942414658
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.323341606308969,
+        "RNA": 0.014262688517489241
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.1107588232687069,
+        "RNA": 0.18620225846613803
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.1958621501925467,
+        "RNA": 0.058457074190954916
+      },
+      "q": 0.7525542193442286,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0006313159484346853,
+        "RNA": 0.14941511652802064
+      },
+      "q": 0.7525542193442286,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.000804215101389838,
+        "RNA": 0.07406345314483231
+      },
+      "q": 0.7908945531732355,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.31817317190648853,
+        "RNA": 0.02015323545121006
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.11148408772820428,
+        "RNA": 0.17147893879792042
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.2029460996189416,
+        "RNA": 0.05928204228645462
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0006254273719823455,
+        "RNA": 0.1537512664596954
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.024203529359893894,
+        "RNA": 0.09373653591082665
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": false,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0005026016166973513,
+        "RNA": 0.06512869449624603
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.33650161372058407,
+        "RNA": 0.028346247066100783
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.08781518771005825,
+        "RNA": 0.1950676680298612
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3353874299772802,
+        "RNA": 0.02894261559103195
+      },
+      "q": 0.5166932974518544,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.09946429547936098,
+        "RNA": 0.19352050893491934
+      },
+      "q": 0.7898568863252979,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.18560852677673945,
+        "RNA": 0.041685003639823526
+      },
+      "q": 0.23681776133209995,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.32605225194184917,
+        "RNA": 0.012542299965606518
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.10652715105159227,
+        "RNA": 0.19254854899588747
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.1918150970330308,
+        "RNA": 0.060391733434235206
+      },
+      "q": 0.7145212423701334,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0011049632077382299,
+        "RNA": 0.1624393593754092
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.32374994126181356,
+        "RNA": 0.014438576652322177
+      },
+      "q": 0.9230100565543917,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.11072092987937732,
+        "RNA": 0.1862657419042476
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.19533943823754463,
+        "RNA": 0.058199764225819184
+      },
+      "q": 0.27803973952028077,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0004948656598915413,
+        "RNA": 0.14908735293569308
+      },
+      "q": 0.6271285161201905,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0006460002220216587,
+        "RNA": 0.07445526227182486
+      },
+      "q": 0.27803973952028077,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3167136390543732,
+        "RNA": 0.01946530563898008
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.11080162394776605,
+        "RNA": 0.17040587307078536
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.20533904572348327,
+        "RNA": 0.06114067299440629
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0005612189019528202,
+        "RNA": 0.15637739677674412
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.02403917154451185,
+        "RNA": 0.09329066626006699
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "pareto",
+      "view_scale": true,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.00045102934345697676,
+        "RNA": 0.062380856412220576
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Lipid and membrane metabolism"
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.33507332651729316,
+        "RNA": 0.03347563777419915
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.08656287380812844,
+        "RNA": 0.22311816146162122
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.333949798648004,
+        "RNA": 0.033783171834090964
+      },
+      "q": 0.500546631906484,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.0962544481347758,
+        "RNA": 0.220169304055696
+      },
+      "q": 0.40317565639999053,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.18907079937179416,
+        "RNA": 0.04715810429078848
+      },
+      "q": 0.23681776133209995,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.324082195897722,
+        "RNA": 0.013633025496337492
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.1031648892858833,
+        "RNA": 0.2186084002394474
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.19561185458646968,
+        "RNA": 0.06636797139678108
+      },
+      "q": 0.7145212423701334,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0009545044426824134,
+        "RNA": 0.17975063575866135
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3208458418285207,
+        "RNA": 0.016163358886745693
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.10672575058571399,
+        "RNA": 0.2120750610524007
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.2004410286754824,
+        "RNA": 0.0656177973377442
+      },
+      "q": 0.6271285161201905,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0004728135371708797,
+        "RNA": 0.16618733228034333
+      },
+      "q": 0.6271285161201905,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0009036825959251038,
+        "RNA": 0.09026515832545601
+      },
+      "q": 0.6271285161201905,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3300778105582848,
+        "RNA": 0.014122295123489392
+      },
+      "q": 0.8027790895505974,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.1005716446254139,
+        "RNA": 0.18826169944087368
+      },
+      "q": 0.24865864939870486,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.1915713547217075,
+        "RNA": 0.04492598333818332
+      },
+      "q": 0.4215018225999901,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0005051053406771588,
+        "RNA": 0.15780369458583288
+      },
+      "q": 0.3256244218316374,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.001319435878662123,
+        "RNA": 0.12093239623647634
+      },
+      "q": 0.3005763893830499,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": false,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0007855097192346339,
+        "RNA": 0.07564415016384296
+      },
+      "q": 0.3609561039658619,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.33511567934011555,
+        "RNA": 0.03382893570425494
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 2,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.08643358689498293,
+        "RNA": 0.22307859612566672
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.3339480852226949,
+        "RNA": 0.033807467027582416
+      },
+      "q": 0.500546631906484,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.09624626510697543,
+        "RNA": 0.22016578789186136
+      },
+      "q": 0.40317565639999053,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 3,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.18906514150442144,
+        "RNA": 0.04714586764670692
+      },
+      "q": 0.23681776133209995,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.32411087139507766,
+        "RNA": 0.013679963959247421
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.1031645829826372,
+        "RNA": 0.21862184789990857
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.19556876014048052,
+        "RNA": 0.06634821296399185
+      },
+      "q": 0.7145212423701334,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 4,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0009462093921964732,
+        "RNA": 0.17973759456877236
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.32099867012365657,
+        "RNA": 0.016229085631946694
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.10667404469643826,
+        "RNA": 0.21202105212790945
+      },
+      "q": 1.0,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.20029012671576585,
+        "RNA": 0.06560634987607139
+      },
+      "q": 0.6271285161201905,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0004793502632579605,
+        "RNA": 0.16611117309549261
+      },
+      "q": 0.6271285161201905,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 5,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0009153281147170622,
+        "RNA": 0.09041955724001016
+      },
+      "q": 0.6271285161201905,
+      "sig": 0,
+      "category": "Functional annotation profile"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 1,
+      "contributions": {
+        "Proteomics": 0.33011941601220796,
+        "RNA": 0.014166847268648253
+      },
+      "q": 0.8027790895505974,
+      "sig": 0,
+      "category": "Growth and development"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 2,
+      "contributions": {
+        "Proteomics": 0.10058849048811658,
+        "RNA": 0.18810325343328604
+      },
+      "q": 0.24865864939870486,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 3,
+      "contributions": {
+        "Proteomics": 0.19149644075086325,
+        "RNA": 0.04525243402521539
+      },
+      "q": 0.4215018225999901,
+      "sig": 0,
+      "category": "Cellular homeostasis"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 4,
+      "contributions": {
+        "Proteomics": 0.0005005782885761922,
+        "RNA": 0.15809980753169162
+      },
+      "q": 0.3256244218316374,
+      "sig": 0,
+      "category": "Gene-expression and biosynthetic regulation"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 5,
+      "contributions": {
+        "Proteomics": 0.0013442996136875385,
+        "RNA": 0.1207291264128274
+      },
+      "q": 0.3005763893830499,
+      "sig": 0,
+      "category": "Transport and cell organization"
+    },
+    {
+      "tissue": "gut",
+      "K": 6,
+      "scaling": "unit_variance",
+      "view_scale": true,
+      "factor": 6,
+      "contributions": {
+        "Proteomics": 0.0007805421949859115,
+        "RNA": 0.07564650635811365
+      },
+      "q": 0.3609561039658619,
+      "sig": 0,
+      "category": "Metabolism and biosynthesis"
+    }
+  ],
+  "search_wide_adjustment": {
+    "configurations": 30,
+    "total_term_tests": 45968,
+    "selected_factor_significant_tests": 30,
+    "best_search_BH_q": 9.988569847540404e-05,
+    "hits": [
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0009889",
+        "term": "regulation of biosynthetic process",
+        "search_BH_q": 9.988569847540404e-05
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0010468",
+        "term": "regulation of gene expression",
+        "search_BH_q": 9.988569847540404e-05
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0010556",
+        "term": "regulation of macromolecule biosynthetic process",
+        "search_BH_q": 9.988569847540404e-05
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0019222",
+        "term": "regulation of metabolic process",
+        "search_BH_q": 9.988569847540404e-05
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0031323",
+        "term": "regulation of cellular metabolic process",
+        "search_BH_q": 9.988569847540404e-05
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0031326",
+        "term": "regulation of cellular biosynthetic process",
+        "search_BH_q": 9.988569847540404e-05
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0060255",
+        "term": "regulation of macromolecule metabolic process",
+        "search_BH_q": 9.988569847540404e-05
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0051171",
+        "term": "regulation of nitrogen compound metabolic process",
+        "search_BH_q": 0.00035648861352428673
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0080090",
+        "term": "regulation of primary metabolic process",
+        "search_BH_q": 0.00035648861352428673
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0009059",
+        "term": "macromolecule biosynthetic process",
+        "search_BH_q": 0.0022214163150519536
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0010467",
+        "term": "gene expression",
+        "search_BH_q": 0.0022214163150519536
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0016070",
+        "term": "RNA metabolic process",
+        "search_BH_q": 0.006966221938833016
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0019219",
+        "term": "regulation of nucleobase-containing compound metabolic process",
+        "search_BH_q": 0.006966221938833016
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0051252",
+        "term": "regulation of RNA metabolic process",
+        "search_BH_q": 0.006966221938833016
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0044249",
+        "term": "cellular biosynthetic process",
+        "search_BH_q": 0.01620757019207566
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0050789",
+        "term": "regulation of biological process",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0050794",
+        "term": "regulation of cellular process",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0065007",
+        "term": "biological regulation",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0006351",
+        "term": "DNA-templated transcription",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0006355",
+        "term": "regulation of DNA-templated transcription",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0006357",
+        "term": "regulation of transcription by RNA polymerase II",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0006366",
+        "term": "transcription by RNA polymerase II",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0018130",
+        "term": "heterocycle biosynthetic process",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0019438",
+        "term": "aromatic compound biosynthetic process",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0032774",
+        "term": "RNA biosynthetic process",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0034654",
+        "term": "nucleobase-containing compound biosynthetic process",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:1901362",
+        "term": "organic cyclic compound biosynthetic process",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:2001141",
+        "term": "regulation of RNA biosynthetic process",
+        "search_BH_q": 0.01798587726643742
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0044271",
+        "term": "cellular nitrogen compound biosynthetic process",
+        "search_BH_q": 0.0216876822814721
+      },
+      {
+        "configuration": "head_K4_pareto_views1",
+        "factor": 2,
+        "view": "RNA",
+        "catalog": "GO_BP",
+        "direction": "positive",
+        "id": "GO:0043170",
+        "term": "macromolecule metabolic process",
+        "search_BH_q": 0.02493548561300473
+      }
+    ]
+  }
+}
