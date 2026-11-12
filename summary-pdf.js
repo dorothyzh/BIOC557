@@ -21,6 +21,7 @@ function downloadSummaryPdf(s,save=true){
  small('Reconstruction basis: '+s.reconstruction_basis);
  text('Reading the report',{size:11,bold:true});small('BH-supported themes contain a term with report-wide BH q < 0.05. Candidate themes are ranked functional leads. Each factor has at most one interpretation supported by enrichment and reviewed primary studies. Positive and negative weights describe opposite ends of a component; the sign can flip between fitted models.');
  const allRefs=[...s.study_papers,...s.references].filter((r,i,a)=>a.findIndex(x=>x.url===r.url)===i),refIds=Object.fromEntries(s.references.map(r=>[r.id,allRefs.findIndex(x=>x.url===r.url)+1]));
+ drawSummaryAtlasPdf(doc,s);
  for(const f of s.factors){newPage();X=M;C=W-2*M;small('COMPONENT PROFILE');heading(`${f.label}: ${f.themes[0]?.category||'Functional assignment open'}`);
   for(const v of f.contributions){ensure(9);doc.setFontSize(9);doc.setTextColor(...ink);doc.text(ascii(v.view),M,y);doc.setFillColor(231,239,238);doc.rect(M+34,y-3,105,4,'F');doc.setFillColor(...teal);doc.rect(M+34,y-3,105*Math.max(0,Math.min(1,v.r2)),4,'F');doc.text(`${(100*v.r2).toFixed(1)}%`,M+144,y);y+=7;}
   y+=4;const topY=y;C=82;
