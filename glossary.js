@@ -52,12 +52,25 @@ function glossaryMatches(text){return courseGlossary.filter(([s])=>{if(s==='LOC'
 function glossaryMarkup(rows){return rows.map(([s,full,meaning])=>`<div><b>${esc(s)}</b><span>${esc(full)}. ${esc(meaning)}</span></div>`).join('');}
 function updateCourseGlossary(){
  const hero=document.querySelector('.hero-copy>p');if(hero&&!document.querySelector('.hero-abbreviations'))hero.insertAdjacentHTML('afterend','<p class="hero-abbreviations">PCA: principal component analysis · MOFA: multi-omics factor analysis.</p>');
- document.querySelectorAll('.chart-section').forEach(section=>{section.querySelector('.chart-abbreviations')?.remove();const rows=glossaryMatches(section.innerText).filter(x=>!['SVG','PNG','CSV'].includes(x[0]));if(rows.length)section.insertAdjacentHTML('beforeend',`<div class="chart-abbreviations">${rows.map(([s,f,m])=>`<span><b>${esc(s)}</b>: ${esc(f)} — ${esc(m)}</span>`).join('')}</div>`);});
- $('course-glossary')?.remove();const root=$('chapter-content');const target=current==='study'?$('study-panel'):root;if(!target)return;
- target.insertAdjacentHTML('beforeend',`<details id="course-glossary" class="course-glossary"><summary>Key terms and abbreviations</summary><div>${glossaryMarkup(courseGlossary)}</div></details>`);
+ // Clear every generated note before reading chart text, including old nested notes.
+ document.querySelectorAll('.chart-abbreviations').forEach(note=>note.remove());
+ const target=current==='study'?$('study-panel'):$('chapter-content');if(!target)return;
+ const explained=new Set();
+ target.querySelectorAll('.chart-section').forEach(section=>{
+  if(section.querySelector('.chart-section')||!section.querySelector('.plot'))return;
+  const rows=glossaryMatches(section.innerText).filter(([term])=>!explained.has(term));
+  rows.forEach(([term])=>explained.add(term));
+  if(rows.length)section.insertAdjacentHTML('beforeend',`<div class="chart-abbreviations">${rows.map(([s,f,m])=>`<span data-term="${esc(s)}"><b>${esc(s)}</b>: ${esc(f)} — ${esc(m)}</span>`).join('')}</div>`);
+ });
+ // Reuse the reference panel so redraws retain its open state and keyboard focus.
+ let reference=$('course-glossary');
+ if(!reference){reference=document.createElement('details');reference.id='course-glossary';reference.className='course-glossary';reference.innerHTML=`<summary>Key terms and abbreviations</summary><div>${glossaryMarkup(courseGlossary)}</div>`;}
+ if(reference.parentElement!==target)target.append(reference);
 }
 const renderBeforeGlossary=renderChapter;renderChapter=function(){renderBeforeGlossary();updateCourseGlossary();};
 const studyBeforeGlossary=renderStudySummary;renderStudySummary=function(){studyBeforeGlossary();updateCourseGlossary();};
-const plotBeforeGlossary=plot;plot=function(...args){const p=plotBeforeGlossary(...args);Promise.resolve(p).then(updateCourseGlossary);return p;};
+let glossaryFrame=null;
+function scheduleCourseGlossary(){if(glossaryFrame!==null)return;glossaryFrame=requestAnimationFrame(()=>{glossaryFrame=null;updateCourseGlossary();});}
+const plotBeforeGlossary=plot;plot=function(...args){const p=plotBeforeGlossary(...args);Promise.resolve(p).then(scheduleCourseGlossary);return p;};
 
 const setChapterBeforeGlossary=setChapter;setChapter=function(id){setChapterBeforeGlossary(id);updateCourseGlossary();};

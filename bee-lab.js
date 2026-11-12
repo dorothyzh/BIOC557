@@ -36,10 +36,3 @@ renderPathwaysPanel=function(box){
 };
 const drawPathwaysBeforeBee=drawPathways;
 drawPathways=function(e){drawPathwaysBeforeBee(e);if(dataset.teaching?.annotation_mode!=='bee_genes')return;const notes=document.querySelectorAll('#pathway-content > p.note');if(notes.length)notes[notes.length-1].textContent=pathwayMethodNote(e)+' Bee GO: UniProt taxon 7460, retrieved 2026-11-11, with available GO.db 3.19.1 ancestors. KEGG: official Apis mellifera (ame) gene pathways, retrieved 2026-11-11.';document.querySelector('#pathway-content > a[href="data/metabolite_mapping.csv"]')?.remove();};
-const codeBeforeBee=currentRSnippet;
-currentRSnippet=function(){
- if(dataset?.teaching?.family!=='bee-own-2025')return codeBeforeBee();
- if(current==='pathways')return `source("R/lab_explore.R")\nannotations <- jsonlite::fromJSON("bee_annotations.json", simplifyVector=FALSE)\nora <- factor_enrichment(lab, mofa, annotations,\n  factor=${Number($('path-factor')?.value??factorIndex)+1}, view="${$('path-view')?.value||'RNA'}",\n  catalog="${$('path-catalog')?.value||'GO_BP'}", top_n=${Number($('path-top')?.value??20)})\nplot_pathway_results(ora)`;
- if(['study','quality','single','integration','export'].includes(current))return `# In the extracted honeybee R kit:\n# Choose tissue <- "head", "abdomen" or "gut" in run_demo.R.\nsource("run_demo.R")\n# First installation: source("R/install_packages.R")\n# Try factors=2, 3, 4, 5 or 6.\n# Feature scaling: "unit_variance", "pareto", "none".\n# To reproduce source preparation: source("prepare_bee.R"); prepare_bee()`;
- return codeBeforeBee();
-};
