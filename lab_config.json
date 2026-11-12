@@ -1,0 +1,10 @@
+{
+  "id": "bee-own-head-2025",
+  "title": "Honeybee head: protein and RNA",
+  "method": "mofa",
+  "study_file": "data/demos/bee-own-head-2025.json",
+  "annotation_file": "data/bee_enrichment_annotations.json",
+  "seed": 557,
+  "center": true,
+  "scale_views": false
+}

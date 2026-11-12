@@ -1,0 +1,261 @@
+---
+title: "BIOC557: Honeybee head: protein and RNA"
+subtitle: "A complete default analysis in R"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    number_sections: true
+    theme: readable
+    highlight: textmate
+    self_contained: true
+    code_folding: show
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+source("R/install_packages.R")
+source("R/default_workflow.R")
+knitr::opts_chunk$set(echo=TRUE, message=FALSE, warning=FALSE, error=FALSE,
+                     fig.width=9, fig.height=5.8, fig.align="center", dpi=144)
+dir.create("outputs", showWarnings=FALSE)
+```
+
+<style>
+body {font-size:17px;line-height:1.7;color:#234653}
+h1,h2,h3 {color:#193e4c;line-height:1.3}
+pre {font-size:14px;line-height:1.5;border-color:#dce7e4;background:#f5f8f7}
+.main-container {max-width:1100px}
+img {max-width:100%;height:auto}
+</style>
+
+# Start here
+
+This report runs one fixed set of starting settings. Every data file is included
+in the teaching package. There is no parameter menu to complete.
+
+For your first run, open **BIOC557.Rproj**, open **START_HERE.R**, and click
+**Source** in RStudio. It installs the missing packages and builds this report.
+After that, open **BIOC557_Default_Lab.Rmd** and click **Knit**.
+
+The code below is written in small steps. Read a section, look at its plot, and
+use the short question to think about what the measurements show.
+
+# Read the demo data
+
+Protein and RNA measurements use the same sample identifiers. Metabolite
+measurements, when present, follow those sample identifiers too.
+
+```{r load-data}
+course <- read_course_study()
+study <- course$study
+settings <- course$settings
+
+knitr::kable(course_settings_table(course))
+```
+
+The sample table tells us which measurements belong together.
+
+```{r sample-table}
+knitr::kable(head(study$metadata[, c("sample_id", "group")]))
+```
+
+# Prepare the molecular views
+
+The supplied measurements are already on their published logarithmic scales.
+We keep features that pass the missingness filter, select the default variable
+features, and apply the selected scaling. Protein and RNA use the same genes
+in the same column order.
+
+```{r prepare-data}
+lab <- run_lab(study,
+               max_missing = settings$max_missing,
+               model_features = settings$model_features,
+               feature_scaling = settings$feature_scaling,
+               feature_alignment = "matched_genes",
+               mofa_center = TRUE)
+
+knitr::kable(course_qc_table(lab))
+```
+
+## Check missing measurements
+
+Each bar shows the fraction of missing input measurements in one sample.
+
+```{r missingness}
+quality_plot <- plot_quality(lab)
+course_save_figure(quality_plot, "01_missingness")
+```
+
+**Think about it:** Which molecular view has the most missing measurements?
+
+# Look at each view with PCA
+
+Principal Component Analysis (PCA) reduces many features to a few axes. Each
+point is one matched sample. Colors show the study groups after the axes
+have been calculated.
+
+```{r single-view-pca, fig.height=7}
+pca_plot <- course_pca_panel(lab)
+course_save_figure(pca_plot, "02_single_view_pca", height=7)
+```
+
+## Combine the views with joint PCA
+
+The joint matrix puts the molecular views side by side and balances their
+feature counts. The axes below describe the combined measurements.
+
+```{r joint-pca}
+joint_plot <- course_joint_pca(lab)
+course_save_figure(joint_plot, "03_joint_pca")
+```
+
+**Think about it:** Do the separate views tell a similar story about the samples?
+
+# Compare RNA and protein for one gene
+
+Each point pairs the RNA and protein measurement of the same gene in the same
+sample. The default gene is selected from genes present in both views.
+
+```{r paired-gene}
+gene_plot <- plot_gene_pair(lab)
+course_save_figure(gene_plot, "04_rna_protein_gene")
+```
+
+**Think about it:** Do high RNA measurements always go with high protein measurements?
+
+# See the aligned feature matrix
+
+Rows are features and columns are samples. Values are scaled within each
+feature for this display. Gray cells are missing observations.
+
+```{r feature-heatmap, fig.height=8}
+feature_plot <- plot_feature_heatmap(lab)
+course_save_figure(feature_plot, "05_feature_heatmap", height=8)
+```
+
+# Fit the default MOFA model
+
+Multi-Omics Factor Analysis (MOFA) describes shared and view-specific patterns
+with latent factors. This is one model fit with a fixed random seed of 557.
+MOFA2 prepares its calculation environment automatically on the first run.
+
+```{r fit-mofa, results='hide'}
+mofa <- fit_lab_mofa(lab,
+                     factors = settings$factors,
+                     iterations = settings$iterations,
+                     seed = 557,
+                     scale_views = FALSE,
+                     runtime = "managed",
+                     outfile = "outputs/default_MOFA.hdf5")
+```
+
+```{r integration}
+integration_plot <- plot_integration(lab, mofa)
+course_save_figure(integration_plot, "06_pca_and_mofa", width=11)
+```
+
+## Which view contributes to each factor?
+
+The percentages show reconstructed variation within each molecular view.
+Read each percentage against its own view. RNA means ribonucleic acid;
+R-squared (R2) is the fraction of input variation reconstructed by the model.
+
+```{r factor-contributions}
+contribution_plot <- plot_factor_contributions(mofa)
+course_save_figure(contribution_plot, "07_factor_contributions")
+```
+
+## How do factor scores vary between samples?
+
+A sample can have a high score for one factor and a low score for another.
+
+```{r sample-factor-scores}
+score_plot <- plot_sample_factors(lab, mofa)
+course_save_figure(score_plot, "08_sample_factor_scores")
+```
+
+# Follow one factor
+
+For this worked example we follow the factor with the largest RNA contribution.
+This rule is fixed before looking at the study groups or the enrichment results.
+
+```{r choose-factor}
+focus_factor <- which.max(mofa$variance_explained["RNA", ])
+focus_factor
+```
+
+## Look at its strongest features
+
+Positive and negative weights describe opposite ends of a factor.
+
+```{r factor-features, fig.height=8}
+weight_plot <- course_weight_plot(lab, mofa, factor=focus_factor)
+course_save_figure(weight_plot, "09_factor_features", height=8)
+```
+
+## Draw a factor network
+
+The center is the selected factor. The surrounding nodes are features from
+each molecular view. Lines connect the factor to its weighted features.
+
+```{r factor-network, fig.width=11, fig.height=7}
+network <- factor_network(lab, mofa, factor=focus_factor, top_per_view=6)
+network_plot <- plot_factor_network(network)
+course_save_figure(network_plot, "10_factor_network", width=11, height=7)
+```
+
+## Connect RNA features to biological processes
+
+Gene Ontology (GO) groups genes by their annotated functions. We test the top
+20 positive-weight RNA features against the annotated model-feature background.
+The Benjamini-Hochberg (BH) procedure adjusts p values across all terms tested
+in this query. The q value is the BH-adjusted p value.
+
+```{r go-analysis, fig.width=11, fig.height=8}
+annotations <- jsonlite::fromJSON(course$config$annotation_file,
+                                  simplifyVector=FALSE)
+go_result <- factor_enrichment(lab, mofa, annotations,
+                                factor=focus_factor, view="RNA",
+                                catalog="GO_BP", top_n=20,
+                                direction="positive")
+go_plot <- plot_pathway_results(go_result)
+course_save_figure(go_plot, "11_go_processes", width=11, height=8)
+write.csv(go_result$rows, "outputs/GO_results.csv", row.names=FALSE)
+```
+
+**Think about it:** Which annotated functions appear among the selected genes?
+Read the q values alongside the overlapping genes.
+
+# Save the completed analysis
+
+The report saves the selected model matrices, gene alignment, sample metadata,
+result tables, settings and R session information. Each plotted figure also has
+PNG, PDF and SVG copies in **outputs/figures/**. PNG is a raster image, PDF is
+Portable Document Format, and SVG is Scalable Vector Graphics.
+
+```{r save-results}
+course_save_results(course, lab, mofa)
+knitr::kable(data.frame(File=list.files("outputs/figures", pattern="\\.png$")))
+```
+
+The HTML report can be opened in a browser after the analysis finishes.
+The **outputs/default_analysis.rds** file stores the analysis objects in R's
+serialized data format. The **outputs/run_manifest.json** file records the
+settings, sample and gene identifiers, and software versions in JavaScript
+Object Notation (JSON). CSV means comma-separated values; it is the format
+used for the result tables.
+
+# Data sources
+
+```{r data-sources, echo=FALSE, results='asis'}
+course_references(course)
+```
+
+Method: Argelaguet et al. [MOFA+: a statistical framework for comprehensive
+integration of multi-modal single-cell data](https://doi.org/10.1186/s13059-020-02015-1).
+*Genome Biology*, 2020.
+
+**One-minute recap:** We matched the samples, checked the measurements,
+compared the molecular views, and summarized their main patterns. Pick one
+plot and explain its axes and one result to a classmate.

@@ -87,7 +87,9 @@ fit_lab_mofa <- function(lab,factors=3,iterations=300,seed=557,runtime='managed'
   if(runtime=='managed') {
     if(utils::packageVersion('reticulate') < '1.41') stop('Update reticulate in R, or choose runtime="basilisk".')
     Sys.setenv(RETICULATE_USE_MANAGED_VENV='yes')
-    reticulate::py_require('mofapy2==0.7.5',python='3.12')
+    requirements<-if(file.exists('R/python_requirements.txt'))readLines('R/python_requirements.txt',warn=FALSE) else 'mofapy2==0.7.5'
+    requirements<-requirements[nzchar(trimws(requirements)) & !grepl('^#',trimws(requirements))]
+    reticulate::py_require(requirements,python='3.12')
   }
   views<-lapply(names(lab$prepared),function(name){x<-t(lab$prepared[[name]]$model);rownames(x)<-paste(name,rownames(x),sep='::');x});names(views)<-names(lab$prepared)
   # Prefixes keep RNA and protein genes distinct inside the factor model.

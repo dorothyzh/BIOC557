@@ -1,0 +1,7 @@
+# MOFA2 provisions these calculation dependencies automatically.
+mofapy2==0.7.5
+numpy==1.26.4
+scipy==1.13.1
+pandas==2.2.3
+h5py==3.12.1
+scikit-learn==1.5.2
