@@ -7,14 +7,16 @@ const renderExperienceBeforeBee=renderExperience;
 renderExperience=function(){renderExperienceBeforeBee();const intro=document.querySelector('.demo-heading p');if(intro)intro.textContent='Use matched protein and RNA measurements from honeybee tissues, or compare the human datasets.';const q=new URLSearchParams(location.search),wanted=q.get('study');if(wanted==='bee'){const tissue=['head','abdomen','gut'].includes(q.get('tissue'))?q.get('tissue'):'head';loadDemo('bee-own-'+tissue+'-2025');}else if(wanted&&wanted!=='ccle'&&demoCatalog.some(d=>d.id===wanted))loadDemo(wanted);};
 const loadDemoBeforeBee=loadDemo;
 loadDemo=async function(id){
+ if(busy)return;
  const bee=id.startsWith('bee-own-');if(bee){pathwaySettings={view:'Proteomics',catalog:'GO_BP',mode:'ora',top_n:20,direction:'absolute'};if($('start-lab'))$('start-lab').disabled=true;}
  await loadDemoBeforeBee(id);
+ if(activeDemo!==id)return;
  if(activeDemo===id){const q=new URLSearchParams();q.set('study',bee?'bee':id);if(bee&&dataset.teaching.tissue!=='Head')q.set('tissue',id.includes('abdomen')?'abdomen':'gut');history.replaceState(null,'',location.pathname+'?'+q+'#study');}
  if(dataset?.teaching?.family==='bee-own-2025'){
   annotations={Proteomics:dataset.gene_labels||{},RNA:dataset.gene_labels||{}};
   document.querySelectorAll('[data-demo]').forEach(b=>{const own=b.dataset.demo===beeEntry.id;b.classList.toggle('selected',own);b.setAttribute('aria-pressed',String(own));b.querySelector('b').textContent=own?'Selected dataset':'Open dataset →';});
  }
- if($('start-lab')&&!busy)$('start-lab').disabled=false;
+ if($('start-lab')&&!busy&&!labStudyLoading)$('start-lab').disabled=false;
 };
 const summaryBeforeBee=renderStudySummary;
 renderStudySummary=function(){

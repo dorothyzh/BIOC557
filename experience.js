@@ -6,6 +6,7 @@ const demoCatalog=[
  {id:'honeybee-eggs-2025',path:'data/demos/honeybee-eggs-2025.json',tag:'NEW · 2025',title:'Honeybee eggs',organism:'Apis mellifera · seasonality',text:'81 matched queens · lipids and metabolites',n:81,views:2}
 ];
 let activeDemo='ccle',motionCleanup=null;
+let labStudyLoading=false,labStudyLoadSequence=0;
 const previousBoot=boot;
 boot=async function(){await previousBoot();renderExperience();};
 function renderExperience(){
@@ -19,17 +20,19 @@ function renderExperience(){
 }
 async function loadDemo(id){
  if(busy)return;
- const entry=demoCatalog.find(x=>x.id===id);if(!entry)return;
- $('demo-status').textContent='Loading '+entry.title+'…';document.querySelectorAll('[data-demo]').forEach(b=>b.disabled=true);
+ const loadSequence=++labStudyLoadSequence;labStudyLoading=true;
+ const entry=demoCatalog.find(x=>x.id===id);if(!entry){labStudyLoading=false;return;}
+ $('demo-status').textContent='Loading '+entry.title+'…';document.querySelectorAll('[data-demo],[data-bee-tissue],#start-lab,#run-analysis,#run-empty').forEach(b=>b.disabled=true);
  try{
-  const response=await fetch(entry.path+'?v=20261111h');if(!response.ok)throw Error('The dataset could not load.');const data=await response.json();
-  dataset=data;activeDemo=id;annotations={};if(id==='ccle')await loadAnnotations();
+  const response=await fetchLabAsset(entry.path+'?v=20261111h');if(!response.ok)throw Error('The dataset could not load.');const data=await response.json();if(loadSequence!==labStudyLoadSequence)return;
+  const nextAnnotations=id==='ccle'?await loadAnnotations(false):{};if(loadSequence!==labStudyLoadSequence)return;
+  dataset=data;activeDemo=id;annotations=nextAnnotations;
   result=null;baseline=null;comparison=null;networkResult=null;enrichmentResult=null;runHistory.length=0;factorIndex=0;geneIndex=0;selectedView=0;challenge='none';
   applyStudyDefaults(data);
   $('uploaded-overview').hidden=true;$('public-study-overview').hidden=false;$('error-banner').hidden=true;$('stale-banner').hidden=true;
   document.querySelectorAll('[data-demo]').forEach(b=>{const selected=b.dataset.demo===id;b.classList.toggle('selected',selected);b.setAttribute('aria-pressed',String(selected));b.querySelector('b').textContent=selected?'Selected dataset':'Open dataset →';});
-  renderStudySummary();setChapter('study');$('runtime-label').textContent='Analysis ready';$('empty-panel').hidden=true;$('demo-status').textContent='Loaded '+entry.title+'. Start with quality control when you are ready.';
- }catch(e){$('demo-status').textContent=e.message;}finally{document.querySelectorAll('[data-demo]').forEach(b=>b.disabled=false);}
+  renderStudySummary();setChapter('study');$('runtime-label').textContent=ready?'Analysis ready':'Loading analysis engine';$('empty-panel').hidden=true;$('demo-status').textContent='Loaded '+entry.title+'. Start with quality control when you are ready.';
+ }catch(e){if(loadSequence===labStudyLoadSequence)$('demo-status').textContent=e.message;}finally{if(loadSequence===labStudyLoadSequence){labStudyLoading=false;document.querySelectorAll('[data-demo],[data-bee-tissue],#start-lab,#run-analysis,#run-empty').forEach(b=>b.disabled=busy);}}
 }
 function defaultRReportUrl(){
  const id=dataset?.teaching?.download_id||activeDemo;
@@ -43,7 +46,7 @@ function renderStudySummary(){
  document.querySelectorAll('.rail-bottom a[download],#code-dialog a[download],#r-walkthrough-link').forEach(a=>a.hidden=false);
  const desc=t.description||'Explore RNA, proteins and metabolites across 61 cancer cell-line models. The views match by cell-line ID across separate public assays.';
  const citation=papers.length?papers.map(p=>`<a href="${esc(p.url)}" target="_blank" rel="noreferrer">${esc(p.title)}</a> · <i>${esc(p.journal)}</i>, ${p.year}`).join('<br>'):'Nusinow et al. · Cell, 2020; Ghandi et al. · Nature, 2019; Li et al. · Nature Medicine, 2019';
- $('public-study-overview').innerHTML=`<div class="study-story"><p class="small-label">${esc(t.species||'Homo sapiens')} · ${d.views.length} MOLECULAR VIEWS</p><h2>${esc(d.title)}</h2><p>${esc(desc)}</p><div class="study-facts"><div><strong>${n}</strong><span>${esc(t.sample_label||'matched cell-line models')}</span></div>${d.views.map(v=>`<div><strong>${v.features.length.toLocaleString()}</strong><span>${esc(v.name)} features</span></div>`).join('')}</div><p class="source-line">${citation}<br><a href="sources.html?v=20261112r2">Data & methods ↗</a>${activeDemo!=='ccle'?` · <a href="downloads/BIOC557_${dataset.teaching?.download_id||activeDemo}_R.zip" download>Download this demo + R code ↓</a>`:''}</p><button class="primary" id="start-lab">Start with quality control <span>→</span></button><button class="quiet study-code-button" id="study-r-code">R code for this chapter</button></div><div class="study-sketch triad-sketch"><div class="sample-stack">${n} ${esc(t.sample_label||'matched cell-line models')}</div><div class="layer-rows">${d.views.map(v=>`<div class="view-line" style="border-color:${viewColors[v.name]}"><span style="color:${viewColors[v.name]}">${esc(v.name.toUpperCase())}</span><strong>${v.features.length.toLocaleString()} features</strong><small>${esc(v.unit||'Published transformed scale')}</small></div>`).join('')}</div><div class="mofa-bridge"><span>${d.views.length} views</span><b>→</b><strong>MOFA</strong><b>→</b><span>shared patterns</span></div><p>${esc(d.pairing_unit||'Same cell-line identity. Different assays and culture batches.')}</p></div>${t.warning?`<div class="demo-context"><b>Read the study design</b><p>${esc(t.warning)}</p></div>`:''}`;
+ $('public-study-overview').innerHTML=`<div class="study-story"><p class="small-label">${esc(t.species||'Homo sapiens')} · ${d.views.length} MOLECULAR VIEWS</p><h2>${esc(d.title)}</h2><p>${esc(desc)}</p><div class="study-facts"><div><strong>${n}</strong><span>${esc(t.sample_label||'matched cell-line models')}</span></div>${d.views.map(v=>`<div><strong>${v.features.length.toLocaleString()}</strong><span>${esc(v.name)} features</span></div>`).join('')}</div><p class="source-line">${citation}<br><a href="sources.html?v=20261117a">Data & methods ↗</a>${activeDemo!=='ccle'?` · <a href="downloads/BIOC557_${dataset.teaching?.download_id||activeDemo}_R.zip" download>Download this demo + R code ↓</a>`:''}</p><button class="primary" id="start-lab">Start with quality control <span>→</span></button><button class="quiet study-code-button" id="study-r-code">R code for this chapter</button></div><div class="study-sketch triad-sketch"><div class="sample-stack">${n} ${esc(t.sample_label||'matched cell-line models')}</div><div class="layer-rows">${d.views.map(v=>`<div class="view-line" style="border-color:${viewColors[v.name]}"><span style="color:${viewColors[v.name]}">${esc(v.name.toUpperCase())}</span><strong>${v.features.length.toLocaleString()} features</strong><small>${esc(v.unit||'Published transformed scale')}</small></div>`).join('')}</div><div class="mofa-bridge"><span>${d.views.length} views</span><b>→</b><strong>MOFA</strong><b>→</b><span>shared patterns</span></div><p>${esc(d.pairing_unit||'Same cell-line identity. Different assays and culture batches.')}</p></div>${t.warning?`<div class="demo-context"><b>Read the study design</b><p>${esc(t.warning)}</p></div>`:''}`;
  $('start-lab').onclick=()=>{setChapter('quality');runAnalysis();};$('study-r-code').onclick=openRCode;
 }
 function startOmicsMotion(){
