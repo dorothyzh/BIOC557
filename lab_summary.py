@@ -115,8 +115,9 @@ def reading_for_factor(groups,selected,labels,curated,hypotheses):
 def summarize(result,options):
  r,model,prefix=model_result(result);context=options.get('context',{});meta=context.get('metadata',[]);labels=context.get('gene_labels',{});top=int(options.get('top_n',20))
  if not 10<=top<=60:raise ValueError('Choose 10–60 top features for the summary.')
- scope=r.get('annotation_scope','human');ann=read_catalogs(scope);queries=[];all_rows=[]
+ scope=r.get('annotation_scope','human');ann={'catalogs':{}} if scope=='none' else read_catalogs(scope);queries=[];all_rows=[]
  allowed={'Proteomics':['GO_BP','Bee_KEGG'] if scope=='bee' else ['GO_BP','Reactome'], 'RNA':['GO_BP','Bee_KEGG'] if scope=='bee' else ['GO_BP','Reactome'],'Metabolomics':['Metabolite_pathways'] if context.get('annotation_mode')!='human_genes_only' else []}
+ if scope=='none':allowed={}
  for k in range(r['mofa']['factors']):
   for i,v in enumerate(r['views']):
    if r['mofa']['variance_explained'][i][k]<.01:continue
@@ -127,7 +128,7 @@ def summarize(result,options):
      for row in q['rows']:row.update(factor=k+1,view=v['name'],catalog=catalog,direction=direction);all_rows.append(row)
  for row,q in zip(all_rows,bh_adjust([row['p_value'] for row in all_rows])):row['report_q']=float(q)
  term_lookup={(cat,t['id']):t for cat,ts in ann['catalogs'].items() for t in ts};refs=references();factors=[]
- study_key='bee' if scope=='bee' else 'islets' if 'islet' in str(context.get('id','')).lower() or context.get('annotation_mode')=='human_genes_only' else 'ccle'
+ study_key='uploaded' if context.get('id')=='uploaded' else 'bee' if scope=='bee' else 'islets' if 'islet' in str(context.get('id','')).lower() or context.get('annotation_mode')=='human_genes_only' else 'ccle'
  curated=[ref for ref in refs if study_key in ref.get('reading',{}).get('studies',[]) and (not ref['reading'].get('tissues') or context.get('tissue') in ref['reading']['tissues'])]
  used={x['id']:x for x in refs if x['kind']=='method' and (not x.get('applies_to') or study_key in x['applies_to'])}
  for ref in curated:used[ref['id']]=ref

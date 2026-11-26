@@ -17,7 +17,7 @@ async function initialize(){
   importScripts('https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js');
   py=await loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.29.3/full/',stdout:()=>{},stderr:()=>{}});
   send('progress',{message:'Loading numerical libraries. First visit takes longer.'});
-  const [code,exploreCode]=await Promise.all([asset('lab_core.py?v=20261117a'),asset('lab_explore.py?v=20261117a'),py.loadPackage(['numpy','scipy'])]);
+  const [code,exploreCode]=await Promise.all([asset('lab_core.py?v=20261126a'),asset('lab_explore.py?v=20261126a'),py.loadPackage(['numpy','scipy'])]);
   py.FS.writeFile('/home/pyodide/lab_core.py',code);py.FS.writeFile('/home/pyodide/lab_explore.py',exploreCode);
   await py.runPythonAsync('from lab_core import run_json\nfrom lab_explore import compare_json, explore_json');
   send('ready');return py;
@@ -35,6 +35,7 @@ async function ensureMofa(){
  return mofaReady;
 }
 async function ensureCatalogs(scope){
+ if(scope==='none')return;
  const name=scope==='bee'?'bee_enrichment_annotations.json':'enrichment_annotations.json';
  if(catalogsReady.has(name))return catalogsReady.get(name);
  const pending=asset('data/'+name+'?v=20261111g').then(text=>py.FS.writeFile('/home/pyodide/'+name,text)).catch(error=>{catalogsReady.delete(name);throw error;});
@@ -42,7 +43,7 @@ async function ensureCatalogs(scope){
 }
 async function ensureSummary(){
  if(summaryReady)return summaryReady;
- summaryReady=Promise.all([asset('lab_summary.py?v=20261117a'),asset('data/summary_references.json?v=20261117a')]).then(([code,refs])=>{py.FS.writeFile('/home/pyodide/lab_summary.py',code);py.FS.writeFile('/home/pyodide/summary_references.json',refs);}).catch(error=>{summaryReady=null;throw error;});
+ summaryReady=Promise.all([asset('lab_summary.py?v=20261126a'),asset('data/summary_references.json?v=20261126a')]).then(([code,refs])=>{py.FS.writeFile('/home/pyodide/lab_summary.py',code);py.FS.writeFile('/home/pyodide/summary_references.json',refs);}).catch(error=>{summaryReady=null;throw error;});
  return summaryReady;
 }
 async function handleMessage(data){

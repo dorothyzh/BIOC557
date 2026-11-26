@@ -22,6 +22,7 @@ function renderLabPlot(id,traces,layout){
   }catch(error){
    if(!node.isConnected||token!==state.token)return null;
    node.setAttribute('aria-busy','false');
+   try{Plotly.purge(node);}catch{}
    const message=document.createElement('div');message.className='plot-error';message.setAttribute('role','alert');
    const text=document.createElement('p');text.textContent='This figure did not finish drawing. Your analysis is still available.';
    const retry=document.createElement('button');retry.textContent='Redraw figure';retry.onclick=()=>renderLabPlot(id,traces,layout);
@@ -69,7 +70,7 @@ initWorker=function(){
  clearLabTimers();worker?.terminate();ready=false;
  const epoch=++labEngineEpoch;
  $('retry-engine').hidden=true;$('runtime-label').textContent='Loading analysis engine';$('runtime-dot').classList.remove('ready');
- const active=new Worker('engine.worker.js?v=20261117a');worker=active;
+ const active=new Worker('engine.worker.js?v=20261126a');worker=active;
  labInitTimer=setTimeout(()=>{if(epoch===labEngineEpoch)failLabRequest('The analysis engine could not finish loading. Select Retry to load it again.',true);},120000);
  active.onmessage=({data})=>{
   if(epoch!==labEngineEpoch)return;
@@ -90,7 +91,16 @@ initWorker=function(){
 const busyBeforeReliability=setBusy;
 setBusy=function(value){busyBeforeReliability(value);$('cancel-analysis').hidden=!value;document.querySelectorAll('[data-demo],[data-bee-tissue],#run-empty').forEach(node=>node.disabled=value||labStudyLoading);};
 $('cancel-analysis').onclick=()=>failLabRequest('Run stopped. Select Run analysis when you are ready to continue.',true);
-$('retry-engine').onclick=()=>{if(busy)failLabRequest('Previous run stopped. Select Run analysis to try again.',true);$('error-banner').hidden=true;initWorker();};
+async function retryLabLoading(){
+ if(busy)failLabRequest('Previous run stopped. Select Run analysis to try again.',true);
+ $('error-banner').hidden=true;
+ if(!dataset){
+  $('retry-engine').disabled=true;
+  try{await boot();}catch(error){$('error-banner').textContent=error.message;$('error-banner').hidden=false;$('retry-engine').hidden=false;}
+  finally{$('retry-engine').disabled=false;}
+ }else initWorker();
+}
+$('retry-engine').onclick=retryLabLoading;
 const runBeforeReliability=runAnalysis;
 runAnalysis=async function(){if(busy||labStudyLoading)return;if(!dataset){$('error-banner').textContent='Wait for the selected dataset to finish loading.';$('error-banner').hidden=false;return;}if(!worker&&!useServer)initWorker();armLabRequest();return runBeforeReliability();};
 const requestBeforeReliability=scientificRequest;

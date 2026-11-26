@@ -233,7 +233,7 @@ def analyze(data, parameters=None):
     ids, groups, levels, source_views = validate_dataset(data)
     rng = np.random.default_rng(params.seed)
     result = {'dataset': data.get('title', 'Uploaded teaching data'), 'sample_ids': ids,
-              'annotation_scope': 'bee' if data.get('teaching', {}).get('annotation_mode') == 'bee_genes' else 'human',
+              'annotation_scope': ('none' if data.get('teaching', {}).get('annotation_mode') == 'none' else 'bee' if data.get('teaching', {}).get('annotation_mode') == 'bee_genes' else 'human'),
               'groups': groups.tolist(), 'group_order': levels, 'parameters': asdict(params),
               'views': [], 'challenge': {'kind': params.challenge, 'synthetic': params.challenge in ['break_pairing', 'missing']}}
     if params.challenge == 'break_pairing':
