@@ -70,7 +70,7 @@ initWorker=function(){
  clearLabTimers();worker?.terminate();ready=false;
  const epoch=++labEngineEpoch;
  $('retry-engine').hidden=true;$('runtime-label').textContent='Loading analysis engine';$('runtime-dot').classList.remove('ready');
- const active=new Worker('engine.worker.js?v=20261126a');worker=active;
+ const active=new Worker('engine.worker.js?v=20261126b');worker=active;
  labInitTimer=setTimeout(()=>{if(epoch===labEngineEpoch)failLabRequest('The analysis engine could not finish loading. Select Retry to load it again.',true);},120000);
  active.onmessage=({data})=>{
   if(epoch!==labEngineEpoch)return;

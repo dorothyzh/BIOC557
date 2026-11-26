@@ -1,4 +1,4 @@
-let py=null,ready=null,mofaReady=null,summaryReady=null;
+let py=null,ready=null,mofaReady=null,summaryReady=null,networkReady=null;
 const catalogsReady=new Map();
 const send=(type,extra={})=>postMessage({type,...extra});
 async function asset(url,binary=false){
@@ -17,7 +17,7 @@ async function initialize(){
   importScripts('https://cdn.jsdelivr.net/pyodide/v0.29.3/full/pyodide.js');
   py=await loadPyodide({indexURL:'https://cdn.jsdelivr.net/pyodide/v0.29.3/full/',stdout:()=>{},stderr:()=>{}});
   send('progress',{message:'Loading numerical libraries. First visit takes longer.'});
-  const [code,exploreCode]=await Promise.all([asset('lab_core.py?v=20261126a'),asset('lab_explore.py?v=20261126a'),py.loadPackage(['numpy','scipy'])]);
+  const [code,exploreCode]=await Promise.all([asset('lab_core.py?v=20261126b'),asset('lab_explore.py?v=20261126b'),py.loadPackage(['numpy','scipy'])]);
   py.FS.writeFile('/home/pyodide/lab_core.py',code);py.FS.writeFile('/home/pyodide/lab_explore.py',exploreCode);
   await py.runPythonAsync('from lab_core import run_json\nfrom lab_explore import compare_json, explore_json');
   send('ready');return py;
@@ -43,8 +43,13 @@ async function ensureCatalogs(scope){
 }
 async function ensureSummary(){
  if(summaryReady)return summaryReady;
- summaryReady=Promise.all([asset('lab_summary.py?v=20261126a'),asset('data/summary_references.json?v=20261126a')]).then(([code,refs])=>{py.FS.writeFile('/home/pyodide/lab_summary.py',code);py.FS.writeFile('/home/pyodide/summary_references.json',refs);}).catch(error=>{summaryReady=null;throw error;});
+ summaryReady=Promise.all([asset('lab_summary.py?v=20261126b'),asset('data/summary_references.json?v=20261126b')]).then(([code,refs])=>{py.FS.writeFile('/home/pyodide/lab_summary.py',code);py.FS.writeFile('/home/pyodide/summary_references.json',refs);}).catch(error=>{summaryReady=null;throw error;});
  return summaryReady;
+}
+async function ensureNetwork(){
+ if(networkReady)return networkReady;
+ networkReady=asset('lab_network.py?v=20261126b').then(code=>py.FS.writeFile('/home/pyodide/lab_network.py',code)).catch(error=>{networkReady=null;throw error;});
+ return networkReady;
 }
 async function handleMessage(data){
  try{
@@ -60,11 +65,12 @@ async function handleMessage(data){
    const value=await py.runPythonAsync('compare_json(_dataset, _parameters, _counts)');send('comparison',{requestId:data.requestId,result:JSON.parse(value)});
   }else if(data.type==='explore'){
    const action=data.options?.action;
-   if(action==='enrichment'||action==='summary'){
+   if(action==='enrichment'||action==='summary'||(action==='network'&&data.options.mode==='integrated'&&data.options.term_limit!==0)){
     send('progress',{requestId:data.requestId,message:'Loading '+(data.result.annotation_scope==='bee'?'honeybee':'human')+' functional annotations…'});
     await ensureCatalogs(data.result.annotation_scope);
    }
    if(action==='summary')await ensureSummary();
+   if(action==='network'&&data.options.mode==='integrated'){await ensureNetwork();if(!data.result.mofa)await ensureSummary();}
    send('progress',{requestId:data.requestId,message:action==='summary'?'Calculating the functional summary…':'Calculating the selected network or pathway query…'});
    py.globals.set('_result',JSON.stringify(data.result));py.globals.set('_options',JSON.stringify(data.options||{}));
    const value=await py.runPythonAsync('explore_json(_result, _options)');send('exploration',{requestId:data.requestId,result:JSON.parse(value),options:data.options});

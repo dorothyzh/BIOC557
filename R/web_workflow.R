@@ -7,6 +7,7 @@ web_install_packages <- function(use_mofa=TRUE) {
   source('R/lab_core.R', local=environment(web_install_packages))
   source('R/lab_plots.R', local=environment(web_install_packages))
   source('R/lab_explore.R', local=environment(web_install_packages))
+  source('R/lab_network.R', local=environment(web_install_packages))
 }
 web_metadata <- function(input) {
   ids <- unlist(input$sample_ids, use.names=FALSE)
@@ -215,7 +216,7 @@ web_functional_summary <- function(lab,model,annotations,top_n=20,categories=NUL
   for(k in seq_len(kmax))for(view in names(lab$prepared)) {
     if(model$variance_explained[view,k]<.01)next
     catalogs <- if(view=='Metabolomics') {
-      if(annotation_mode=='human_genes_only')character() else 'Metabolite_pathways'
+      if(annotation_mode=='human_genes_only')character() else intersect('Metabolite_pathways',names(annotations$catalogs))
     } else intersect(c('GO_BP','Bee_KEGG','Reactome'),names(annotations$catalogs))
     for(catalog in catalogs)for(direction in c('positive','negative')) {
       q <- factor_enrichment(lab,model,annotations,k,view,catalog,top_n,direction)
@@ -262,11 +263,11 @@ web_summary_plot <- function(summary,component='Factor') {
     ggplot2::geom_segment(data=d,ggplot2::aes(x=0,xend=pmax(0,r2),y=y,yend=y,color=view),linewidth=4)+
     ggplot2::geom_text(data=d,ggplot2::aes(x=-.025,y=y,label=view),hjust=1,size=3)+
     ggplot2::geom_text(data=d,ggplot2::aes(x=pmax(0,r2)+.025,y=y,label=sprintf('%.1f%%',100*r2)),hjust=0,size=3)+
-    ggplot2::geom_point(data=f,ggplot2::aes(x=.95,y=y),size=13,color='#193f4e')+
-    ggplot2::geom_text(data=f,ggplot2::aes(x=.95,y=y,label=paste0(if(component=='PC')'PC' else 'F',factor)),color='white',size=3.5)+
-    ggplot2::geom_text(data=f,ggplot2::aes(x=1.08,y=y+.08,label=category),hjust=0,fontface='bold',size=3.5)+
-    ggplot2::geom_text(data=f,ggplot2::aes(x=1.08,y=y-.15,label=status),hjust=0,size=3)+
-    ggplot2::scale_color_manual(values=view_colors)+ggplot2::coord_cartesian(xlim=c(-.2,2.3),ylim=c(.45,kmax+.6),clip='off')+
+    ggplot2::geom_point(data=f,ggplot2::aes(x=1.2,y=y),size=13,color='#193f4e')+
+    ggplot2::geom_text(data=f,ggplot2::aes(x=1.2,y=y,label=paste0(if(component=='PC')'PC' else 'F',factor)),color='white',size=3.5)+
+    ggplot2::geom_text(data=f,ggplot2::aes(x=1.35,y=y+.08,label=category),hjust=0,fontface='bold',size=3.5)+
+    ggplot2::geom_text(data=f,ggplot2::aes(x=1.35,y=y-.15,label=status),hjust=0,size=3)+
+    ggplot2::scale_color_manual(values=view_colors)+ggplot2::coord_cartesian(xlim=c(-.2,2.6),ylim=c(.45,kmax+.6),clip='off')+
     ggplot2::labs(title='Factor functions and evidence',subtitle='View contributions and report-wide BH-adjusted enrichment',color='Molecular view')+
     ggplot2::theme_void()+ggplot2::theme(legend.position='bottom',plot.title=ggplot2::element_text(face='bold',size=16,color='#111820'),
       plot.subtitle=ggplot2::element_text(size=10),plot.margin=ggplot2::margin(18,25,18,25))

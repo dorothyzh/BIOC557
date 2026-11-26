@@ -100,6 +100,8 @@ fit_lab_mofa <- function(lab,factors=3,iterations=300,seed=557,runtime='managed'
   m<-MOFA2::prepare_mofa(m,data_options=data_options,model_options=model_options,training_options=training_options)
   dir.create(dirname(outfile),recursive=TRUE,showWarnings=FALSE)
   m<-MOFA2::run_mofa(m,outfile=outfile,use_basilisk=use_basilisk)
+  # Keep the requested components, including inactive ones, as in the web results.
+  m<-MOFA2::load_model(outfile,sort_factors=FALSE,remove_inactive_factors=FALSE,verbose=FALSE)
   z<-MOFA2::get_factors(m)[[1]];z<-z[lab$study$metadata$sample_id,,drop=FALSE]
   w<-MOFA2::get_weights(m)
   for(name in names(views)) w[[name]]<-w[[name]][rownames(views[[name]]),,drop=FALSE]

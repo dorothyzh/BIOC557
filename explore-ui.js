@@ -1,6 +1,6 @@
 'use strict';
 let comparison=null,networkResult=null,enrichmentResult=null,runHistory=[],exploreSequence=0;
-let networkSettings={mode:'factor',top_per_view:6,threshold:.6},pathwaySettings={view:'RNA',catalog:'GO_BP',mode:'ora',top_n:20,direction:'absolute'};
+let networkSettings={mode:'integrated',factor:-1,top_per_view:20,threshold:.6,q_max:.05,term_limit:8,include_within:true,include_identity:true,labels:'key'},pathwaySettings={view:'RNA',catalog:'GO_BP',mode:'ora',top_n:20,direction:'absolute'};
 function bindPlotSaves(){
  document.querySelectorAll('[data-save]').forEach(e=>e.onclick=()=>{const el=$(e.dataset.save),format=e.dataset.format||'png',ratio=(el?.clientHeight||500)/Math.max(el?.clientWidth||800,1),height=Math.round(Math.max(600,1100*ratio));Plotly.downloadImage(e.dataset.save,{format,width:1100,height,scale:format==='png'?3:1,filename:'BIOC557_'+e.dataset.save});});
  document.querySelectorAll('[data-source]').forEach(e=>e.onclick=()=>{const figure=plots.findLast(x=>x.id===e.dataset.source);if(!figure)return;const rows=[];figure.traces.forEach((t,i)=>{if(t.meta?.legendOnly)return;if(t.type==='heatmap'){(t.z||[]).forEach((row,j)=>row.forEach((value,k)=>rows.push({trace:t.name||i+1,x:t.x?.[k]??k,y:t.y?.[j]??j,value})));}else(t.x||[]).forEach((x,j)=>rows.push({trace:t.name||i+1,x,y:t.y?.[j]??null,label:t.text?.[j]??'',details:JSON.stringify(t.customdata?.[j]??'')}));});downloadBlob(new Blob([Papa.unparse(rows)],{type:'text/csv;charset=utf-8'}),'BIOC557_'+e.dataset.source+'_source.csv');});

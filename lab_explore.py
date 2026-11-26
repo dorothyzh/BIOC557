@@ -103,7 +103,7 @@ def enrichment(result, options, annotations):
 
 def network(result,options):
     factor=int(options.get('factor',0));top=int(options.get('top_per_view',6));mode=options.get('mode','factor');threshold=float(options.get('threshold',.6))
-    if not 3<=top<=10:raise ValueError('Choose3–10 features per view.')
+    if not 3<=top<=40:raise ValueError('Choose 3–40 features per view.')
     if mode not in ['factor','correlation']:raise ValueError('Choose factor or correlation network.')
     if not .3<=threshold<=.95:raise ValueError('Correlation threshold must be0.3–0.95.')
     selected=selected_features(result,factor,top)
@@ -134,7 +134,11 @@ def explore(result,options,annotations=None):
     if action=='summary':
         from lab_summary import summarize
         return summarize(result,options)
-    if action=='network':return network(result,options)
+    if action=='network':
+        if options.get('mode')=='integrated':
+            from lab_network import integrated_network
+            return integrated_network(result,options,annotations)
+        return network(result,options)
     if action=='enrichment':return enrichment(result,options,annotations if annotations is not None else read_catalogs(result.get('annotation_scope','human')))
     raise ValueError('Unknown exploration action.')
 

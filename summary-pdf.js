@@ -47,6 +47,7 @@ function downloadSummaryPdf(s,save=true){
  newPage();heading('Abbreviations and explanations');const glossaryTop=y;X=M;C=82;let column=0;
  for(const [term,full,explanation] of courseGlossary){const lines=doc.splitTextToSize(ascii(full+' '+explanation),82).length;const need=10+lines*3.5;if(y+need>B){if(column===0){column=1;X=110;y=glossaryTop;}else{newPage();X=M;heading('Abbreviations, continued');column=0;}}text(`${term} - ${full}`,{size:9,bold:true,gap:1});small(explanation);}
  X=M;C=W-2*M;
+ if(typeof addNetworkPdfPage==='function'&&networkResult?.mode==='integrated'&&networkResult.dataset===s.dataset&&networkResult.samples===s.samples)addNetworkPdfPage(doc,networkResult);
  const pages=doc.getNumberOfPages();for(let i=1;i<=pages;i++){doc.setPage(i);line(M,285,W-M,285);doc.setFont('helvetica','normal');doc.setFontSize(8);doc.setTextColor(...muted);doc.text('BIOC557 | '+ascii(s.model)+' functional summary',M,291);doc.text(`${i} / ${pages}`,W-M,291,{align:'right'});}
  const bytes=doc.output('arraybuffer');if(save){doc.save('BIOC557_Functional_Summary_'+sessionId+'.pdf');if($('summary-status'))$('summary-status').textContent='PDF downloaded with the current settings, component profiles, evidence and references.';}return bytes;
 }

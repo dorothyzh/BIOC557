@@ -15,7 +15,7 @@ factor_enrichment<-function(lab,mofa,annotations,factor=1,view='RNA',catalog='GO
  N<-length(universe);n<-length(query);min_size<-if(view=='Metabolomics')2 else 3
  rows<-lapply(seq_along(terms),function(i){set<-intersect(members[[i]],universe);M<-length(set);if(M<min_size)return(NULL);hit<-intersect(set,query);k<-length(hit);data.frame(id=terms[[i]]$id,name=terms[[i]]$name,overlap=k,query_size=n,background_size=N,term_in_background=M,p_value=if(n)phyper(k-1,M,N-M,n,lower.tail=FALSE) else 1,features=paste(sort(hit),collapse=';'))})
  d<-do.call(rbind,rows);if(is.null(d))d<-data.frame(id=character(),name=character(),overlap=integer(),query_size=integer(),background_size=integer(),term_in_background=integer(),p_value=double(),features=character())
- d$q_value<-p.adjust(d$p_value,'BH');d$gene_ratio<-if(n)d$overlap/n else 0;d<-d[order(d$q_value,d$p_value,-d$overlap),]
+ d$q_value<-p.adjust(d$p_value,'BH');d$gene_ratio<-if(n)d$overlap/n else rep(0,nrow(d));d<-d[order(d$q_value,d$p_value,-d$overlap),]
  list(mode='ora',rows=d,universe_size=N,query_mapped=n,query_selected=length(selected),tested_terms=nrow(d),significant_terms=sum(d$q_value<.05),view=view,catalog=catalog,factor=factor)
 }
 plot_pathway_results<-function(e){
